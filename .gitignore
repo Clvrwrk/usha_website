@@ -1,0 +1,33 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+
+# Session memory and tooling
+.memsearch/
+.claude/*
+!.claude/launch.json
+
+# Large exports and archives (kept in Dropbox, not in git)
+*.pdf
+*.zip
+*.docx
+*.pptx
+
+# Raw research data and lead lists (never commit contact data)
+USHA Project Folder/Leads/
+USHA Project Folder/Brand Identity/*.csv
+
+# Claude Design bundle exports (36 MB, regenerated from the design project)
+The New USHA/figma-bundles/
+The New USHA/H4 Abstract Prism logo/uploads/
+The New USHA/H4 Abstract Prism logo/.thumbnail
+
+# Local scratch
+node_modules/
+
+# Old-brand loose logo files (superseded by the USHA Logo Set folders)
+USHA Logos/Gemini_Generated_Image_*.png
+USHA Logos/USHA_Greyscale.png
+USHA Logos/RWB USHA Logo Drop-Stroke.png
+USHA Logos/ny-13-today-LOVE-mediumSquareAt3X.jpg

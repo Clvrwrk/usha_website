@@ -1,0 +1,29 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "usha-site",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8942",
+        "--directory",
+        "usha-site"
+      ],
+      "port": 8942
+    },
+    {
+      "name": "usha-canvas",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8943",
+        "--directory",
+        "usha-canvas"
+      ],
+      "port": 8943
+    }
+  ]
+}

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700;800;900&family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<script src="usha-dots.js"></script>
+<style>
+body { margin: 0; background: #0D1B2A; font-family: Manrope, sans-serif; color: #F8F9FA; }
+a { color: #00D2FF; text-decoration: none; } a:hover { color: #FFB703; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes dotPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.5); } }
+@keyframes sealSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+</style>
+</helmet>
+<div style="display: flex; flex-direction: column; min-width: 1280px">
+
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 22px 56px; position: sticky; top: 0; background: rgba(13,27,42,0.88); backdrop-filter: blur(12px); z-index: 50; border-bottom: 1px solid rgba(0,210,255,0.15)">
+    <a href="USHA Home.dc.html" style="display: flex; align-items: center; gap: 14px; color: #F8F9FA">
+      {{ navMark }}
+      <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 22px; letter-spacing: 0.04em">USHA</div>
+    </a>
+    <div style="display: flex; align-items: center; gap: 36px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 0.12em">
+      <a href="USHA Home.dc.html">MISSION</a>
+      <a href="USHA Home.dc.html">WHAT WE DO</a>
+      <a href="USHA Home.dc.html">HUBS</a>
+      <a href="#roster" style="color: #FFB703">MEMBERS</a>
+      <div style="background: #FFB703; color: #0D1B2A; font-weight: 700; padding: 12px 24px; border-radius: 999px; cursor: pointer; letter-spacing: 0.08em" style-hover="background: #00D2FF">JOIN THE ALLIANCE</div>
+    </div>
+  </div>
+
+  <div style="position: relative; padding: 110px 56px 80px; overflow: hidden; background: radial-gradient(ellipse 70% 60% at 80% 30%, rgba(59,11,89,0.55), rgba(13,27,42,0) 65%), #0D1B2A">
+    <div style="position: absolute; right: -220px; top: -40px; opacity: 0.5">{{ heroMap }}</div>
+    <div style="position: relative; z-index: 2; display: flex; flex-direction: column; gap: 26px; max-width: 1000px">
+      <div style="display: flex; align-items: center; gap: 12px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.34em; color: #00D2FF">
+        <div style="width: 42px; height: 2px; background: #00D2FF"></div>
+        OUR MEMBERS
+      </div>
+      <div style="font-family: Unbounded, sans-serif; font-weight: 900; font-size: 88px; line-height: 1.02; letter-spacing: -0.02em">PROUD<span style="color: #FFB703">.</span> LOUD<span style="color: #FFB703">.</span><br><span style="color: #00D2FF">ON THE MAP</span><span style="color: #FFB703">.</span></div>
+      <div style="font-size: 20px; font-weight: 500; color: #B9C6D6; max-width: 640px; line-height: 1.6; text-wrap: pretty">These are the companies, campuses, and coalitions building America's hydrogen economy — on the record, in the statehouse, and on the ground.</div>
+      <div style="display: flex; gap: 48px; padding-top: 8px">
+        <div style="display: flex; flex-direction: column; gap: 4px"><div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 44px; color: #00D2FF">26</div><div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.18em; color: #8B95A5">MEMBERS &amp; ALLIES</div></div>
+        <div style="display: flex; flex-direction: column; gap: 4px"><div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 44px; color: #FFB703">3</div><div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.18em; color: #8B95A5">FOUNDING MEMBERS</div></div>
+        <div style="display: flex; flex-direction: column; gap: 4px"><div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 44px; color: #9D4EDD">3</div><div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.18em; color: #8B95A5">NATIONS ALLIED</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background: #FFB703; overflow: hidden; padding: 12px 0; border-top: 3px solid #0D1B2A; border-bottom: 3px solid #0D1B2A">
+    <div style="display: flex; width: max-content; animation: marquee 32s linear infinite">
+      <div style="display: flex; gap: 40px; padding-right: 40px; font-family: Unbounded, sans-serif; font-weight: 500; font-size: 15px; color: #0D1B2A; white-space: nowrap">
+        <sc-for list="{{ marqueeNames }}" as="n" hint-placeholder-count="8"><span>{{ n }}</span><span>◦</span></sc-for>
+        <sc-for list="{{ marqueeNames }}" as="n" hint-placeholder-count="8"><span>{{ n }}</span><span>◦</span></sc-for>
+      </div>
+    </div>
+  </div>
+
+  <div id="roster" style="background: #0D1B2A; padding: 96px 56px 40px; display: flex; flex-direction: column; gap: 22px">
+    <div style="display: flex; align-items: baseline; gap: 18px">
+      <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 40px">H₂ Champions</div>
+      <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.2em; color: #FFB703">THE HEAVYWEIGHT TIER</div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px">
+      <sc-for list="{{ champions }}" as="m" hint-placeholder-count="10">
+        <div style="position: relative; background: linear-gradient(160deg, rgba(59,11,89,0.5), rgba(13,27,42,0.3)); border: 1px solid rgba(0,210,255,0.25); border-radius: 12px; padding: 28px 24px; min-height: 150px; display: flex; flex-direction: column; gap: 10px; justify-content: flex-end; overflow: hidden; transition: transform 0.25s, border-color 0.25s; cursor: pointer" style-hover="transform: translateY(-8px); border-color: #00D2FF">
+          <div style="position: absolute; top: 16px; right: 16px; opacity: 0.22">{{ m.watermark }}</div>
+          <sc-if value="{{ m.founding }}" hint-placeholder-val="{{ false }}">
+            <div style="position: absolute; top: 16px; left: 16px; background: #FFB703; color: #0D1B2A; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 10px; letter-spacing: 0.16em; padding: 5px 10px; border-radius: 999px">FOUNDING</div>
+          </sc-if>
+          <div style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 21px; line-height: 1.2">{{ m.name }}</div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.18em; color: #00D2FF">{{ m.sector }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="background: #0D1B2A; padding: 40px 56px; display: flex; flex-direction: column; gap: 22px">
+    <div style="display: flex; align-items: baseline; gap: 18px">
+      <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 32px">H₂ Patrons</div>
+      <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.2em; color: #9D4EDD">THE NEXT NAME IS YOURS</div>
+    </div>
+    <div style="border: 2px dashed rgba(157,78,221,0.5); border-radius: 12px; padding: 34px; display: flex; align-items: center; justify-content: space-between; gap: 24px">
+      <div style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 22px; color: #B9C6D6">This tier has room<span style="color: #FFB703">.</span></div>
+      <div style="background: #9D4EDD; color: #0D1B2A; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.08em; padding: 15px 28px; border-radius: 999px; cursor: pointer" style-hover="background: #FFB703">BECOME A PATRON →</div>
+    </div>
+  </div>
+
+  <div style="background: #0D1B2A; padding: 40px 56px 96px; display: flex; flex-direction: column; gap: 22px">
+    <div style="display: flex; align-items: baseline; gap: 18px">
+      <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 32px">H₂ Proponents</div>
+      <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.2em; color: #00D2FF">INDUSTRY · RESEARCH · CAMPUS</div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px">
+      <sc-for list="{{ proponents }}" as="m" hint-placeholder-count="12">
+        <div style="background: rgba(248,249,250,0.04); border: 1px solid rgba(248,249,250,0.14); border-radius: 10px; padding: 20px 16px; min-height: 108px; display: flex; flex-direction: column; gap: 8px; justify-content: flex-end; transition: transform 0.25s, border-color 0.25s; cursor: pointer" style-hover="transform: translateY(-6px); border-color: #00D2FF">
+          <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 15px; line-height: 1.3">{{ m.name }}</div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 10px; letter-spacing: 0.16em; color: #7CE4FF">{{ m.sector }}</div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="display: flex; align-items: baseline; gap: 18px; padding-top: 26px">
+      <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 32px">Our Allies</div>
+      <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.2em; color: #FFB703">A CONTINENTAL COALITION</div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px">
+      <sc-for list="{{ allies }}" as="m" hint-placeholder-count="4">
+        <div style="background: linear-gradient(160deg, rgba(255,183,3,0.12), rgba(13,27,42,0.3)); border: 1px solid rgba(255,183,3,0.35); border-radius: 10px; padding: 22px 18px; display: flex; flex-direction: column; gap: 8px; transition: transform 0.25s" style-hover="transform: translateY(-6px)">
+          <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 15px; line-height: 1.35">{{ m.name }}</div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 10px; letter-spacing: 0.16em; color: #FFB703">{{ m.sector }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="background: #F8F9FA; color: #0D1B2A; padding: 100px 56px; display: flex; flex-direction: column; gap: 44px">
+    <div style="display: flex; flex-direction: column; gap: 12px; align-items: center; text-align: center">
+      <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.34em; color: #6C1FA0">HEAR FROM OUR MEMBERS</div>
+      <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 44px; text-wrap: balance">In their words<span style="color: #E09E00">.</span></div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px">
+      <sc-for list="{{ quotes }}" as="q" hint-placeholder-count="6">
+        <div style="background: #FFFFFF; border: 1px solid #DDE4EA; border-radius: 12px; padding: 30px 26px; display: flex; flex-direction: column; gap: 16px; break-inside: avoid">
+          <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 34px; color: #FFB703; line-height: 0.6">“</div>
+          <div style="font-size: 15px; font-weight: 500; line-height: 1.65; color: #2A3B4E; text-wrap: pretty">{{ q.text }}</div>
+          <div style="display: flex; flex-direction: column; gap: 2px; border-top: 2px solid #FFB703; padding-top: 12px">
+            <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px">{{ q.who }}</div>
+            <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.16em; color: #6C1FA0">{{ q.org }}</div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="background: #0D1B2A; padding: 100px 56px; display: flex; flex-direction: column; gap: 40px">
+    <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 44px; text-align: center; text-wrap: balance">Membership pays for itself<span style="color: #FFB703">.</span></div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px">
+      <div style="border: 1px solid rgba(0,210,255,0.25); border-radius: 10px; padding: 26px 22px; display: flex; flex-direction: column; gap: 8px"><div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.2em; color: #00D2FF">STRATEGY SESSIONS</div><div style="font-size: 14px; color: #B9C6D6; line-height: 1.6">Monthly one-on-one strategy meetings on your company's priorities.</div></div>
+      <div style="border: 1px solid rgba(0,210,255,0.25); border-radius: 10px; padding: 26px 22px; display: flex; flex-direction: column; gap: 8px"><div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.2em; color: #00D2FF">VISIBILITY</div><div style="font-size: 14px; color: #B9C6D6; line-height: 1.6">Represent your company — and the Alliance — with key external partners.</div></div>
+      <div style="border: 1px solid rgba(0,210,255,0.25); border-radius: 10px; padding: 26px 22px; display: flex; flex-direction: column; gap: 8px"><div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.2em; color: #00D2FF">INFORMATION</div><div style="font-size: 14px; color: #B9C6D6; line-height: 1.6">Weekly policy reports tracking federal and state hydrogen &amp; fuel cell action.</div></div>
+      <div style="border: 1px solid rgba(157,78,221,0.35); border-radius: 10px; padding: 26px 22px; display: flex; flex-direction: column; gap: 8px"><div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.2em; color: #9D4EDD">POLICY ENGAGEMENT</div><div style="font-size: 14px; color: #B9C6D6; line-height: 1.6">Expert technical testimony and regulatory comment opportunities.</div></div>
+      <div style="border: 1px solid rgba(157,78,221,0.35); border-radius: 10px; padding: 26px 22px; display: flex; flex-direction: column; gap: 8px"><div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.2em; color: #9D4EDD">BUSINESS DEVELOPMENT</div><div style="font-size: 14px; color: #B9C6D6; line-height: 1.6">Tailored introductions to offtakers, partners, and policymakers.</div></div>
+      <div style="border: 1px solid rgba(157,78,221,0.35); border-radius: 10px; padding: 26px 22px; display: flex; flex-direction: column; gap: 8px"><div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.2em; color: #9D4EDD">EXCLUSIVE EVENTS</div><div style="font-size: 14px; color: #B9C6D6; line-height: 1.6">Member-only access to Alliance events, webinars, and delegations.</div></div>
+    </div>
+  </div>
+
+  <div style="background: linear-gradient(120deg, #3B0B59, #0D1B2A 70%); padding: 100px 56px; display: grid; grid-template-columns: auto 1fr; gap: 70px; align-items: center">
+    {{ joinSeal }}
+    <div style="display: flex; flex-direction: column; gap: 22px; max-width: 780px">
+      <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 50px; line-height: 1.1; text-wrap: balance">Your name belongs on this page<span style="color: #FFB703">.</span></div>
+      <div style="font-size: 18px; font-weight: 500; color: #B9C6D6; line-height: 1.65; text-wrap: pretty">The only hydrogen business trade association active state-by-state. Bring your state. Bring your molecule.</div>
+      <div style="display: flex; gap: 16px; padding-top: 6px">
+        <div style="background: #FFB703; color: #0D1B2A; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; padding: 18px 34px; border-radius: 999px; cursor: pointer" style-hover="background: #00D2FF">SUBMIT AN APPLICATION</div>
+        <div style="border: 2px solid rgba(0,210,255,0.5); color: #00D2FF; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; padding: 16px 32px; border-radius: 999px; cursor: pointer" style-hover="border-color: #FFB703; color: #FFB703">2026 MEMBERSHIP BROCHURE ↓</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background: #0A1420; padding: 56px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(0,210,255,0.12)">
+    <div style="display: flex; align-items: center; gap: 14px">
+      {{ navMark2 }}
+      <div style="display: flex; flex-direction: column">
+        <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 18px">USHA</div>
+        <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.24em; color: #6B7A8D">UNITED STATES HYDROGEN ALLIANCE</div>
+      </div>
+    </div>
+    <div style="display: flex; gap: 28px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.1em">
+      <a href="USHA Home.dc.html">HOME</a><a href="#roster">MEMBERS</a><a href="#roster">JOIN</a>
+    </div>
+    <div style="display: flex; gap: 6px">
+      <div style="width: 22px; height: 22px; border-radius: 4px; background: #3B0B59"></div>
+      <div style="width: 22px; height: 22px; border-radius: 4px; background: #0D1B2A; border: 1px solid #33455C"></div>
+      <div style="width: 22px; height: 22px; border-radius: 4px; background: #00D2FF"></div>
+      <div style="width: 22px; height: 22px; border-radius: 4px; background: #FFB703"></div>
+      <div style="width: 22px; height: 22px; border-radius: 4px; background: #F8F9FA"></div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  waitData() { if (window.USHA_DOTS) return true; if (!this._t) this._t = setTimeout(() => { this._t = null; this.forceUpdate(); }, 120); return false; }
+  svgOf(dots, vb, w, recolor, style) {
+    return React.createElement('svg', { viewBox: vb, width: w, style: Object.assign({ display: 'block', flex: 'none' }, style || {}) },
+      dots.map((d, i) => React.createElement('circle', { key: i, cx: d.x, cy: d.y, r: d.r, fill: recolor ? recolor(d) : d.c })));
+  }
+  seal(ink, accent, w, spin) {
+    const D = window.USHA_DOTS.h;
+    const id = 'memSeal' + ink.replace('#', '');
+    const hs = 150 / D.w, hox = 200 - (D.w * hs) / 2, hoy = 200 - (D.h * hs) / 2;
+    const darkMap = { '#00a8cc': '#33dbff', '#0d1b2a': '#7ce4ff', '#00d2ff': '#5fe0ff', '#3b0b59': '#9d4edd', '#2a073f': '#8a3fc7', '#e09e00': '#ffb703', '#7ce4ff': '#a8eeff', '#6c1fa0': '#9d4edd' };
+    return React.createElement('svg', { viewBox: '0 0 400 400', width: w, style: { display: 'block' } },
+      React.createElement('defs', null, React.createElement('path', { id, d: 'M 200,362 a 162,162 0 1,1 0.01,0', fill: 'none' }), React.createElement('path', { id: id + 'b', d: 'M 200,52 a 148,148 0 1,0 0.01,0', fill: 'none' })),
+      React.createElement('circle', { cx: 200, cy: 200, r: 192, fill: 'none', stroke: ink, strokeWidth: 3 }),
+      React.createElement('circle', { cx: 200, cy: 200, r: 130, fill: 'none', stroke: ink, strokeWidth: 1.5 }),
+      React.createElement('g', { style: spin ? { animation: 'sealSpin 36s linear infinite', transformOrigin: '200px 200px' } : null },
+        Array.from({ length: 60 }, (_, i) => { const a = i / 60 * Math.PI * 2; return React.createElement('circle', { key: 'r' + i, cx: 200 + Math.cos(a) * 180, cy: 200 + Math.sin(a) * 180, r: i % 5 === 0 ? 3.4 : 1.6, fill: i % 5 === 0 ? accent : ink }); })),
+      React.createElement('text', { fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 19.5, letterSpacing: 5, fill: ink, textAnchor: 'middle' },
+        React.createElement('textPath', { href: '#' + id, startOffset: '50%' }, 'UNITED STATES HYDROGEN ALLIANCE')),
+      React.createElement('text', { fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 19.5, letterSpacing: 6, fill: accent, textAnchor: 'middle' },
+        React.createElement('textPath', { href: '#' + id + 'b', startOffset: '50%' }, '\u2022 H\u2082 \u2022')),
+      React.createElement('g', { transform: `translate(${hox},${hoy}) scale(${hs})` },
+        window.USHA_DOTS.h.dots.map((d, i) => React.createElement('circle', { key: i, cx: d.x, cy: d.y, r: d.r, fill: darkMap[d.c] || d.c }))));
+  }
+  renderVals() {
+    if (!this.waitData()) return {};
+    const D = window.USHA_DOTS, MV = `0 0 ${D.map.w} ${D.map.h}`, HV = `0 0 ${D.h.w} ${D.h.h}`;
+    const lerp = (a, b, t) => a.map((v, i) => Math.round(v + (b[i] - v) * t));
+    const hex = c => [parseInt(c.slice(1, 3), 16), parseInt(c.slice(3, 5), 16), parseInt(c.slice(5, 7), 16)];
+    const rgb = c => `rgb(${c[0]},${c[1]},${c[2]})`;
+    const spec = stops => d => { const t = Math.min(1, Math.max(0, d.x / D.map.w)) * (stops.length - 1); const i = Math.min(stops.length - 2, Math.floor(t)); return rgb(lerp(hex(stops[i]), hex(stops[i + 1]), t - i)); };
+    const specDark = spec(['#9D4EDD', '#6C1FA0', '#00A8CC', '#00D2FF']);
+    const champions = [
+      { name: 'Air Water', sector: 'INDUSTRIAL GAS', founding: true },
+      { name: 'Honda', sector: 'MOBILITY & POWER', founding: false },
+      { name: 'Nikkiso', sector: 'CRYOGENIC SYSTEMS', founding: false },
+      { name: 'Pacific Clean Fuels', sector: 'FUELS & INFRASTRUCTURE', founding: false },
+      { name: 'The Papé Group', sector: 'EQUIPMENT', founding: false },
+      { name: 'Taylor-Wharton', sector: 'CRYOGENICS', founding: true },
+      { name: 'TOMCO2 Systems', sector: 'GAS SYSTEMS', founding: true },
+      { name: 'Total Hydrogen Solutions', sector: 'PROJECT SOLUTIONS', founding: false },
+      { name: 'BayoTech', sector: 'MODULAR H\u2082 PRODUCTION', founding: false },
+      { name: 'Entegris', sector: 'ADVANCED MATERIALS', founding: false }
+    ].map(m => Object.assign(m, { watermark: this.svgOf(D.h.dots, HV, 40, () => 'rgba(0,210,255,0.9)') }));
+    const proponents = [
+      { name: 'iH2', sector: 'H\u2082 PRODUCTION' },
+      { name: 'Jensen Hughes', sector: 'SAFETY ENGINEERING' },
+      { name: 'RW Energy', sector: 'ENERGY SERVICES' },
+      { name: 'Southwest Gas', sector: 'UTILITY' },
+      { name: 'Suburban Propane', sector: 'ENERGY DISTRIBUTION' },
+      { name: 'Southwest Research Institute', sector: 'RESEARCH' },
+      { name: 'TLM One', sector: 'TECHNOLOGY' },
+      { name: 'University of Delaware', sector: 'UNIVERSITY' },
+      { name: 'University of Maryland', sector: 'UNIVERSITY' },
+      { name: 'University of Wyoming', sector: 'UNIVERSITY' },
+      { name: 'VT Corporate Research Center', sector: 'INNOVATION CAMPUS' },
+      { name: 'Zero Emission Advisors', sector: 'ADVISORY' }
+    ];
+    const allies = [
+      { name: 'ASU Center for an Arizona Carbon-Neutral Economy', sector: 'RESEARCH ALLY · USA' },
+      { name: 'Canadian Hydrogen Association', sector: 'ALLY · CANADA' },
+      { name: 'H2 M\u00e9xico', sector: 'ALLY · M\u00c9XICO' },
+      { name: 'Nuclear Hydrogen Initiative', sector: 'COALITION ALLY' }
+    ];
+    const quotes = [
+      { text: "It's not a trade association; it's an active legislative impact machine. It's helping to drive the infrastructure that's needed to build out the actual physical infrastructure of hydrogen.", who: 'Jeff Holyoak', org: 'TOMCO SYSTEMS' },
+      { text: 'There is no price tag on what USHA has done for us. We have not felt this support with any other organization so far.', who: 'Carolina Ahlstrand', org: 'HYCAMITE' },
+      { text: "In our six months with USHA, the return on investment has been evident through the connections made and knowledge gained.", who: 'Greg Heller', org: 'HNO INTERNATIONAL' },
+      { text: 'They helped us get introduced to the right people to further our business.', who: 'Aaron Villarreal', org: 'TAYLOR-WHARTON' },
+      { text: "HSB has gained hundreds of contacts through the U.S. Hydrogen Alliance. The network is fantastic. I can't be happier with our membership.", who: 'George Drake', org: 'HSB' },
+      { text: "We've seen real policy impact, with legislation developed and passed that enhances state-level understanding of hydrogen.", who: 'Tim Sasseen', org: 'BALLARD POWER SYSTEMS' }
+    ];
+    return {
+      navMark: this.svgOf(D.h.dots, HV, 34, null),
+      navMark2: this.svgOf(D.h.dots, HV, 38, null),
+      heroMap: this.svgOf(D.map.dots, MV, 1100, specDark),
+      joinSeal: this.seal('#F8F9FA', '#FFB703', 300, true),
+      marqueeNames: [...champions.map(m => m.name), ...proponents.map(m => m.name)],
+      champions, proponents, allies, quotes
+    };
+  }
+}
+</script>
+</body>
+</html>

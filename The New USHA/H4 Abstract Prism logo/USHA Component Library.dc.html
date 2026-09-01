@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700;800;900&family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<script src="usha-dots.js"></script>
+<script src="usha-icons.js"></script>
+<script src="usha-effects.js"></script>
+<style>
+body { margin: 0; background: #0D1B2A; font-family: Manrope, sans-serif; color: #F8F9FA; }
+a { color: #00D2FF; text-decoration: none; } a:hover { color: #FFB703; }
+@keyframes dotPulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.55); opacity: 0.75; } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes progressDot { 0%, 100% { opacity: 0.15; } 50% { opacity: 1; } }
+</style>
+</helmet>
+<div style="display: flex; flex-direction: column; min-width: 1280px">
+
+  <div style="padding: 72px 56px 44px; display: flex; flex-direction: column; gap: 18px; border-bottom: 1px solid rgba(0,210,255,0.15)">
+    <div style="display: flex; align-items: center; gap: 12px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.3em; color: #00D2FF"><div style="width: 36px; height: 2px; background: #00D2FF"></div>USHA DESIGN SYSTEM · COMPONENT LIBRARY V1.0</div>
+    <div style="font-family: Unbounded, sans-serif; font-weight: 900; font-size: 56px; line-height: 1.05">Nothing left to decide<span style="color: #FFB703">.</span></div>
+    <div style="font-size: 16px; color: #B9C6D6; max-width: 760px; line-height: 1.65">Every icon, button, card, loader, cursor effect, and scroll behavior — specified, styled, and shipped. Dev handoff: <strong style="color: #F8F9FA">usha-components.css</strong> (classes + tokens), <strong style="color: #F8F9FA">usha-effects.js</strong> (favicon, glow, magnet, ripple, reveal), <strong style="color: #F8F9FA">usha-icons.js</strong> (icon suite). This page is the living spec.</div>
+  </div>
+
+  <div style="padding: 56px; display: flex; flex-direction: column; gap: 24px" data-usha-reveal="up">
+    <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 30px">01 · Icon Suite <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.2em; color: #00D2FF; margin-left: 12px">24×24 · STROKE 1.8 · ONE GOLD DOT</span></div>
+    <div style="font-size: 14px; color: #B9C6D6; max-width: 760px; line-height: 1.6">The dot is the signature: most icons carry exactly one filled gold accent dot. Sizes 16 / 20 / 24 / 32 only. Ice on dark, navy on light — never cyan or gold strokes.</div>
+    <div style="display: grid; grid-template-columns: repeat(9, 1fr); gap: 12px">
+      <sc-for list="{{ icons }}" as="ic" hint-placeholder-count="36">
+        <div style="background: rgba(248,249,250,0.04); border: 1px solid rgba(248,249,250,0.12); border-radius: 10px; padding: 18px 10px 12px; display: flex; flex-direction: column; align-items: center; gap: 10px; transition: border-color 0.2s" style-hover="border-color: #00D2FF">
+          {{ ic.el }}
+          <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 10px; letter-spacing: 0.1em; color: #8B95A5">{{ ic.name }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding: 56px; display: flex; flex-direction: column; gap: 24px; background: #0A1420" data-usha-reveal="up">
+    <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 30px">02 · Loaders <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.2em; color: #00D2FF; margin-left: 12px">THE MOLECULE AT WORK</span></div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px">
+      <div style="border: 1px solid rgba(248,249,250,0.12); border-radius: 12px; padding: 34px; display: flex; flex-direction: column; align-items: center; gap: 18px">
+        {{ hLoader }}
+        <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.16em; color: #8B95A5">H-LOADER · PAGE &amp; APP LOADS</div>
+      </div>
+      <div style="border: 1px solid rgba(248,249,250,0.12); border-radius: 12px; padding: 34px; display: flex; flex-direction: column; align-items: center; gap: 18px">
+        {{ ringLoader }}
+        <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.16em; color: #8B95A5">DOT RING · INLINE / BUTTONS</div>
+      </div>
+      <div style="border: 1px solid rgba(248,249,250,0.12); border-radius: 12px; padding: 34px; display: flex; flex-direction: column; align-items: center; gap: 18px">
+        {{ progressLoader }}
+        <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.16em; color: #8B95A5">WEST→EAST PROGRESS · UPLOADS</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding: 56px; display: flex; flex-direction: column; gap: 24px" data-usha-reveal="up">
+    <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 30px">03 · Animated Favicon <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.2em; color: #00D2FF; margin-left: 12px">LIVE IN THIS TAB RIGHT NOW</span></div>
+    <div style="display: flex; align-items: center; gap: 28px; border: 1px solid rgba(0,210,255,0.25); border-radius: 12px; padding: 28px 32px">
+      {{ faviconPreview }}
+      <div style="display: flex; flex-direction: column; gap: 10px; flex: 1">
+        <div style="font-size: 14px; color: #B9C6D6; line-height: 1.6; max-width: 640px">The dotted H pulses in the browser tab — 8 canvas frames at 140 ms on a navy dot. Ships in <strong style="color: #F8F9FA">usha-effects.js</strong> as <code style="font-family: 'Space Grotesk', monospace; font-size: 12px; color: #00D2FF">USHAFavicon.start() / .stop()</code>. Rules: run it on marketing pages; static favicon in app contexts; always static when <code style="font-family: 'Space Grotesk', monospace; font-size: 12px; color: #00D2FF">prefers-reduced-motion</code>.</div>
+        <div onClick="{{ toggleFavicon }}" style="align-self: flex-start; background: #FFB703; color: #0D1B2A; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.08em; padding: 12px 22px; border-radius: 999px; cursor: pointer" style-hover="background: #00D2FF" data-usha-ripple="rgba(13,27,42,0.25)">{{ faviconLabel }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding: 56px; display: flex; flex-direction: column; gap: 24px; background: #0A1420" data-usha-reveal="up">
+    <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 30px">04 · Buttons <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.2em; color: #00D2FF; margin-left: 12px">PILL · 44PX MIN · NAVY TEXT ON FILLS</span></div>
+    <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center">
+      <div data-usha-ripple="rgba(13,27,42,0.25)" data-usha-magnet style="background: #FFB703; color: #0D1B2A; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.08em; padding: 15px 28px; border-radius: 999px; cursor: pointer" style-hover="background: #00D2FF">PRIMARY — GOLD</div>
+      <div data-usha-ripple="rgba(13,27,42,0.25)" style="background: #00D2FF; color: #0D1B2A; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.08em; padding: 15px 28px; border-radius: 999px; cursor: pointer" style-hover="background: #FFB703">SECONDARY — CYAN</div>
+      <div style="border: 2px solid rgba(248,249,250,0.35); color: #F8F9FA; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.08em; padding: 13px 26px; border-radius: 999px; cursor: pointer" style-hover="border-color: #00D2FF; color: #00D2FF">TERTIARY — OUTLINE</div>
+      <div style="background: #E5484D; color: #FFFFFF; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.08em; padding: 15px 28px; border-radius: 999px; cursor: pointer">DANGER</div>
+      <div style="background: #FFB703; opacity: 0.4; color: #0D1B2A; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.08em; padding: 15px 28px; border-radius: 999px; cursor: not-allowed">DISABLED</div>
+      <div data-usha-ripple="rgba(13,27,42,0.25)" style="width: 48px; height: 48px; background: #FFB703; border-radius: 999px; display: flex; align-items: center; justify-content: center; cursor: pointer" style-hover="background: #00D2FF">{{ iconArrowNavy }}</div>
+      <div style="outline: 2px solid #00D2FF; outline-offset: 2px; background: #FFB703; color: #0D1B2A; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.08em; padding: 15px 28px; border-radius: 999px">FOCUS STATE</div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center">
+      <div style="background: #FFB703; color: #0D1B2A; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.08em; padding: 11px 18px; border-radius: 999px; cursor: pointer">SMALL 36</div>
+      <div style="background: #FFB703; color: #0D1B2A; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.08em; padding: 15px 28px; border-radius: 999px; cursor: pointer">DEFAULT 44</div>
+      <div style="background: #FFB703; color: #0D1B2A; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; padding: 20px 34px; border-radius: 999px; cursor: pointer">LARGE 56</div>
+      <div style="font-size: 12px; color: #8B95A5">Hover swaps gold ⇄ cyan · active scales 0.97 · primary buttons get ripple + magnet (try them)</div>
+    </div>
+  </div>
+
+  <div style="padding: 56px; display: flex; flex-direction: column; gap: 24px" data-usha-reveal="up">
+    <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 30px">05 · Cards <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.2em; color: #00D2FF; margin-left: 12px">HOVER LIFT −8PX · TINTED 1PX BORDERS</span></div>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px">
+      <div style="background: linear-gradient(160deg, rgba(59,11,89,0.55), rgba(13,27,42,0.4)); border: 1px solid rgba(157,78,221,0.4); border-radius: 12px; padding: 28px 24px; display: flex; flex-direction: column; gap: 12px; transition: transform 0.25s" style-hover="transform: translateY(-8px); border-color: #9D4EDD">
+        {{ iconCapitol }}
+        <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 18px">Pillar card</div>
+        <div style="font-size: 13px; color: #B9C6D6; line-height: 1.6">Purple tint. Programs, policy, features.</div>
+        <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.14em; color: #9D4EDD">ACTION →</div>
+      </div>
+      <div style="background: rgba(248,249,250,0.04); border: 1px solid rgba(248,249,250,0.14); border-radius: 12px; padding: 28px 24px; display: flex; flex-direction: column; gap: 10px; justify-content: flex-end; transition: transform 0.25s" style-hover="transform: translateY(-8px); border-color: #00D2FF">
+        <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 16px">Member card</div>
+        <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 10px; letter-spacing: 0.16em; color: #7CE4FF">GHOST TINT · ROSTERS</div>
+      </div>
+      <div style="background: linear-gradient(160deg, rgba(0,137,168,0.35), rgba(13,27,42,0.4)); border: 1px solid rgba(0,210,255,0.35); border-radius: 12px; padding: 28px 24px; display: flex; flex-direction: column; gap: 6px; transition: transform 0.25s" style-hover="transform: translateY(-8px); border-color: #00D2FF">
+        <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 40px; color: #00D2FF">50</div>
+        <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.18em; color: #8B95A5">STAT CARD · CYAN TINT</div>
+      </div>
+      <div style="background: #FFFFFF; border: 1px solid #DDE4EA; border-top: 3px solid #FFB703; border-radius: 12px; padding: 24px; color: #0D1B2A; display: flex; flex-direction: column; gap: 10px; transition: transform 0.25s" style-hover="transform: translateY(-8px)">
+        <div style="font-size: 13px; line-height: 1.6; color: #2A3B4E">"Quote card — light surfaces, gold top rule."</div>
+        <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 11px">NAME · ORG</div>
+      </div>
+    </div>
+    <div data-usha-glow="rgba(0,210,255,0.18)" style="border: 1px solid rgba(0,210,255,0.3); border-radius: 12px; padding: 34px; display: flex; align-items: center; justify-content: space-between; gap: 24px; background: rgba(248,249,250,0.03)">
+      <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 20px">Spotlight card — move your mouse across me<span style="color: #FFB703">.</span></div>
+      <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.16em; color: #8B95A5">data-usha-glow · HERO CALLOUTS ONLY</div>
+    </div>
+  </div>
+
+  <div style="padding: 56px; display: flex; flex-direction: column; gap: 24px; background: #0A1420" data-usha-reveal="up">
+    <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 30px">06 · Forms <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.2em; color: #00D2FF; margin-left: 12px">48PX FIELDS · CYAN FOCUS · GOLD CHECKS</span></div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; align-items: start">
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.18em; color: #00D2FF">WORK EMAIL</div>
+        <input placeholder="you@yourcompany.com" style="min-height: 48px; padding: 12px 18px; border-radius: 10px; border: 1.5px solid rgba(248,249,250,0.25); background: rgba(248,249,250,0.05); color: #F8F9FA; font-family: Manrope, sans-serif; font-size: 15px">
+        <div style="font-size: 12px; color: #8B95A5">Hover: cyan 50% border · Focus: solid cyan</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.18em; color: #00D2FF">MEMBERSHIP TIER</div>
+        <select style="min-height: 48px; padding: 12px 14px; border-radius: 10px; border: 1.5px solid rgba(248,249,250,0.25); background: #12233A; color: #F8F9FA; font-family: Manrope, sans-serif; font-size: 15px">
+          <option>H₂ Champion</option><option>H₂ Patron</option><option>H₂ Proponent</option><option>Ally</option>
+        </select>
+        <div style="display: flex; flex-direction: column; gap: 8px; padding-top: 6px">
+          <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.18em; color: #E5484D">ERROR STATE</div>
+          <input value="not-an-email" style="min-height: 48px; padding: 12px 18px; border-radius: 10px; border: 1.5px solid #E5484D; background: rgba(229,72,77,0.08); color: #F8F9FA; font-family: Manrope, sans-serif; font-size: 15px">
+          <div style="font-size: 12px; font-weight: 600; color: #E5484D">Enter a valid work email.</div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 16px">
+        <label style="display: flex; align-items: center; gap: 12px; cursor: pointer"><span style="width: 22px; height: 22px; border-radius: 6px; background: #FFB703; display: inline-flex; align-items: center; justify-content: center">{{ iconCheckNavy }}</span><span style="font-size: 14px">Checkbox checked — gold fill, navy check</span></label>
+        <label style="display: flex; align-items: center; gap: 12px; cursor: pointer"><span style="width: 22px; height: 22px; border-radius: 6px; border: 2px solid rgba(248,249,250,0.4)"></span><span style="font-size: 14px">Checkbox empty</span></label>
+        <label style="display: flex; align-items: center; gap: 12px; cursor: pointer"><span style="width: 22px; height: 22px; border-radius: 50%; border: 2px solid #FFB703; display: inline-flex; align-items: center; justify-content: center"><span style="width: 10px; height: 10px; border-radius: 50%; background: #FFB703"></span></span><span style="font-size: 14px">Radio selected</span></label>
+        <div style="display: flex; align-items: center; gap: 12px">
+          <div style="width: 52px; height: 30px; border-radius: 999px; background: #00D2FF; position: relative"><div style="position: absolute; top: 4px; left: 26px; width: 22px; height: 22px; border-radius: 50%; background: #0D1B2A"></div></div>
+          <div style="width: 52px; height: 30px; border-radius: 999px; background: rgba(248,249,250,0.18); position: relative"><div style="position: absolute; top: 4px; left: 4px; width: 22px; height: 22px; border-radius: 50%; background: #F8F9FA"></div></div>
+          <span style="font-size: 14px">Toggle on / off — knob springs (cubic-bezier 0.2, 0.8, 0.3, 1.2)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding: 56px; display: flex; flex-direction: column; gap: 24px" data-usha-reveal="up">
+    <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 30px">07 · Mouse &amp; Scroll Effects <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.2em; color: #00D2FF; margin-left: 12px">ALL SHIPPED IN USHA-EFFECTS.JS</span></div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px">
+      <div style="border: 1px solid rgba(248,249,250,0.14); border-radius: 12px; padding: 24px; display: flex; flex-direction: column; gap: 8px"><div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.16em; color: #FFB703">data-usha-ripple</div><div style="font-size: 13px; color: #B9C6D6; line-height: 1.6">Gold/navy dot expands from the click point. Primary + secondary buttons, 550 ms ease-out. The click IS a molecule.</div></div>
+      <div style="border: 1px solid rgba(248,249,250,0.14); border-radius: 12px; padding: 24px; display: flex; flex-direction: column; gap: 8px"><div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.16em; color: #FFB703">data-usha-magnet</div><div style="font-size: 13px; color: #B9C6D6; line-height: 1.6">Hero CTAs lean ≤8 px toward the cursor and spring back (0.35 s overshoot). One magnetic element per view.</div></div>
+      <div style="border: 1px solid rgba(248,249,250,0.14); border-radius: 12px; padding: 24px; display: flex; flex-direction: column; gap: 8px"><div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.16em; color: #FFB703">data-usha-glow</div><div style="font-size: 13px; color: #B9C6D6; line-height: 1.6">220 px cyan spotlight follows the cursor inside hero callouts. Never on text blocks or forms.</div></div>
+      <div style="border: 1px solid rgba(248,249,250,0.14); border-radius: 12px; padding: 24px; display: flex; flex-direction: column; gap: 8px"><div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.16em; color: #FFB703">data-usha-reveal = up | left | right | scale</div><div style="font-size: 13px; color: #B9C6D6; line-height: 1.6">Sections fade + rise 28 px on scroll entry (0.6 s, overshoot curve) — every section of this page uses it. One reveal per block, no re-trigger, off under reduced motion.</div></div>
+    </div>
+    <div style="display: flex; gap: 14px">
+      <div data-usha-reveal="left" style="flex: 1; background: linear-gradient(160deg, rgba(59,11,89,0.5), rgba(13,27,42,0.3)); border: 1px solid rgba(157,78,221,0.4); border-radius: 12px; padding: 22px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.14em">REVEAL: LEFT</div>
+      <div data-usha-reveal="up" style="flex: 1; background: linear-gradient(160deg, rgba(0,137,168,0.3), rgba(13,27,42,0.3)); border: 1px solid rgba(0,210,255,0.35); border-radius: 12px; padding: 22px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.14em">REVEAL: UP</div>
+      <div data-usha-reveal="scale" style="flex: 1; background: linear-gradient(160deg, rgba(255,183,3,0.15), rgba(13,27,42,0.3)); border: 1px solid rgba(255,183,3,0.4); border-radius: 12px; padding: 22px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.14em">REVEAL: SCALE</div>
+      <div data-usha-reveal="right" style="flex: 1; background: rgba(248,249,250,0.04); border: 1px solid rgba(248,249,250,0.14); border-radius: 12px; padding: 22px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.14em">REVEAL: RIGHT</div>
+    </div>
+    <div style="background: #FFB703; overflow: hidden; padding: 12px 0; border-top: 3px solid #0D1B2A; border-bottom: 3px solid #0D1B2A; border-radius: 4px">
+      <div style="display: flex; width: max-content; animation: marquee 20s linear infinite">
+        <div style="display: flex; gap: 40px; padding-right: 40px; font-family: Unbounded, sans-serif; font-weight: 500; font-size: 14px; color: #0D1B2A; white-space: nowrap"><span>MARQUEE — THE ONLY LINEAR MOTION IN THE SYSTEM</span><span>◦</span><span>GOLD BAND · NAVY RULES · 20–32S LOOP</span><span>◦</span><span>MARQUEE — THE ONLY LINEAR MOTION IN THE SYSTEM</span><span>◦</span><span>GOLD BAND · NAVY RULES · 20–32S LOOP</span><span>◦</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding: 56px; display: flex; flex-direction: column; gap: 24px; background: #F8F9FA; color: #0D1B2A" data-usha-reveal="up">
+    <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 30px">08 · Print Components <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.2em; color: #0089A8; margin-left: 12px">SAME CLASSES · PRINT-COLOR-ADJUST EXACT</span></div>
+    <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center">
+      <div style="background: #0D1B2A; color: #F8F9FA; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.12em; padding: 8px 14px; border-radius: 999px">NAVY CHIP</div>
+      <div style="background: #FFB703; color: #0D1B2A; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.12em; padding: 8px 14px; border-radius: 999px">GOLD CHIP</div>
+      <div style="background: #6C1FA0; color: #F8F9FA; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.12em; padding: 8px 14px; border-radius: 999px">PURPLE CHIP</div>
+      <div style="border: 1.5px solid #0D1B2A; color: #0D1B2A; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.12em; padding: 8px 14px; border-radius: 999px">OUTLINE CHIP</div>
+      <div style="font-size: 12px; color: #45566B">Punch bands, spec tables, and tier cards: see the 2026 brochures — built from these same parts.</div>
+    </div>
+    <div style="background: #0D1B2A; color: #F8F9FA; border-radius: 10px; padding: 24px 30px; display: flex; align-items: center; justify-content: space-between; gap: 24px">
+      <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 19px">Punch band — every print page ends with one<span style="color: #FFB703">.</span></div>
+      {{ iconH2Dark }}
+    </div>
+  </div>
+
+  <div style="padding: 44px 56px; background: #0A1420; border-top: 1px solid rgba(0,210,255,0.12); display: flex; align-items: center; justify-content: space-between">
+    <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.2em; color: #6B7A8D">USHA COMPONENT LIBRARY V1.0 · HANDOFF: USHA-COMPONENTS.CSS + USHA-EFFECTS.JS + USHA-ICONS.JS</div>
+    {{ navMark }}
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { fav: true };
+  componentDidMount() { const go = () => { if (window.USHAFavicon) { window.USHAFavicon.start(); this.forceUpdate(); } else setTimeout(go, 150); }; go(); }
+  waitData() { if (window.USHA_DOTS && window.USHA_ICONS) return true; if (!this._t) this._t = setTimeout(() => { this._t = null; this.forceUpdate(); }, 120); return false; }
+  icon(name, size, color) {
+    return React.createElement('span', { style: { display: 'block', width: size, height: size, color: color || '#F8F9FA' },
+      dangerouslySetInnerHTML: { __html: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="${size}" height="${size}">${window.USHA_ICONS[name] || ''}</svg>` } });
+  }
+  renderVals() {
+    if (!this.waitData()) return {};
+    const D = window.USHA_DOTS, HV = `0 0 ${D.h.w} ${D.h.h}`;
+    const names = Object.keys(window.USHA_ICONS);
+    const icons = names.map(n => ({ name: n, el: this.icon(n, 26) }));
+    const hLoader = React.createElement('svg', { viewBox: HV, width: 64 },
+      D.h.dots.map((d, i) => React.createElement('circle', { key: i, cx: d.x, cy: d.y, r: d.r, fill: d.c,
+        style: { animation: 'dotPulse 1.4s ease-in-out infinite', animationDelay: (i * 0.05) + 's', transformBox: 'fill-box', transformOrigin: 'center' } })));
+    const ringLoader = React.createElement('svg', { viewBox: '0 0 48 48', width: 48, style: { animation: 'spin 1.8s linear infinite' } },
+      Array.from({ length: 12 }, (_, i) => { const a = i / 12 * Math.PI * 2; return React.createElement('circle', { key: i, cx: 24 + Math.cos(a) * 18, cy: 24 + Math.sin(a) * 18, r: 2.6, fill: ['#9D4EDD', '#00A8CC', '#00D2FF', '#FFB703'][i % 4], opacity: 0.25 + 0.75 * (i / 12) }); }));
+    const progressLoader = React.createElement('div', { style: { display: 'flex', gap: 7 } },
+      Array.from({ length: 16 }, (_, i) => React.createElement('span', { key: i, style: { width: 9, height: 9, borderRadius: '50%',
+        background: i < 4 ? '#9D4EDD' : i < 8 ? '#6C1FA0' : i < 12 ? '#00A8CC' : '#00D2FF',
+        animation: 'progressDot 1.8s ease-in-out infinite', animationDelay: (i * 0.1) + 's' } })));
+    const faviconPreview = React.createElement('svg', { viewBox: HV, width: 64, style: { background: '#0D1B2A', borderRadius: 14, padding: 10 } },
+      D.h.dots.map((d, i) => React.createElement('circle', { key: i, cx: d.x, cy: d.y, r: d.r, fill: d.c,
+        style: { animation: 'dotPulse 1.6s ease-in-out infinite', animationDelay: (i * 0.07) + 's', transformBox: 'fill-box', transformOrigin: 'center' } })));
+    const running = window.USHAFavicon && window.USHAFavicon.running();
+    return {
+      icons, hLoader, ringLoader, progressLoader, faviconPreview,
+      faviconLabel: running ? 'STOP THE TAB ANIMATION' : 'START THE TAB ANIMATION',
+      toggleFavicon: () => { window.USHAFavicon.toggle(); this.forceUpdate(); },
+      iconArrowNavy: this.icon('arrow-right', 22, '#0D1B2A'),
+      iconCheckNavy: this.icon('check', 14, '#0D1B2A'),
+      iconCapitol: this.icon('capitol', 30, '#9D4EDD'),
+      iconH2Dark: this.icon('h2', 34, '#F8F9FA'),
+      navMark: React.createElement('svg', { viewBox: HV, width: 32 }, D.h.dots.map((d, i) => React.createElement('circle', { key: i, cx: d.x, cy: d.y, r: d.r, fill: d.c })))
+    };
+  }
+}
+</script>
+</body>
+</html>

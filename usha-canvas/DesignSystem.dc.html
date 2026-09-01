@@ -1,0 +1,364 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Syne:wght@600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body { margin: 0; background: #F8F9FA; font-family: Manrope, 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 15px; line-height: 1.65; color: #0D1B2A; }
+a { color: #0089A8; text-decoration: none; } a:hover { color: #6C1FA0; }
+.dark { background: #0D1B2A; color: #F8F9FA; } .dark a { color: #00D2FF; } .dark a:hover { color: #FFB703; }
+.light { background: #F8F9FA; color: #0D1B2A; } .tint { background: #F1F4F7; color: #0D1B2A; }
+.sec { padding: 55px 56px; border-top: 1px solid #DDE4EA; }
+.sec-head { display: flex; align-items: baseline; gap: 21px; margin-bottom: 34px; }
+.sec-num { font-family: Syne, sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.22em; color: #E09E00; }
+.sec-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 34px; letter-spacing: -0.02em; margin: 0; }
+.note { font-size: 14px; color: #45566B; max-width: 78ch; margin: 0; text-wrap: pretty; }
+.rule { font-family: Syne, sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #6B7A8D; margin: 0; }
+.spec { font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: 12px; letter-spacing: 0.02em; color: #6B7A8D; }
+.display { font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: -0.02em; line-height: 1.08; margin: 0; }
+.dot { color: #FFB703; }
+.eyebrow { font-family: Syne, sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; margin: 0; color: #6C1FA0; }
+.dark .eyebrow { color: #00D2FF; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 12px 26px; border-radius: 999px; border: 0; cursor: pointer; font-family: Syne, sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: background 200ms cubic-bezier(0.16,1,0.3,1), color 200ms cubic-bezier(0.16,1,0.3,1), border-color 200ms cubic-bezier(0.16,1,0.3,1); box-sizing: border-box; white-space: nowrap; }
+.btn.btn-primary { background: #FFB703; color: #0D1B2A; } .btn.btn-primary:hover { background: #00D2FF; color: #0D1B2A; }
+.btn.btn-secondary { background: #00D2FF; color: #0D1B2A; } .btn.btn-secondary:hover { background: #FFB703; color: #0D1B2A; }
+.btn.btn-tertiary { background: transparent; color: #F8F9FA; border: 2px solid rgba(248,249,250,0.35); padding: 10px 24px; } .btn.btn-tertiary:hover { border-color: #00D2FF; color: #00D2FF; }
+.btn.btn-tertiary-light { background: transparent; color: #0D1B2A; border: 2px solid rgba(13,27,42,0.35); padding: 10px 24px; } .btn.btn-tertiary-light:hover { border-color: #6C1FA0; color: #6C1FA0; }
+.btn.is-hover.btn-primary { background: #00D2FF; } .btn.is-hover.btn-secondary { background: #FFB703; } .btn.is-hover.btn-tertiary { border-color: #00D2FF; color: #00D2FF; }
+.btn.is-focus { outline: 2px solid #00D2FF; outline-offset: 2px; }
+.chip { display: inline-flex; align-items: center; align-self: flex-start; background: #6C1FA0; color: #F8F9FA; font-family: Syne, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 7px 14px; border-radius: 999px; white-space: nowrap; }
+.card { border-radius: 12px; padding: 28px 26px; display: flex; flex-direction: column; gap: 12px; box-sizing: border-box; transition: transform 200ms cubic-bezier(0.16,1,0.3,1), box-shadow 200ms; }
+.card:hover { transform: translateY(-8px); box-shadow: 0 18px 40px rgba(13,27,42,0.18); }
+.dark .card, .tint .dark .card, .light .dark .card { background: rgba(248,249,250,0.04); border: 1px solid rgba(0,210,255,0.35); color: #F8F9FA; }
+.light .card, .tint .card { background: #FFFFFF; border: 1px solid rgba(108,31,160,0.35); }
+.card.tint-cyan { border-color: rgba(0,168,204,0.45); } .card.tint-gold { border-color: rgba(255,183,3,0.5); }
+.card h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 21px; line-height: 1.25; margin: 0; letter-spacing: -0.01em; }
+.card p { font-size: 15px; line-height: 1.6; margin: 0; }
+.light .card p, .tint .card p { color: #45566B; } .dark .card p, .tint .dark .card p, .light .dark .card p { color: #B9C6D6; }
+.stat .num { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 55px; line-height: 1; letter-spacing: -0.02em; }
+.stat .label { font-family: Syne, sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; margin-top: 10px; line-height: 1.5; }
+.row1 .num, .row1 .label { color: #F8F9FA; } .row1 .plus { color: #FFB703; }
+.row2 .num, .row2 .label { color: #FFB703; } .row2 .plus { color: #F8F9FA; }
+.swatch { border-radius: 12px; padding: 21px; min-height: 150px; display: flex; flex-direction: column; justify-content: flex-end; gap: 4px; box-sizing: border-box; }
+.swatch b { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: -0.01em; }
+.swatch small { font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: 0.06em; opacity: 0.85; }
+.tint-swatch { height: 55px; border-radius: 8px; display: flex; align-items: flex-end; padding: 6px 8px; font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: 0.04em; box-sizing: border-box; }
+.trow { display: grid; grid-template-columns: 200px 1fr 260px; gap: 21px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid #DDE4EA; }
+.logo-cell { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; min-height: 72px; padding: 13px 16px; border: 1px solid #DDE4EA; border-radius: 10px; background: #FFFFFF; font-family: Syne, sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: #45566B; box-sizing: border-box; }
+.logo-cell .founding { display: block; font-size: 9px; letter-spacing: 0.2em; color: #E09E00; margin-top: 4px; }
+.nav-link { font-family: Syne, sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #F8F9FA; }
+.footer-link { color: #B9C6D6; font-size: 14px; }
+.footer h5 { font-family: Syne, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #00D2FF; margin: 0 0 13px; }
+.field { width: 100%; box-sizing: border-box; min-height: 48px; padding: 12px 16px; border-radius: 10px; border: 1px solid #DDE4EA; background: #FFFFFF; font-family: Manrope, sans-serif; font-size: 15px; color: #6B7A8D; display: flex; align-items: center; }
+.field.is-focus { outline: 2px solid #00D2FF; outline-offset: 2px; border-color: #00A8CC; }
+.flabel { font-family: Syne, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; margin: 0 0 6px; }
+.marquee { background: #FFB703; color: #0D1B2A; overflow: hidden; white-space: nowrap; padding: 11px 0; min-width: 0; max-width: 100%; }
+.marquee-track { display: inline-block; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.2em; animation: marquee 32s linear infinite; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.kin { font-family: Syne, sans-serif; font-weight: 700; font-size: 39px; letter-spacing: 0.16em; text-transform: uppercase; color: #00D2FF; line-height: 1.15; margin: 0; }
+.kin span { display: inline-block; animation: kin 9s cubic-bezier(0.16,1,0.3,1) infinite; }
+@keyframes kin { 0% { opacity: 0; transform: translateY(18px); } 8% { opacity: 1; transform: translateY(0); } 82% { opacity: 1; transform: translateY(0); } 90% { opacity: 0; transform: translateY(-10px); } 100% { opacity: 0; transform: translateY(18px); } }
+.sp { background: #00A8CC; border-radius: 4px; }
+.check { display: grid; grid-template-columns: 52px 1fr; gap: 10px; align-items: start; font-size: 14px; color: #0D1B2A; }
+.ok { font-family: Syne, sans-serif; font-weight: 800; font-size: 12px; color: #21A66E; padding-top: 3px; } .no { font-family: Syne, sans-serif; font-weight: 800; font-size: 12px; color: #E5484D; padding-top: 3px; }
+.qrow { display: grid; grid-template-columns: 84px 1fr 1fr; gap: 21px; padding: 13px 0; border-bottom: 1px solid #DDE4EA; font-size: 14px; align-items: start; }
+.qrow .k { font-family: Syne, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.12em; color: #6C1FA0; }
+@media (prefers-reduced-motion: reduce) { .kin span, .marquee-track { animation: none !important; } }
+</style>
+</helmet>
+<div style="display: flex; flex-direction: column; width: 1440px; background: #F8F9FA; overflow: hidden">
+
+  <div class="dark" style="padding: 76px 56px 55px; display: grid; grid-template-columns: 1.618fr 1fr; gap: 55px; align-items: center">
+    <div style="display: flex; flex-direction: column; gap: 18px">
+      <p class="eyebrow">USHA web design system &middot; v1.1 draft &middot; September 2026</p>
+      <h1 class="display" style="font-size: 62px; color: #F8F9FA">One system. Every page<span class="dot">.</span></h1>
+      <p style="color: #B9C6D6; font-size: 17px; max-width: 60ch; margin: 0">The web layer of the USHA Brand &amp; Design System v1.0, updated with every review note on the CURRENT canvas. Tokens, type, components, and the copy rules the whole site inherits.</p>
+      <div style="display: flex; gap: 13px; flex-wrap: wrap; margin-top: 8px">
+        <span class="chip" style="background: #FFB703; color: #0D1B2A">Space Grotesk &middot; Syne &middot; Manrope</span>
+        <span class="chip">Fibonacci spacing</span>
+        <span class="chip" style="background: #00D2FF; color: #0D1B2A">62 / 38 splits</span>
+      </div>
+    </div>
+    <div style="display: flex; justify-content: flex-end"><img src="usha-map-full-dark.svg" alt="USHA dotted map, full color on navy" style="width: 100%; max-width: 480px; height: auto; display: block"></div>
+  </div>
+
+  <div class="sec light">
+    <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">Color<span class="dot">.</span></h2></div>
+    <p class="note" style="margin-bottom: 21px">Navy is the ground, ice is the air, cyan is the current, gold is the action, purple is the gravity. 60% ground &middot; 30% air &middot; 10% current and action. Sections alternate navy &rarr; ice &rarr; tint for rhythm.</p>
+    <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 13px">
+      <div class="swatch" style="background: #0D1B2A; color: #F8F9FA"><b>Dark Navy</b><small>#0D1B2A &middot; ground, text on light</small></div>
+      <div class="swatch" style="background: #F8F9FA; color: #0D1B2A; border: 1px solid #DDE4EA"><b>Crisp Ice</b><small>#F8F9FA &middot; air, text on dark</small></div>
+      <div class="swatch" style="background: #00D2FF; color: #0D1B2A"><b>Electric Cyan</b><small>#00D2FF &middot; current, eyebrows on dark</small></div>
+      <div class="swatch" style="background: #FFB703; color: #0D1B2A"><b>Energy Gold</b><small>#FFB703 &middot; action, the period, the plus</small></div>
+      <div class="swatch" style="background: #3B0B59; color: #F8F9FA"><b>Royal Purple</b><small>#3B0B59 &middot; gravity, chips, eyebrows on light</small></div>
+    </div>
+    <p class="rule" style="margin: 34px 0 10px">Extended tints &middot; dots, data, states, and text-safe substitutes</p>
+    <div style="display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 8px">
+      <div class="tint-swatch" style="background: #2A073F; color: #F8F9FA">2A073F</div>
+      <div class="tint-swatch" style="background: #6C1FA0; color: #F8F9FA">6C1FA0 chip</div>
+      <div class="tint-swatch" style="background: #9D4EDD; color: #0D1B2A">9D4EDD</div>
+      <div class="tint-swatch" style="background: #0089A8; color: #F8F9FA">0089A8 text</div>
+      <div class="tint-swatch" style="background: #00A8CC; color: #0D1B2A">00A8CC</div>
+      <div class="tint-swatch" style="background: #7CE4FF; color: #0D1B2A">7CE4FF</div>
+      <div class="tint-swatch" style="background: #E09E00; color: #0D1B2A">E09E00 text</div>
+      <div class="tint-swatch" style="background: #FFC733; color: #0D1B2A">FFC733</div>
+      <div class="tint-swatch" style="background: #FFD866; color: #0D1B2A">FFD866</div>
+    </div>
+    <p class="rule" style="margin: 34px 0 10px">Neutrals derived from navy and ice</p>
+    <div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px">
+      <div class="tint-swatch" style="background: #45566B; color: #F8F9FA">45566B body on light</div>
+      <div class="tint-swatch" style="background: #6B7A8D; color: #F8F9FA">6B7A8D captions</div>
+      <div class="tint-swatch" style="background: #B9C6D6; color: #0D1B2A">B9C6D6 body on dark</div>
+      <div class="tint-swatch" style="background: #DDE4EA; color: #0D1B2A">DDE4EA lines</div>
+      <div class="tint-swatch" style="background: #F1F4F7; color: #0D1B2A; border: 1px solid #DDE4EA">F1F4F7 tint surface</div>
+      <div class="tint-swatch" style="background: #FFFFFF; color: #0D1B2A; border: 1px solid #DDE4EA">FFFFFF card on light</div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 34px; margin-top: 34px">
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <div class="check"><span class="ok">AAA</span><span>Ice on navy 16.9:1 &middot; cyan on navy 9.6:1 &middot; gold on navy 9.2:1 &middot; purple on ice 14.5:1</span></div>
+        <div class="check"><span class="no">FAIL</span><span>Cyan or gold as text on light. Use #0089A8 and #E09E00 (18px+) instead, or pair gold with navy.</span></div>
+        <div class="check"><span class="ok">RULE</span><span>Gold and cyan fills always carry navy text. Focus ring: 2px cyan, 2px offset, on every interactive element.</span></div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <div class="check"><span class="ok">NEW</span><span>Two-line headlines on dark alternate: line one ice with a gold period, line two gold with an ice period.</span></div>
+        <div class="check"><span class="ok">NEW</span><span>Stat rows alternate: row one ice numbers with gold plus signs, row two gold numbers with ice plus signs. Labels match their row.</span></div>
+        <div class="check"><span class="ok">NEW</span><span>The hero tagline sits in gold: &ldquo;Fifty states. One hydrogen economy. Built together.&rdquo;</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec light">
+    <div class="sec-head"><span class="sec-num">02</span><h2 class="sec-title">Typography<span class="dot">.</span></h2></div>
+    <p class="note" style="margin-bottom: 21px">Three faces, three jobs. Space Grotesk is the voice raised (display, never below 20px, never paragraphs). Syne is the voice precise (caps, tracked, labels and buttons). Manrope is the voice at the table (body, 16px minimum). The earlier Unbounded drafts are retired.</p>
+    <div class="trow"><span class="spec">display-xl &middot; 76&ndash;89px &middot; SG 700 &middot; -0.02em</span><span class="display" style="font-size: 76px">The future starts here<span class="dot">.</span></span><span class="spec">Hero statements only. Gold period, never an exclamation point.</span></div>
+    <div class="trow"><span class="spec">display-l &middot; 55px &middot; SG 700</span><span class="display" style="font-size: 55px">Hydrogen Built<span class="dot">.</span></span><span class="spec">Section leads.</span></div>
+    <div class="trow"><span class="spec">eyebrow-xl &middot; 39px &middot; Syne 700 &middot; +0.16em</span><span class="kin" style="color: #0089A8">Hydrogen is entering a new era</span><span class="spec">New. The hero eyebrow at three times label size, animated (see 12). Cyan on dark, #0089A8 on light.</span></div>
+    <div class="trow"><span class="spec">heading-1 &middot; 34px &middot; SG 700</span><span class="display" style="font-size: 34px">Fourth Annual National Convention<span class="dot">.</span></span><span class="spec">Page and card titles.</span></div>
+    <div class="trow"><span class="spec">heading-2 &middot; 21px &middot; SG 700</span><span class="display" style="font-size: 21px; line-height: 1.25">Navigate what&rsquo;s next</span><span class="spec">Card titles inside the standard card.</span></div>
+    <div class="trow"><span class="spec">label &middot; 13px &middot; Syne 700 &middot; +0.22em caps</span><span class="eyebrow">Propel your business</span><span class="spec">Eyebrows. Purple on light, cyan on dark.</span></div>
+    <div class="trow"><span class="spec">button &middot; 13px &middot; Syne 700 &middot; +0.08em caps</span><span style="font-family: Syne, sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase">Become a member</span><span class="spec">Buttons, nav, tags.</span></div>
+    <div class="trow"><span class="spec">body-l &middot; 18px &middot; Manrope 500 &middot; 1.65</span><span style="font-size: 18px; line-height: 1.65">The next hydrogen economy needs more than technology. It needs the conditions to grow.</span><span class="spec">Lead paragraphs.</span></div>
+    <div class="trow"><span class="spec">body &middot; 16px &middot; Manrope 500 &middot; 1.7</span><span style="font-size: 16px; line-height: 1.7; color: #45566B">USHA works state by state to shape policy, build markets, and connect the people who make hydrogen happen.</span><span class="spec">Default text. #45566B on light, #B9C6D6 on dark.</span></div>
+    <div class="trow" style="border-bottom: 0"><span class="spec">caption &middot; 12px &middot; Syne 600 &middot; +0.16em caps</span><span class="rule">&copy; 2026 United States Hydrogen Alliance &middot; 501(c)(6)</span><span class="spec">Footnotes, stat labels, copyright. Always 501(c)(6), never &copy;.</span></div>
+  </div>
+
+  <div class="sec tint">
+    <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">Spacing, grid and the golden split<span class="dot">.</span></h2></div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 55px; align-items: start">
+      <div style="display: flex; flex-direction: column; gap: 13px">
+        <p class="rule">Fibonacci spacing tokens</p>
+        <div style="display: flex; align-items: flex-end; gap: 13px">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 6px"><div class="sp" style="width: 8px; height: 8px"></div><span class="spec">8</span></div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 6px"><div class="sp" style="width: 13px; height: 13px"></div><span class="spec">13</span></div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 6px"><div class="sp" style="width: 21px; height: 21px"></div><span class="spec">21</span></div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 6px"><div class="sp" style="width: 34px; height: 34px"></div><span class="spec">34</span></div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 6px"><div class="sp" style="width: 55px; height: 55px"></div><span class="spec">55</span></div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 6px"><div class="sp" style="width: 89px; height: 89px"></div><span class="spec">89</span></div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 6px"><div class="sp" style="width: 144px; height: 144px; background: #6C1FA0"></div><span class="spec">144</span></div>
+        </div>
+        <p class="note">8 and 13 inside components &middot; 21 and 34 between elements &middot; 55 and 89 between blocks &middot; 89 is the section padding on desktop, 56 on mobile.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 13px">
+        <p class="rule">Layout</p>
+        <div style="display: grid; grid-template-columns: 1.618fr 1fr; gap: 13px">
+          <div style="background: #0D1B2A; color: #F8F9FA; border-radius: 8px; padding: 21px; font-family: Syne, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.16em">CONTENT &middot; 61.8%</div>
+          <div style="background: #6C1FA0; color: #F8F9FA; border-radius: 8px; padding: 21px; font-family: Syne, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.16em">COUNTERWEIGHT &middot; 38.2%</div>
+        </div>
+        <p class="note">Desktop: 1440 canvas, 1216px content max, 56px margins, 24px gutters, two-column layouts at 62/38. Mobile: 390, 24px margins, everything stacks, 44px minimum hit targets, buttons go full width.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec light">
+    <div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">Buttons and chips<span class="dot">.</span></h2></div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 21px">
+      <div class="dark" style="border-radius: 12px; padding: 34px; display: flex; flex-direction: column; gap: 21px">
+        <p class="rule" style="color: #B9C6D6">On dark &middot; hover any button</p>
+        <div style="display: flex; gap: 13px; flex-wrap: wrap; align-items: center"><a class="btn btn-primary" href="#">Primary</a><a class="btn btn-secondary" href="#">Secondary</a><a class="btn btn-tertiary" href="#">Tertiary &#9656;</a></div>
+        <div style="display: flex; gap: 13px; flex-wrap: wrap; align-items: center"><a class="btn btn-primary is-hover" href="#">Primary hover</a><a class="btn btn-secondary is-hover" href="#">Secondary hover</a><a class="btn btn-tertiary is-hover" href="#">Tertiary hover</a></div>
+        <div style="display: flex; gap: 13px; flex-wrap: wrap; align-items: center"><a class="btn btn-primary is-focus" href="#">Focus ring</a><span class="chip">Purple chip</span><span class="chip" style="background: #FFB703; color: #0D1B2A">Gold chip</span></div>
+      </div>
+      <div class="tint" style="border-radius: 12px; padding: 34px; display: flex; flex-direction: column; gap: 21px; border: 1px solid #DDE4EA">
+        <p class="rule">On light</p>
+        <div style="display: flex; gap: 13px; flex-wrap: wrap; align-items: center"><a class="btn btn-primary" href="#">Primary</a><a class="btn btn-tertiary-light" href="#">Tertiary &#9656;</a><span class="chip">September 8&ndash;10, 2026</span></div>
+        <p class="note">Pill radius 999, 44px minimum height, Syne 700 caps at +8%. Primary is gold and swaps to cyan on hover. Gold and cyan buttons always carry navy text. One primary action per view.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec tint">
+    <div class="sec-head"><span class="sec-num">05</span><h2 class="sec-title">The standard card<span class="dot">.</span></h2></div>
+    <p class="note" style="margin-bottom: 21px">One card format everywhere: a purple pill label, a bold Space Grotesk title, and Manrope body. Review note: &ldquo;match this bubble format with all bubbles, including the membership and policymaker pages.&rdquo; 12px radius, 1px tinted border, 8px hover lift.</p>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 21px">
+      <div class="card"><span class="chip">Gauge and anticipate</span><h3>See what&rsquo;s coming</h3><p>We track industry, market, and political shifts before they become barriers or opportunities, giving members the foresight to move early.</p></div>
+      <div class="card tint-cyan"><span class="chip">Design the framework</span><h3>Design the right structure</h3><p>We work across the ecosystem to design policy and market frameworks that create the conditions for investment, deployment, and lasting hydrogen growth.</p></div>
+      <div class="card tint-gold"><span class="chip">Connect to build</span><h3>Bring the right people together</h3><p>We bring industry, policymakers, investors, communities, and market partners together around practical solutions, turning well-founded ideas into coordinated action.</p></div>
+      <div class="card"><span class="chip">Deliver</span><h3>Turn action into outcomes</h3><p>We move frameworks from strategy to execution, advancing policy, strengthening markets, and building the foundation for hydrogen economies that last.</p></div>
+    </div>
+    <div class="dark" style="border-radius: 12px; padding: 34px; margin-top: 21px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 21px">
+      <div class="card"><span class="chip">Strategy</span><h3>Navigate what&rsquo;s next</h3><p>One-on-one strategy focused on the policy, market, and business priorities affecting your company.</p></div>
+      <div class="card"><span class="chip">Visibility</span><h3>Be seen by the right people</h3><p>Position your company and expertise before policymakers, industry leaders, and potential partners.</p></div>
+      <div class="card"><span class="chip">Intelligence</span><h3>See what&rsquo;s coming</h3><p>Biweekly policy reports on federal and state hydrogen and fuel cell policy.</p></div>
+    </div>
+    <p class="spec" style="margin-top: 13px">Light variant: white fill, purple / cyan / gold border at 35&ndash;50%. Dark variant: ice at 4%, cyan border at 35%. The &ldquo;Join the Alliance&rdquo; cards on every page carry the six Why Join benefits from the membership page.</p>
+  </div>
+
+  <div class="sec dark">
+    <div class="sec-head"><span class="sec-num">06</span><h2 class="sec-title" style="color: #F8F9FA">Headlines and stats on dark<span class="dot">.</span></h2></div>
+    <div style="display: grid; grid-template-columns: 1.618fr 1fr; gap: 89px; align-items: center">
+      <div style="display: flex; flex-direction: column; gap: 21px">
+        <p class="eyebrow">About us</p>
+        <h2 class="display" style="font-size: 55px">
+          <span style="color: #F8F9FA">Technology makes hydrogen possible<span class="dot">.</span></span><br>
+          <span style="color: #FFB703">USHA builds the policy and markets to put it to work<span style="color: #F8F9FA">.</span></span>
+        </h2>
+        <p style="color: #B9C6D6; margin: 0; max-width: 60ch">Line one ice with a gold period. Line two gold with an ice period. Questions take a gold question mark. Exclamation points do not exist in this system.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 34px 21px">
+        <div class="stat row1"><div class="num">1,000<span class="plus">+</span></div><div class="label">Row one &middot; ice, gold plus</div></div>
+        <div class="stat row1"><div class="num">20</div><div class="label">Row one &middot; ice label</div></div>
+        <div class="stat row2"><div class="num">300<span class="plus">+</span></div><div class="label">Row two &middot; gold, ice plus</div></div>
+        <div class="stat row2"><div class="num">500<span class="plus">+</span></div><div class="label">Row two &middot; gold label</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec light">
+    <div class="sec-head"><span class="sec-num">07</span><h2 class="sec-title">Marks by surface<span class="dot">.</span></h2></div>
+    <p class="note" style="margin-bottom: 21px">Review notes ask for &ldquo;the logo with dark background&rdquo; on navy sections and &ldquo;the logo with white background&rdquo; on light ones. The full-color masters are the default; spectrum and knockout stay available as tweaks on the home artboards. Never redraw or rearrange dots.</p>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 21px; align-items: stretch">
+      <div class="dark" style="border-radius: 12px; padding: 21px; display: flex; flex-direction: column; gap: 13px"><img src="usha-map-full-dark.svg" alt="USHA map, full color on navy" style="width: 100%; height: auto; display: block"><span class="spec" style="color: #B9C6D6">usha-map-full-dark &middot; hero, dark sections</span></div>
+      <div style="border-radius: 12px; padding: 21px; border: 1px solid #DDE4EA; background: #FFFFFF; display: flex; flex-direction: column; gap: 13px"><img src="usha-map-full-light.svg" alt="USHA map, full color on ice" style="width: 100%; height: auto; display: block"><span class="spec">usha-map-full-light &middot; light sections</span></div>
+      <div class="dark" style="border-radius: 12px; padding: 21px; display: flex; flex-direction: column; gap: 13px"><img src="usha-map-spectrum-dark.svg" alt="USHA map, spectrum on navy" style="width: 100%; height: auto; display: block"><span class="spec" style="color: #B9C6D6">usha-map-spectrum-dark &middot; video, expressive hero (optional)</span></div>
+      <div class="dark" style="border-radius: 12px; padding: 21px; display: flex; flex-direction: column; gap: 13px"><img src="usha-map-knockout.svg" alt="USHA map, knockout on navy" style="width: 100%; height: auto; display: block"><span class="spec" style="color: #B9C6D6">usha-map-knockout &middot; apparel, one-plate reverse</span></div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 21px; margin-top: 21px; align-items: stretch">
+      <div class="dark" style="border-radius: 12px; padding: 21px; display: flex; align-items: center; gap: 14px"><img src="usha-h-full-dark.svg" alt="USHA H monogram on navy" style="width: 44px; height: auto; display: block"><div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 28px; letter-spacing: -0.02em">USHA</div><span class="spec" style="color: #B9C6D6; margin-left: auto">nav + footer lockup</span></div>
+      <div style="border-radius: 12px; padding: 21px; border: 1px solid #DDE4EA; background: #FFFFFF; display: flex; align-items: center; gap: 14px"><img src="usha-h-full-light.svg" alt="USHA H monogram on ice" style="width: 44px; height: auto; display: block"><div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 28px; letter-spacing: -0.02em">USHA</div><span class="spec" style="margin-left: auto">favicon, light lockup</span></div>
+      <div class="dark" style="border-radius: 12px; padding: 21px; display: flex; align-items: center; gap: 14px"><img src="usha-seal-fullcolor-dark.svg" alt="USHA seal on navy" style="width: 72px; height: auto; display: block"><span class="spec" style="color: #B9C6D6">seal &middot; documents, avatars, certification. Retired from the web footer.</span></div>
+      <div style="border-radius: 12px; padding: 21px; border: 1px solid #DDE4EA; background: #FFFFFF; display: flex; align-items: center; gap: 14px"><img src="usha-map-gold-navy.svg" alt="USHA map, gold and navy duotone" style="width: 50%; height: auto; display: block"><span class="spec">gold-navy duotone &middot; print, foil, certificates</span></div>
+    </div>
+  </div>
+
+  <div class="sec tint">
+    <div class="sec-head"><span class="sec-num">08</span><h2 class="sec-title">Site chrome<span class="dot">.</span></h2></div>
+    <div class="dark" style="border-radius: 12px; overflow: hidden">
+      <div style="display: flex; align-items: center; gap: 34px; min-height: 72px; padding: 0 56px; background: rgba(13,27,42,0.9); border-bottom: 1px solid rgba(0,210,255,0.12)">
+        <div style="display: flex; align-items: center; gap: 12px"><img src="usha-h-full-dark.svg" alt="USHA H monogram" style="width: 34px; height: auto; display: block"><div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: -0.02em">USHA</div></div>
+        <div style="display: flex; align-items: center; gap: 24px; margin-left: auto"><span class="nav-link">About Us</span><span class="nav-link">Membership</span><span class="nav-link">Policymakers</span><span class="nav-link">Industry</span><span class="nav-link">Events</span><span class="nav-link">Media Room</span><span class="nav-link">Resources</span><a class="btn btn-primary" href="#" style="margin-left: 8px; min-height: 40px; padding: 10px 22px">Join</a></div>
+      </div>
+      <div class="footer" style="padding: 55px 56px 34px; display: flex; flex-direction: column; gap: 34px">
+        <div style="display: grid; grid-template-columns: 1.618fr 1fr 1fr 1fr; gap: 55px; align-items: start">
+          <div style="display: flex; flex-direction: column; gap: 21px">
+            <div style="display: flex; align-items: center; gap: 14px"><img src="usha-h-full-dark.svg" alt="USHA H monogram" style="width: 44px; height: auto; display: block"><div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 28px; letter-spacing: -0.02em">USHA</div></div>
+            <p style="color: #B9C6D6; margin: 0; white-space: nowrap">Fifty states. One hydrogen economy. Built together.</p>
+          </div>
+          <div><h5>Alliance</h5><div style="display: flex; flex-direction: column; gap: 8px"><span class="footer-link">About Us</span><span class="footer-link">Membership</span><span class="footer-link">Contact</span></div></div>
+          <div><h5>Work</h5><div style="display: flex; flex-direction: column; gap: 8px"><span class="footer-link">Policymakers</span><span class="footer-link">Industry</span><span class="footer-link">Hydrogen Built</span><span class="footer-link">Events</span></div></div>
+          <div><h5>Newsroom</h5><div style="display: flex; flex-direction: column; gap: 8px"><span class="footer-link">Media Room</span><span class="footer-link">Resources</span><span class="footer-link">LinkedIn &middot; USHA</span><span class="footer-link">LinkedIn &middot; Convention</span><span class="footer-link">X / Twitter</span></div></div>
+        </div>
+        <div style="border-top: 2px solid #FFB703; padding-top: 21px; text-align: center; font-family: Syne, sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #6B7A8D">&copy; 2026 United States Hydrogen Alliance &middot; 501(c)(6)</div>
+      </div>
+    </div>
+    <p class="spec" style="margin-top: 13px">Nav: sticky, navy at 90% with 12px blur, H mark + wordmark left, Syne caps labels, gold JOIN pill. Footer: H + USHA lockup with the tagline on one line beneath it (review note), three link columns, gold rule, centered copyright. Common Bond is replaced by Hydrogen Built.</p>
+  </div>
+
+  <div class="sec light">
+    <div class="sec-head"><span class="sec-num">09</span><h2 class="sec-title">Forms, marquee and motion<span class="dot">.</span></h2></div>
+    <div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 34px; align-items: start">
+      <div style="display: flex; flex-direction: column; gap: 21px; min-width: 0">
+        <p class="rule">Fields</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 13px">
+          <div><p class="flabel">First name</p><div class="field">&nbsp;</div></div>
+          <div><p class="flabel">Email</p><div class="field is-focus">name@company.com</div></div>
+        </div>
+        <div style="display: flex; gap: 13px; align-items: center"><div class="field" style="flex: 1 1 auto">Work email</div><a class="btn btn-primary" href="#">Subscribe</a></div>
+        <p class="note">10px radius, 48px height, Manrope 15px, Syne caps labels. Focus: cyan ring. Newsletter is the one form that repeats on every page.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 21px; min-width: 0">
+        <p class="rule">Marquee &middot; the only linear motion</p>
+        <div class="marquee"><div class="marquee-track" style="{{ marqueeStyle }}">ONE HYDROGEN ECONOMY &nbsp;&#9702;&nbsp; BUILT TOGETHER &nbsp;&#9702;&nbsp; 50 STATES &nbsp;&#9702;&nbsp; ONE HYDROGEN ECONOMY &nbsp;&#9702;&nbsp; BUILT TOGETHER &nbsp;&#9702;&nbsp; 50 STATES &nbsp;&#9702;&nbsp; ONE HYDROGEN ECONOMY &nbsp;&#9702;&nbsp; BUILT TOGETHER &nbsp;&#9702;&nbsp; 50 STATES &nbsp;&#9702;&nbsp; </div></div>
+        <p class="rule">Kinetic eyebrow &middot; Assemble then Settle, west to east</p>
+        <div class="dark" style="border-radius: 12px; padding: 34px">
+          <sc-if value="{{ motion }}" hint-placeholder-val="{{ true }}"><div class="kin"><sc-for list="{{ words }}" as="w" hint-placeholder-count="6"><span style="display: inline-block; white-space: nowrap; margin-right: 0.35em"><sc-for list="{{ w.letters }}" as="l" hint-placeholder-count="8"><span style="{{ l.style }}">{{ l.ch }}</span></sc-for></span></sc-for></div></sc-if>
+          <sc-if value="{{ still }}" hint-placeholder-val="{{ false }}"><div class="kin">Hydrogen is entering a new era</div></sc-if>
+        </div>
+        <p class="note">Letters assemble left to right over ~1.4s, hold, dissolve, and repeat every 9s. UI micro-motion stays at 150&ndash;250ms ease-out with the 8px card lift. Everything honors prefers-reduced-motion.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec tint">
+    <div class="sec-head"><span class="sec-num">10</span><h2 class="sec-title">Copy rules and member tiers<span class="dot">.</span></h2></div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 34px; align-items: start">
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <div class="check"><span class="ok">SAY</span><span>Declarative verdicts. Places and workers by name. Electrolyzer, offtaker, price parity, then the plain-English payoff.</span></div>
+        <div class="check"><span class="ok">SAY</span><span>Tagline: <b>Fifty states. One hydrogen economy. Built together.</b> Hero, footer, and campaign pages.</span></div>
+        <div class="check"><span class="ok">SAY</span><span>501(c)(6) in copy and the copyright line.</span></div>
+        <div class="check"><span class="no">NOT</span><span>Exclamation points. The gold period replaces them everywhere.</span></div>
+        <div class="check"><span class="no">NOT</span><span>&ldquo;Green, sustainable, eco-friendly&rdquo; or stakeholder-speak. Say reliable, domestic, energy secure, firm, dispatchable.</span></div>
+        <div class="check"><span class="no">NOT</span><span>&ldquo;Common Bond&rdquo; as the campaign name on the site. The campaign is Hydrogen Built.</span></div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 13px">
+        <p class="rule">Member tiers after the review (logo artwork pending)</p>
+        <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px">
+          <div class="logo-cell" style="border-color: rgba(224,158,0,0.6)">H2 Champions<span class="founding">8 members &middot; #E09E00</span></div>
+          <div class="logo-cell" style="border-color: rgba(108,31,160,0.5)">H2 Patrons<span class="founding" style="color: #6C1FA0">Avalon only</span></div>
+          <div class="logo-cell" style="border-color: rgba(0,137,168,0.5)">H2 Proponents<span class="founding" style="color: #0089A8">10 members</span></div>
+          <div class="logo-cell">Our Allies<span class="founding" style="color: #6B7A8D">4 partners</span></div>
+        </div>
+        <p class="note">Removed: BayoTech, Entegris, 174 Power Global, Audubon, Baker Botts, Ballard, GH Power, Hycamite, Modern Hydrogen, RW Energy, Vermont Technical College, Widelity. Added: Suburban Propane, Virginia Tech Corporate Research Center. Papé Group / Canada H2 becomes Canadian Hydrogen Association under Allies.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec light">
+    <div class="sec-head"><span class="sec-num">11</span><h2 class="sec-title">Review notes applied, and what is still open<span class="dot">.</span></h2></div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 55px; align-items: start">
+      <div>
+        <p class="rule" style="margin-bottom: 8px">Applied on the home page</p>
+        <div class="qrow"><span class="k">HERO</span><span>Eyebrow 3&times; bigger and animated</span><span>39px kinetic Syne, tweak &ldquo;motion&rdquo; turns it off.</span></div>
+        <div class="qrow"><span class="k">HERO</span><span>Tagline in the period gold</span><span>#FFB703, Space Grotesk 21px.</span></div>
+        <div class="qrow"><span class="k">HERO</span><span>Logo with dark background</span><span>Full-color map on navy; spectrum and knockout as tweaks.</span></div>
+        <div class="qrow"><span class="k">BUILT</span><span>Logo with white background</span><span>Full-color map on ice; duotone as a tweak.</span></div>
+        <div class="qrow"><span class="k">ABOUT</span><span>Line colors, plus signs, 501(c)(6)</span><span>Ice / gold alternation on headline and stat rows; &copy; typo fixed.</span></div>
+        <div class="qrow"><span class="k">MEMBERS</span><span>Tier removals and additions</span><span>Lists updated per notes; names shown until logos arrive.</span></div>
+        <div class="qrow"><span class="k">JOIN</span><span>Use the Why Join content</span><span>Six standard cards with purple pill labels.</span></div>
+        <div class="qrow" style="border-bottom: 0"><span class="k">FOOTER</span><span>Lockup, one-line tagline, centered copyright</span><span>H + USHA, tagline beneath, &copy; centered under the gold rule.</span></div>
+      </div>
+      <div>
+        <p class="rule" style="margin-bottom: 8px">Open questions for Roxana and the team</p>
+        <div class="qrow"><span class="k">Q1</span><span>Which tagline is canonical? The notes use &ldquo;Fifty states. One hydrogen economy. Built together.&rdquo; The brand guide still carries &ldquo;One molecule. Every state. Zero excuses.&rdquo;</span><span>Assumed the new line everywhere; the old line is dropped from the footer.</span></div>
+        <div class="qrow"><span class="k">Q2</span><span>&ldquo;Logo with dark background&rdquo; in the hero: the full-color map, or keep the spectrum map?</span><span>Assumed full-color. Flip the tweak to compare.</span></div>
+        <div class="qrow"><span class="k">Q3</span><span>Does &ldquo;PEOPLE. POLICY. MARKETS. / Your seat is at the table.&rdquo; replace the Join section on every page, or only on the membership page?</span><span>Assumed membership page only.</span></div>
+        <div class="qrow"><span class="k">Q4</span><span>Footer Newsroom column: keep Media Room and Resources, and which two LinkedIn URLs?</span><span>Kept both; LinkedIn links are placeholders.</span></div>
+        <div class="qrow"><span class="k">Q5</span><span>Media Room migration: transfer or cut? It affects nav and footer on every page.</span><span>Kept in nav for now.</span></div>
+        <div class="qrow" style="border-bottom: 0"><span class="k">Q6</span><span>Member logo files, and does Papé stay in Champions while the Allies entry becomes Canadian Hydrogen Association?</span><span>Assumed yes; awaiting artwork.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dark" style="padding: 34px 56px; display: flex; justify-content: space-between; align-items: center">
+    <span class="rule" style="color: #B9C6D6">USHA web design system &middot; v1.1 draft &middot; derived from Brand &amp; Design System v1.0 (July 2026) and the CURRENT canvas review</span>
+    <span class="rule" style="color: #FFB703">Fifty states. One hydrogen economy. Built together.</span>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1440,"height":8400},"motion":{"editor":"boolean","default":true,"tsType":"boolean","section":"Motion"}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const motion = this.props.motion ?? true;
+    const text = 'HYDROGEN IS ENTERING A NEW ERA';
+    let idx = 0; const words = text.split(' ').map((w) => ({ letters: Array.from(w).map((c) => ({ ch: c, style: 'animation-delay: ' + ((idx++) * 45) + 'ms' })) }));
+    return { motion: motion, still: !motion, words: words, marqueeStyle: motion ? '' : 'animation: none' };
+  }
+}
+</script>
+</body>
+</html>

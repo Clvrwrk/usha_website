@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Syne:wght@600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body { margin: 0; background: #0D1B2A; font-family: Manrope, 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 16px; line-height: 1.7; color: #F8F9FA; }
+a { color: #00D2FF; text-decoration: none; } a:hover { color: #FFB703; }
+.light, .tint, .paper { color: #0D1B2A; }
+.light { background: #F8F9FA; } .tint { background: #F1F4F7; } .paper { background: #EEF2F6; } .dark { background: #0D1B2A; color: #F8F9FA; }
+.light a, .tint a, .paper a { color: #0089A8; } .light a:hover, .tint a:hover, .paper a:hover { color: #6C1FA0; }
+.sec { padding: 89px 56px; } .m .sec { padding: 56px 24px; }
+.wrap { max-width: 1216px; margin: 0 auto; display: flex; flex-direction: column; gap: 34px; }
+.m .wrap { gap: 24px; }
+.eyebrow { font-family: Syne, sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; margin: 0; }
+.m .eyebrow { font-size: 12px; }
+.dark .eyebrow { color: #00D2FF; } .light .eyebrow, .tint .eyebrow, .paper .eyebrow { color: #6C1FA0; }
+.display { font-family: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; letter-spacing: -0.02em; line-height: 1.08; margin: 0; text-wrap: balance; }
+.h-xl { font-size: 66px; } .h-l { font-size: 55px; } .h-1 { font-size: 34px; } .h-2 { font-size: 21px; line-height: 1.25; }
+.m .h-xl { font-size: 42px; } .m .h-l { font-size: 34px; } .m .h-1 { font-size: 26px; } .m .h-2 { font-size: 20px; }
+.dot { color: #FFB703; } .gold { color: #FFB703; } .cyan { color: #00D2FF; } .purple { color: #6C1FA0; }
+p { margin: 0; text-wrap: pretty; }
+.lead { font-size: 18px; line-height: 1.65; } .m .lead { font-size: 17px; }
+.dark p { color: #B9C6D6; } .light p, .tint p, .paper p { color: #45566B; }
+.stack { display: flex; flex-direction: column; gap: 18px; } .stack-s { display: flex; flex-direction: column; gap: 13px; }
+.split { display: grid; grid-template-columns: 1.618fr 1fr; gap: 55px; align-items: center; }
+.split.flip { grid-template-columns: 1fr 1.618fr; }
+.split.even { grid-template-columns: minmax(0,1fr) minmax(0,1fr); }
+.m .split, .m .split.flip, .m .split.even { grid-template-columns: 1fr; gap: 24px; }
+.g2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 21px; }
+.g3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 21px; }
+.g4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 21px; }
+.g5 { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 13px; }
+.m .g2, .m .g3, .m .g4 { grid-template-columns: 1fr; gap: 14px; } .m .g5 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.m .g2.keep { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.btns { display: flex; gap: 13px; flex-wrap: wrap; align-items: center; } .m .btns { flex-direction: column; align-items: stretch; gap: 12px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 12px 26px; border-radius: 999px; border: 0; cursor: pointer; font-family: Syne, sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: background 200ms cubic-bezier(0.16,1,0.3,1), color 200ms cubic-bezier(0.16,1,0.3,1), border-color 200ms cubic-bezier(0.16,1,0.3,1); box-sizing: border-box; white-space: nowrap; text-align: center; }
+.m .btns .btn { width: 100%; white-space: normal; min-height: 48px; }
+.btn.btn-primary { background: #FFB703; color: #0D1B2A; } .btn.btn-primary:hover { background: #00D2FF; color: #0D1B2A; }
+.btn.btn-tertiary { background: transparent; color: #F8F9FA; border: 2px solid rgba(248,249,250,0.35); padding: 10px 24px; } .btn.btn-tertiary:hover { border-color: #00D2FF; color: #00D2FF; }
+.light .btn.btn-tertiary, .tint .btn.btn-tertiary, .paper .btn.btn-tertiary { color: #0D1B2A; border-color: rgba(13,27,42,0.35); } .light .btn.btn-tertiary:hover, .tint .btn.btn-tertiary:hover, .paper .btn.btn-tertiary:hover { border-color: #6C1FA0; color: #6C1FA0; }
+.chip { display: inline-flex; align-items: center; align-self: flex-start; background: #6C1FA0; color: #F8F9FA; font-family: Syne, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 7px 14px; border-radius: 999px; white-space: nowrap; }
+.chip.gold { background: #FFB703; color: #0D1B2A; }
+.m .chip { white-space: normal; text-align: left; line-height: 1.4; }
+.card { border-radius: 12px; padding: 28px 26px; display: flex; flex-direction: column; gap: 12px; box-sizing: border-box; transition: transform 200ms cubic-bezier(0.16,1,0.3,1), box-shadow 200ms cubic-bezier(0.16,1,0.3,1); }
+.m .card { padding: 24px 22px; gap: 10px; }
+.card:hover { transform: translateY(-8px); box-shadow: 0 18px 40px rgba(13,27,42,0.18); }
+.dark .card { background: rgba(248,249,250,0.04); border: 1px solid rgba(0,210,255,0.35); }
+.light .card, .tint .card, .paper .card { background: #FFFFFF; border: 1px solid rgba(108,31,160,0.35); }
+.card.tint-cyan { border-color: rgba(0,168,204,0.45); } .card.tint-gold { border-color: rgba(255,183,3,0.5); }
+.card h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 21px; line-height: 1.25; margin: 0; letter-spacing: -0.01em; }
+.m .card h3 { font-size: 20px; }
+.card p { font-size: 15px; line-height: 1.6; }
+.card .open { font-family: Syne, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; }
+.stat .num { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 55px; line-height: 1; letter-spacing: -0.02em; }
+.m .stat .num { font-size: 40px; }
+.stat .label { font-family: Syne, sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; margin-top: 10px; line-height: 1.5; }
+.m .stat .label { font-size: 11px; }
+.row1 .num, .row1 .label { color: #F8F9FA; } .row1 .plus { color: #FFB703; }
+.row2 .num, .row2 .label { color: #FFB703; } .row2 .plus { color: #F8F9FA; }
+.ice .num, .ice .label { color: #F8F9FA; } .ice .plus, .ice .dot { color: #FFB703; }
+.light .stat .num, .tint .stat .num { color: #0D1B2A; } .light .stat .label, .tint .stat .label { color: #6B7A8D; }
+.tier h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 21px; margin: 0 0 13px; } .m .tier h4 { font-size: 18px; margin-bottom: 10px; }
+.logo-cell { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; min-height: 72px; padding: 13px 16px; border: 1px solid #DDE4EA; border-radius: 10px; background: #FFFFFF; font-family: Syne, sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: #45566B; box-sizing: border-box; }
+.m .logo-cell { min-height: 60px; padding: 10px 12px; font-size: 11px; }
+.logo-cell .founding { display: block; font-size: 9px; letter-spacing: 0.2em; color: #E09E00; margin-top: 4px; }
+.quote { border-left: 3px solid #FFB703; padding: 8px 0 8px 21px; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.quote p { font-size: 19px; line-height: 1.5; font-weight: 600; color: #0D1B2A; } .m .quote p { font-size: 17px; }
+.dark .quote p { color: #F8F9FA; }
+.quote cite { font-style: normal; font-family: Syne, sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #6B7A8D; }
+.dark .quote cite { color: #B9C6D6; }
+.nav { display: flex; align-items: center; gap: 34px; min-height: 72px; padding: 0 56px; background: rgba(13,27,42,0.9); border-bottom: 1px solid rgba(0,210,255,0.12); }
+.m .nav { min-height: 64px; padding: 0 20px; justify-content: space-between; gap: 12px; }
+.brand { display: flex; align-items: center; gap: 12px; } .brand img { width: 34px; height: auto; display: block; } .m .brand img { width: 28px; }
+.brand .wm { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: -0.02em; color: #F8F9FA; } .m .brand .wm { font-size: 19px; }
+.nav-links { display: flex; align-items: center; gap: 24px; margin-left: auto; }
+.nav-link { font-family: Syne, sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #F8F9FA; padding: 8px 2px; border-bottom: 2px solid transparent; }
+.nav-link:hover { color: #00D2FF; } .nav-link.on { color: #FFB703; border-bottom-color: #FFB703; }
+.burger { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(0,210,255,0.3); border-radius: 10px; }
+.footer a { color: #B9C6D6; font-size: 14px; } .footer a:hover { color: #00D2FF; } .m .footer a { font-size: 15px; padding: 6px 0; }
+.footer h5 { font-family: Syne, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #00D2FF; margin: 0 0 13px; } .m .footer h5 { font-size: 11px; margin-bottom: 8px; }
+.fgrid { display: grid; grid-template-columns: 1.618fr 1fr 1fr 1fr; gap: 55px; align-items: start; }
+.m .fgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; }
+.m .fgrid > div:first-child, .m .fgrid > div.wide { grid-column: span 2; }
+.fcol { display: flex; flex-direction: column; gap: 8px; } .m .fcol { gap: 0; }
+.copy { border-top: 2px solid #FFB703; padding-top: 21px; text-align: center; font-family: Syne, sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #6B7A8D; line-height: 1.6; }
+.field { width: 100%; box-sizing: border-box; min-height: 48px; padding: 12px 16px; border-radius: 10px; border: 1px solid #DDE4EA; background: #FFFFFF; font-family: Manrope, sans-serif; font-size: 15px; color: #6B7A8D; display: flex; align-items: center; }
+.field.ta { min-height: 130px; align-items: flex-start; }
+.flabel { font-family: Syne, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; margin: 0 0 6px; color: #0D1B2A; }
+.dark .flabel { color: #00D2FF; }
+.dark .field { background: rgba(248,249,250,0.05); border-color: rgba(248,249,250,0.25); color: rgba(248,249,250,0.5); }
+.fgroup { display: flex; flex-direction: column; }
+.list-row { display: grid; grid-template-columns: 150px 1fr auto; gap: 21px; align-items: baseline; padding: 21px 0; border-bottom: 1px solid #DDE4EA; }
+.m .list-row { grid-template-columns: 1fr; gap: 6px; padding: 16px 0; }
+.list-row .date { font-family: Syne, sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #6B7A8D; }
+.list-row h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 21px; margin: 0 0 4px; letter-spacing: -0.01em; line-height: 1.25; } .m .list-row h3 { font-size: 19px; }
+.list-row p { font-size: 15px; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { font-family: Syne, sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid #DDE4EA; border-radius: 999px; padding: 7px 14px; color: #45566B; background: #FFFFFF; }
+.tag.on { background: #0D1B2A; color: #F8F9FA; border-color: #0D1B2A; }
+.info { display: flex; flex-direction: column; gap: 6px; padding: 21px 24px; border-radius: 12px; background: #FFFFFF; border: 1px solid #DDE4EA; }
+.info .k { font-family: Syne, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #6C1FA0; }
+.info .v { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; color: #0D1B2A; line-height: 1.3; }
+.person { display: flex; flex-direction: column; gap: 10px; padding: 24px; border-radius: 12px; background: #FFFFFF; border: 1px solid #DDE4EA; }
+.avatar { width: 72px; height: 72px; border-radius: 50%; background: #0D1B2A; color: #FFB703; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: -0.02em; }
+.avatar.cyan { background: #0089A8; color: #F8F9FA; } .avatar.purple { background: #6C1FA0; color: #F8F9FA; }
+.person .name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 19px; color: #0D1B2A; line-height: 1.25; }
+.person .role { font-family: Syne, sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #6C1FA0; }
+.person p { font-size: 14px; }
+.icon { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1.5px solid rgba(108,31,160,0.45); background: rgba(108,31,160,0.06); flex: none; }
+.dark .icon { border-color: rgba(0,210,255,0.45); background: rgba(0,210,255,0.06); }
+.pillar { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; padding: 21px 13px; border-left: 1px solid #DDE4EA; }
+.pillar:first-child { border-left: 0; }
+.m .pillar { border-left: 0; border-top: 1px solid #DDE4EA; padding: 21px 0; } .m .pillar:first-child { border-top: 0; }
+.dark .pillar { border-left-color: rgba(248,249,250,0.14); } .m .dark .pillar, .dark.m .pillar { border-top-color: rgba(248,249,250,0.14); }
+.pillar .t { font-family: Syne, sans-serif; font-weight: 800; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; }
+.pillar p { font-size: 15px; line-height: 1.7; }
+.hb-photo { border-radius: 12px; overflow: hidden; background: linear-gradient(160deg, #1B2A44, #0D1B2A 55%, #3B0B59); position: relative; min-height: 420px; display: flex; align-items: flex-end; }
+.hb-photo img { width: 100%; height: auto; display: block; }
+.diagram { position: relative; width: 560px; height: 560px; margin: 0 auto; } .m .diagram { width: 342px; height: 342px; }
+.node { position: absolute; width: 96px; height: 96px; margin: -48px 0 0 -48px; border-radius: 50%; background: #FFFFFF; border: 1.5px solid rgba(108,31,160,0.45); display: flex; align-items: center; justify-content: center; text-align: center; font-family: Syne, sans-serif; font-weight: 700; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #0D1B2A; padding: 8px; box-sizing: border-box; line-height: 1.3; }
+.m .node { width: 74px; height: 74px; margin: -37px 0 0 -37px; font-size: 8px; letter-spacing: 0.08em; }
+.node.core { width: 150px; height: 150px; margin: -75px 0 0 -75px; background: #0D1B2A; color: #FFB703; font-size: 14px; border: 0; box-shadow: 0 0 0 10px rgba(255,183,3,0.12); }
+.m .node.core { width: 100px; height: 100px; margin: -50px 0 0 -50px; font-size: 11px; }
+.marquee { background: #FFB703; color: #0D1B2A; overflow: hidden; white-space: nowrap; padding: 11px 0; }
+.marquee-track { display: inline-block; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.2em; animation: marquee 32s linear infinite; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .marquee-track { animation: none !important; } .card, .btn { transition: none; } }
+</style>
+</helmet>
+<div class="root" style="display: flex; flex-direction: column; width: 1440px; background: #0D1B2A; overflow: hidden"><div class="dark nav"><div class="brand"><img src="usha-h-full-dark.svg" alt="USHA dotted-H monogram, full color on navy"><div class="wm">USHA</div></div><div class="nav-links"><a class="nav-link" href="#about">About Us</a><a class="nav-link" href="#membership">Membership</a><a class="nav-link on" href="#policymakers">Policymakers</a><a class="nav-link" href="#industry">Industry</a><a class="nav-link" href="#events">Events</a><a class="nav-link" href="#media">Media Room</a><a class="nav-link" href="#resources">Resources</a><a class="btn btn-primary" href="#join" style="margin-left: 8px; min-height: 40px; padding: 10px 22px">Join</a></div></div><div class="dark sec" style="padding-top: 89px; padding-bottom: 76px"><div class="wrap"><div class="split"><div class="stack"><p class="eyebrow">Policymakers</p><h1 class="display h-xl">Shape your local hydrogen economy<span class="dot">.</span></h1><p class="lead">Hydrogen policy is being built state by state. USHA brings policymakers from across the country together to learn from one another, develop practical policy frameworks, and build a more coordinated American hydrogen economy.</p><div class="g3" style="gap: 21px; margin-top: 21px">
+      <div class="stat ice"><div class="num">179</div><div class="label">Policymakers attended</div></div>
+      <div class="stat ice"><div class="num">41</div><div class="label">States represented</div></div>
+      <div class="stat ice"><div class="num">4</div><div class="label">Conventions to date</div></div></div><div class="btns" style="margin-top: 8px"><a class="btn btn-primary" href="#roundtable">Join the Policy Leaders Roundtable</a><a class="btn btn-tertiary" href="#register">Register for the convention &#9656;</a></div></div><div><img src="usha-map-full-dark.svg" alt="USHA dotted map, full color on navy" style="width: 100%; height: auto; display: block; filter: drop-shadow(0 0 26px rgba(0,210,255,0.22))"></div></div></div></div><div class="light sec" style=""><div class="wrap"><div class="split flip">
+      <div class="stack"><p class="eyebrow">National coordination</p><h2 class="display h-l">Policy doesn&rsquo;t have to be built in isolation<span class="dot">.</span></h2>
+      <p class="lead">The Hydrogen Policy Leaders Roundtable is a national forum where state policymakers learn from one another, compare approaches, and develop practical, nonpartisan frameworks for hydrogen investment, infrastructure, workforce, and deployment.</p>
+      <div class="btns"><a class="btn btn-primary" href="#roundtable">Join the Roundtable</a></div></div>
+      <div class="g3" style="grid-template-columns: 1fr; gap: 14px">
+        <div class="card "><span class="chip">Learn</span><h3>Know what&rsquo;s shaping hydrogen</h3><p>Monthly educational briefings on hydrogen markets, technologies, infrastructure, financing, workforce, and emerging policy issues.</p></div>
+        <div class="card tint-cyan"><span class="chip">Collaborate</span><h3>Learn from every state</h3><p>Connect with policymakers from across the country to exchange lessons learned, compare policy approaches, and understand how different states and regions are addressing hydrogen opportunities and challenges.</p></div>
+        <div class="card tint-gold"><span class="chip">Build</span><h3>Turn knowledge into policy</h3><p>Apply what you learn to develop practical, nonpartisan policy frameworks that support hydrogen investment, infrastructure, workforce development, economic growth, and deployment.</p></div>
+      </div></div></div></div><div class="tint sec" style=""><div class="wrap"><div class="split flip" style="align-items: start">
+      <div class="stack"><p class="eyebrow">Policy tools</p><h2 class="display h-l">Start with what already works<span class="dot">.</span></h2>
+      <p class="lead">USHA maintains a working library of model legislation, enacted bills, and regulatory guidance so no state has to start from a blank page.</p></div>
+      <div class="stack" style="gap: 24px">
+        <div style="display: flex; gap: 16px; align-items: flex-start"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6C1FA0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m14 4 6 6M9 9l6 6M4 20l7-7M13 5l6 6-3 3-6-6 3-3Z"/></svg></div><div class="stack-s" style="gap: 4px"><div style="font-family: Syne, sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #6C1FA0">Model legislation</div><p style="font-size: 15px">Bill language drafted from hydrogen policy that has already passed, ready to adapt to your state.</p></div></div>
+        <div style="display: flex; gap: 16px; align-items: flex-start"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6C1FA0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V11h14v10M12 3l6 5H6l6-5ZM9 21v-6M15 21v-6M12 21v-6"/></svg></div><div class="stack-s" style="gap: 4px"><div style="font-family: Syne, sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #6C1FA0">Enacted state policy</div><p style="font-size: 15px">Tax credits, revolving funds, permitting reforms, and workforce programs that are working today.</p></div></div>
+        <div style="display: flex; gap: 16px; align-items: flex-start"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6C1FA0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4V4Z"/><path d="M20 4h-7a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h8V4Z"/></svg></div><div class="stack-s" style="gap: 4px"><div style="font-family: Syne, sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #6C1FA0">Policy &amp; regulatory library</div><p style="font-size: 15px">Guidebooks, factsheets, state roadmaps, and regulatory comments curated for policy staff.</p></div></div>
+        <a href="#resources" style="font-family: Syne, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase">Access the policymaker resources &#9656;</a>
+      </div></div></div></div><div class="light sec" style=""><div class="wrap"><div class="split flip" style="align-items: start">
+      <div class="stack"><p class="eyebrow">Fifty states, one economy</p><h2 class="display h-l">Build from the states up<span class="dot">.</span></h2>
+      <p class="lead">States set the pace on hydrogen: permitting, incentives, infrastructure, and workforce are decided closer to home than Washington.</p>
+      <p>USHA brings the policy expertise, market intelligence, and peer network to help each state move faster, and to align fifty state efforts into one American hydrogen economy.</p></div>
+      <div class="g2" style="gap: 21px"><div style="display: flex; gap: 14px; align-items: center"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6C1FA0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V11h14v10M12 3l6 5H6l6-5ZM9 21v-6M15 21v-6M12 21v-6"/></svg></div><span style="font-family: Manrope, sans-serif; font-weight: 700; font-size: 15px; color: #0D1B2A">State legislation and regulation</span></div><div style="display: flex; gap: 14px; align-items: center"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6C1FA0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 6.5c0-1.5-2-2.5-5-2.5S7 5 7 7s2 3 5 3 5 1 5 3-2 3-5 3-5-1-5-2.5"/></svg></div><span style="font-family: Manrope, sans-serif; font-weight: 700; font-size: 15px; color: #0D1B2A">Incentives and financing</span></div><div style="display: flex; gap: 14px; align-items: center"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6C1FA0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 6 6-2 6 2 6-2v14l-6 2-6-2-6 2V6Z"/><path d="M9 4v14M15 6v14"/></svg></div><span style="font-family: Manrope, sans-serif; font-weight: 700; font-size: 15px; color: #0D1B2A">Regional coordination</span></div><div style="display: flex; gap: 14px; align-items: center"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6C1FA0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V9l5 3V9l5 3V9l5 3v9H3Z"/><path d="M8 21v-4h3v4M14 21v-4h3v4"/></svg></div><span style="font-family: Manrope, sans-serif; font-weight: 700; font-size: 15px; color: #0D1B2A">Permitting and infrastructure</span></div><div style="display: flex; gap: 14px; align-items: center"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6C1FA0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-4 3-6 7-6s7 2 7 6"/><circle cx="17" cy="9" r="2.5"/><path d="M17 14c3 0 5 2 5 5"/></svg></div><span style="font-family: Manrope, sans-serif; font-weight: 700; font-size: 15px; color: #0D1B2A">Workforce development</span></div><div style="display: flex; gap: 14px; align-items: center"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6C1FA0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4V4Z"/><path d="M20 4h-7a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h8V4Z"/></svg></div><span style="font-family: Manrope, sans-serif; font-weight: 700; font-size: 15px; color: #0D1B2A">Lessons learned and best practice</span></div></div>
+    </div><p style="font-family: Syne, sans-serif; font-weight: 800; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: #6C1FA0; text-align: center">Local leadership in partnership with national coordination<span class="dot">.</span></p></div></div><div class="dark sec" style=""><div class="wrap"><div class="split" style="align-items: start">
+      <div class="stack"><p class="eyebrow">Fourth annual convention</p><h2 class="display h-l">Build the framework<span class="dot">.</span> Align the states<span class="dot">.</span> Move the market<span class="dot">.</span></h2>
+      <p style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 21px; color: #FFB703; line-height: 1.3">Fourth Annual National Hydrogen Policy Leaders Convention</p>
+      <p style="font-family: Syne, sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #F8F9FA">September 8&ndash;10, 2026 &middot; Atlantic City, New Jersey</p>
+      <p>Three days that bring policymakers and industry together to build practical state policy, align regional strategies, and create the frameworks hydrogen markets need in order to grow.</p>
+      <div class="g2 keep" style="gap: 8px 21px"><div style="display: flex; gap: 8px; align-items: center; font-size: 14px; color: #B9C6D6"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00D2FF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg>Infrastructure &amp; deployment</div><div style="display: flex; gap: 8px; align-items: center; font-size: 14px; color: #B9C6D6"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00D2FF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg>Financing &amp; investment</div><div style="display: flex; gap: 8px; align-items: center; font-size: 14px; color: #B9C6D6"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00D2FF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg>Energy security</div><div style="display: flex; gap: 8px; align-items: center; font-size: 14px; color: #B9C6D6"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00D2FF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg>Hub integration</div><div style="display: flex; gap: 8px; align-items: center; font-size: 14px; color: #B9C6D6"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00D2FF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg>Transportation</div><div style="display: flex; gap: 8px; align-items: center; font-size: 14px; color: #B9C6D6"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00D2FF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg>Workforce development</div><div style="display: flex; gap: 8px; align-items: center; font-size: 14px; color: #B9C6D6"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00D2FF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg>Market standardization</div><div style="display: flex; gap: 8px; align-items: center; font-size: 14px; color: #B9C6D6"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00D2FF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg>Federal policy</div></div>
+      <div class="btns"><a class="btn btn-primary" href="#register">Register &middot; complimentary for policymakers</a><a class="btn btn-tertiary" href="#agenda">See the agenda &#9656;</a></div></div>
+      <div class="card" style="background: #6C1FA0; border-color: #6C1FA0; padding: 34px; gap: 14px"><span class="chip gold">Government officials</span><h3 style="color: #F8F9FA">Complimentary registration for government officials</h3><p style="color: #F8F9FA">USHA covers convention registration for elected officials and their staff. [Confirm eligibility and travel support details.]</p></div>
+    </div></div></div><div class="light sec" style=""><div class="wrap"><div class="stack-s"><p class="eyebrow">A national community</p><h2 class="display h-l">Your peers are already at the table<span class="dot">.</span></h2><p class="lead" style="max-width: 62ch">Policymakers from across the country are building hydrogen policy through USHA, and comparing notes on what works.</p></div><div class="g4" style="gap: 21px"><div class="person" style="align-items: center; text-align: center"><div class="avatar ">A</div><div class="name" style="font-size: 16px">[Policymaker name]</div><div class="role">[Office] &middot; [State]</div></div><div class="person" style="align-items: center; text-align: center"><div class="avatar cyan">B</div><div class="name" style="font-size: 16px">[Policymaker name]</div><div class="role">[Office] &middot; [State]</div></div><div class="person" style="align-items: center; text-align: center"><div class="avatar purple">C</div><div class="name" style="font-size: 16px">[Policymaker name]</div><div class="role">[Office] &middot; [State]</div></div><div class="person" style="align-items: center; text-align: center"><div class="avatar ">D</div><div class="name" style="font-size: 16px">[Policymaker name]</div><div class="role">[Office] &middot; [State]</div></div><div class="person" style="align-items: center; text-align: center"><div class="avatar cyan">E</div><div class="name" style="font-size: 16px">[Policymaker name]</div><div class="role">[Office] &middot; [State]</div></div><div class="person" style="align-items: center; text-align: center"><div class="avatar purple">F</div><div class="name" style="font-size: 16px">[Policymaker name]</div><div class="role">[Office] &middot; [State]</div></div><div class="person" style="align-items: center; text-align: center"><div class="avatar ">G</div><div class="name" style="font-size: 16px">[Policymaker name]</div><div class="role">[Office] &middot; [State]</div></div><div class="person" style="align-items: center; text-align: center"><div class="avatar cyan">H</div><div class="name" style="font-size: 16px">[Policymaker name]</div><div class="role">[Office] &middot; [State]</div></div></div>
+        <div class="btns"><a class="btn btn-tertiary" href="#roster">See the policymaker roster &#9656;</a></div></div></div><div class="dark sec" style=""><div class="wrap"><div class="split flip" style="align-items: start">
+      <div class="stack"><p class="eyebrow">Get involved</p><h2 class="display h-l">There is a seat for your state<span class="dot">.</span></h2>
+      <p class="lead">Join the Hydrogen Policy Leaders Roundtable, get the publications, and put your state on the map.</p>
+      <div class="btns"><a class="btn btn-tertiary" href="#register">Register for the convention &#9656;</a></div></div>
+      <div class="stack" style="gap: 14px"><h3 class="display h-2" style="font-size: 24px">Join the Hydrogen Policy Leaders Roundtable</h3><p style="font-size: 14px">Request to join the national forum for state lawmakers and policymakers. A member of the USHA team will follow up with next steps.</p>
+        <div class="g2 keep" style="gap: 13px"><div class="fgroup"><p class="flabel">First name</p><div class="field">&nbsp;</div></div><div class="fgroup"><p class="flabel">Last name</p><div class="field">&nbsp;</div></div></div>
+        <div class="fgroup"><p class="flabel">Title / position</p><div class="field">&nbsp;</div></div>
+        <div class="fgroup"><p class="flabel">Work email</p><div class="field">&nbsp;</div></div>
+        <div class="g2 keep" style="gap: 13px"><div class="fgroup"><p class="flabel">State</p><div class="field">Select your state</div></div><div class="fgroup"><p class="flabel">Office type</p><div class="field">Select an option</div></div></div>
+        <div class="fgroup"><p class="flabel">Message (optional)</p><div class="field ta">&nbsp;</div></div>
+        <div style="display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: #B9C6D6"><div style="width: 20px; height: 20px; border: 2px solid rgba(248,249,250,0.4); border-radius: 6px; flex: none; margin-top: 2px"></div><span>Yes, I would like to receive updates and resources from USHA.</span></div>
+        <div class="btns"><a class="btn btn-primary" href="#roundtable">Request to join</a></div></div>
+    </div></div></div><div class="dark sec" style=""><div class="wrap"><div class="stack-s"><p class="eyebrow">Propel your business</p><h2 class="display h-l">Join the United States Hydrogen Alliance<span class="dot">.</span></h2></div><div class="g3"><div class="card "><span class="chip">Strategy</span><h3>Navigate what&rsquo;s next</h3><p>One-on-one strategy focused on the policy, market, and business priorities affecting your company.</p></div><div class="card "><span class="chip">Visibility</span><h3>Be seen by the right people</h3><p>Position your company and expertise before policymakers, industry leaders, and potential partners.</p></div><div class="card "><span class="chip">Intelligence</span><h3>See what&rsquo;s coming</h3><p>Biweekly policy reports on federal and state hydrogen and fuel cell policy.</p></div><div class="card "><span class="chip">Policy engagement</span><h3>Help shape the framework</h3><p>Bring your expertise into the policies and regulations affecting hydrogen deployment.</p></div><div class="card "><span class="chip">Business development</span><h3>Get closer to opportunity</h3><p>Tailored introductions to customers, partners, economic developers, and emerging markets.</p></div><div class="card "><span class="chip">Exclusive access</span><h3>Get in the room</h3><p>Member-only access to working groups, strategy sessions, political and investment roundtables, and USHA convenings.</p></div></div><div class="btns"><a class="btn btn-primary" href="#membership">Explore membership</a></div></div></div><div class="tint sec" style="padding-top: 76px; padding-bottom: 76px"><div class="wrap"><div class="split"><div class="stack-s"><p class="eyebrow">Newsletter</p><h2 class="display h-l">Stay ahead<span class="dot">.</span></h2><p class="lead">From policy shifts to market opportunities, stay ahead of what&rsquo;s moving hydrogen forward.</p></div>
+      <div class="btns" style="flex-wrap: nowrap"><div class="field" style="flex: 1 1 auto">Work email</div><a class="btn btn-primary" href="#newsletter">Subscribe</a></div></div></div></div><div class="dark footer sec" style="padding-top: 76px; padding-bottom: 34px"><div class="wrap" style="gap: 55px">
+      <div class="fgrid">
+        <div class="stack" style="">
+          <div class="brand" style="gap: 14px"><img src="usha-h-full-dark.svg" alt="USHA dotted-H monogram, full color on navy" style="width: 44px"><div class="wm" style="font-size: 28px">USHA</div></div>
+          <p style="color: #B9C6D6; font-size: 16px; white-space: nowrap">Fifty states. One hydrogen economy. Built together.</p>
+        </div>
+        <div><h5>Alliance</h5><div class="fcol"><a href="#about">About Us</a><a href="#membership">Membership</a><a href="#contact">Contact</a></div></div>
+        <div><h5>Work</h5><div class="fcol"><a href="#policymakers">Policymakers</a><a href="#industry">Industry</a><a href="#hydrogen-built">Hydrogen Built</a><a href="#events">Events</a></div></div>
+        <div class="wide"><h5>Newsroom</h5><div class="fcol"><a href="#media">Media Room</a><a href="#resources">Resources</a><a href="#linkedin-usha">LinkedIn &middot; USHA</a><a href="#linkedin-convention">LinkedIn &middot; Convention</a><a href="#x">X / Twitter</a></div></div>
+      </div>
+      <div class="copy">&copy; 2026 United States Hydrogen Alliance &middot; 501(c)(6)</div>
+    </div></div></div>
+</x-dc>
+</body>
+</html>

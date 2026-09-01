@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hydrogen: The Common Bond · United States Hydrogen Alliance</title>
+<meta name="description" content="A campaign to build the foundation of the U.S. hydrogen economy. If Washington won't build it, the states will.">
+<link rel="icon" type="image/svg+xml" href="assets/usha-h-full-light.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Syne:wght@400;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/usha.css">
+</head>
+<body>
+<!-- Relume: Navbar 2 (dropdown nav, adapted — sticky navy 90% + blur, gold JOIN pill per DS §09) -->
+<header class="nav" data-relume="navbar-2">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html" aria-label="USHA home">
+      <img src="assets/usha-h-full-dark.svg" alt="USHA dotted-H monogram, full color on navy">
+      <span class="wordmark">USHA</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Open menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="membership.html">Membership</a></li>
+      <li><a href="policymakers.html">Policymakers</a></li>
+      <li><a href="industry.html" aria-current="page">Industry</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="media-room.html">Media Room</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li class="nav-cta"><a class="btn btn-primary" href="membership.html">Join</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- Relume: Header 5 (campaign hero) -->
+<section class="section on-dark" data-relume="header-5">
+  <div class="container">
+    <div class="split">
+      <div class="reveal">
+        <p class="eyebrow">The Campaign</p>
+        <h1 class="display-xl">Hydrogen: the common bond<span class="dot">.</span></h1>
+        <p class="lead" style="max-width: 48ch">A campaign to build the foundation of the U.S. hydrogen economy. Hydrogen already feeds our fields, fuels our refineries, and firms our power &mdash; the most abundant molecule on the planet, at work every day.</p>
+        <a class="btn btn-primary" href="#join">Join the Campaign</a>
+      </div>
+      <img class="map-bleed reveal" src="assets/usha-map-spectrum-dark.svg" alt="USHA dotted map, spectrum coloring on navy">
+    </div>
+  </div>
+</section>
+
+<!-- Relume: Layout 242 (3 pillars) -->
+<section class="section on-light" data-relume="layout-242">
+  <div class="container">
+    <p class="eyebrow reveal">Three Pillars</p>
+    <h2 class="display-l reveal">Leadership, acceleration, coalition<span class="dot">.</span></h2>
+    <div class="grid-3" style="margin-top: var(--sp-4)">
+      <div class="card reveal"><span class="chip">01</span><h3 class="h2" style="margin-top: var(--sp-2)">Leadership</h3><p>USHA at the forefront of hydrogen policy &mdash; the go-to voice in every statehouse.</p></div>
+      <div class="card tint-cyan reveal"><span class="chip">02</span><h3 class="h2" style="margin-top: var(--sp-2)">State-Level Acceleration</h3><p>Tax credits, revolving funds, and policy replication &mdash; wins in one state templated for fifty.</p></div>
+      <div class="card tint-gold reveal"><span class="chip">03</span><h3 class="h2" style="margin-top: var(--sp-2)">Coalition Expansion</h3><p>Industry, labor, and utilities united across party lines.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Relume: Layout 3 (mission statement split) -->
+<section class="section on-dark" data-relume="layout-3">
+  <div class="container">
+    <div class="split">
+      <div class="reveal">
+        <p class="eyebrow">The Mission</p>
+        <h2 class="display-l">Empower states to lead<span class="dot">.</span></h2>
+        <p>The Department of Energy's cancellation of hydrogen hubs erased $2.2 billion in commitments. The lesson is plain: the next era of hydrogen growth will not depend on federal megaprojects vulnerable to political cycles.</p>
+        <p class="lead" style="color: var(--gold)">If Washington won't build it, the states will.</p>
+      </div>
+      <div class="reveal">
+        <div class="card"><h3 class="h2">The State Playbook</h3>
+          <p>&#9679;&nbsp; Lifecycle-based, technology-neutral tax incentives<br>
+          &#9679;&nbsp; Revolving loan and bond financing programs<br>
+          &#9679;&nbsp; Plug-and-play policy templates for state legislatures</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Relume: Contact 2 (campaign join form) -->
+<section id="join" class="section on-tint" data-relume="contact-2">
+  <div class="container">
+    <div class="split">
+      <div class="reveal">
+        <p class="eyebrow">Sign On</p>
+        <h2 class="display-l">Bring your state. Bring your molecule<span class="dot">.</span></h2>
+        <p>Join the Hydrogen Policy Leaders Roundtable, get the publications, and put your state on the map.</p>
+      </div>
+      <form class="reveal" action="#" method="post" aria-label="Join the Common Bond campaign">
+        <div class="field"><label for="cb-name">Name</label><input id="cb-name" name="name" type="text" required></div>
+        <div class="field"><label for="cb-email">Email</label><input id="cb-email" name="email" type="email" required></div>
+        <div class="field"><label for="cb-state">State</label><input id="cb-state" name="state" type="text" required></div>
+        <div class="field"><label for="cb-position">Position</label><input id="cb-position" name="position" type="text"></div>
+        <button class="btn btn-primary" type="submit">Join the Campaign</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Relume: Layout 238 (3-column icon feature grid, adapted) — the six member benefits -->
+<section class="section on-dark" data-relume="layout-238">
+  <div class="container">
+    <p class="eyebrow reveal">Propel your business</p>
+    <h2 class="display-l reveal">Join the United States Hydrogen Alliance<span class="dot">.</span></h2>
+    <div class="grid-3" style="margin-top: var(--sp-4)">
+      <div class="card reveal"><h3 class="h2">Strategy Sessions</h3><p>Monthly one-on-one strategy meetings on your company's priorities.</p></div>
+      <div class="card reveal"><h3 class="h2">Visibility</h3><p>Represent your company with policymakers and external partners.</p></div>
+      <div class="card reveal"><h3 class="h2">Information</h3><p>Weekly policy reports tracking federal and state hydrogen and fuel cell policy.</p></div>
+      <div class="card reveal"><h3 class="h2">Policy Engagement</h3><p>Deliver expert technical testimony and regulatory comments where they count.</p></div>
+      <div class="card reveal"><h3 class="h2">Business Development</h3><p>Tailored introductions to offtakers, partners, and decision makers.</p></div>
+      <div class="card reveal"><h3 class="h2">Exclusive Events</h3><p>Access to member-only United States Hydrogen Alliance events.</p></div>
+    </div>
+    <div style="margin-top: var(--sp-4)"><a class="btn btn-primary reveal" href="membership.html">Explore Membership</a></div>
+  </div>
+</section>
+<!-- Relume: CTA 26 (newsletter signup, adapted — one gold action per view) -->
+<section class="section on-tint" data-relume="cta-26">
+  <div class="container">
+    <div class="split">
+      <div class="reveal">
+        <p class="eyebrow">Newsletter</p>
+        <h2 class="display-l">Stay informed<span class="dot">.</span></h2>
+        <p class="lead">Exclusive industry insights and the latest hydrogen policy news, from statehouse to statehouse.</p>
+      </div>
+      <form class="form-inline reveal" action="#" method="post" aria-label="Newsletter signup">
+        <input type="email" name="email" placeholder="Work email" aria-label="Email address" required>
+        <button class="btn btn-primary" type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+<!-- Relume: Footer 4 (multi-column with brand block, adapted — seal, gold rule, Syne caps) -->
+<footer class="footer" data-relume="footer-4">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img src="assets/usha-seal-fullcolor-dark.svg" alt="USHA seal, full color on navy" style="width:110px; margin-bottom: var(--sp-3)">
+        <p style="color: var(--ice-on-navy-soft); max-width: 34ch">The one voice for American hydrogen &mdash; from statehouse to statehouse, coast to coast.</p>
+      </div>
+      <div>
+        <h4>Alliance</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Work</h4>
+        <ul>
+          <li><a href="policymakers.html">Policymakers</a></li>
+          <li><a href="industry.html">Industry</a></li>
+          <li><a href="common-bond.html">Common Bond</a></li>
+          <li><a href="events.html">Events</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Newsroom</h4>
+        <ul>
+          <li><a href="media-room.html">Media Room</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="https://www.linkedin.com/company/united-states-h2-alliance/" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://twitter.com/US_H2_Alliance" rel="noopener">X / Twitter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base">
+      <div>&copy; 2026 United States Hydrogen Alliance &middot; 501(c)(6)</div>
+      <div>One molecule. Every state. Zero excuses.</div>
+    </div>
+  </div>
+</footer>
+<script src="js/usha.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+/* ============================================================
+   USHA COMPONENT LIBRARY — usha-components.css · v1.0
+   Drop-in classes for web + print. Pair with usha-effects.js
+   (favicon, glow, magnet, ripple, reveal) and usha-icons.js.
+   Nothing here is optional. Nothing here is a suggestion.
+   ============================================================ */
+:root {
+  --usha-navy: #0D1B2A; --usha-ice: #F8F9FA; --usha-cyan: #00D2FF;
+  --usha-gold: #FFB703; --usha-purple: #3B0B59;
+  --usha-purple-600: #6C1FA0; --usha-purple-400: #9D4EDD;
+  --usha-cyan-700: #0089A8; --usha-cyan-600: #00A8CC; --usha-cyan-200: #7CE4FF;
+  --usha-gold-600: #E09E00; --usha-gold-300: #FFC733;
+  --usha-success: #21A66E; --usha-warning: #FFB703; --usha-error: #E5484D; --usha-info: #00A8CC;
+  --usha-sp-1: 8px; --usha-sp-2: 13px; --usha-sp-3: 21px; --usha-sp-4: 34px; --usha-sp-5: 55px; --usha-sp-6: 89px; --usha-sp-7: 144px;
+  --usha-font-display: 'Unbounded', sans-serif;
+  --usha-font-label: 'Space Grotesk', sans-serif;
+  --usha-font-body: 'Manrope', sans-serif;
+  --usha-radius-card: 12px; --usha-radius-pill: 999px;
+  --usha-shadow-lift: 0 14px 34px rgba(13, 27, 42, 0.28);
+}
+
+/* ---------- BUTTONS ---------- */
+.usha-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  border: 0; cursor: pointer; border-radius: var(--usha-radius-pill);
+  font: 700 13px/1 var(--usha-font-label); letter-spacing: 0.08em; text-transform: uppercase;
+  min-height: 44px; padding: 0 26px; transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+}
+.usha-btn--primary { background: var(--usha-gold); color: var(--usha-navy); }
+.usha-btn--primary:hover { background: var(--usha-cyan); }
+.usha-btn--secondary { background: var(--usha-cyan); color: var(--usha-navy); }
+.usha-btn--secondary:hover { background: var(--usha-gold); }
+.usha-btn--tertiary { background: transparent; color: var(--usha-ice); border: 2px solid rgba(248,249,250,0.35); }
+.usha-btn--tertiary:hover { border-color: var(--usha-cyan); color: var(--usha-cyan); }
+.usha-btn--tertiary-light { background: transparent; color: var(--usha-navy); border: 2px solid rgba(13,27,42,0.3); }
+.usha-btn--tertiary-light:hover { border-color: var(--usha-purple-600); color: var(--usha-purple-600); }
+.usha-btn--danger { background: var(--usha-error); color: #fff; }
+.usha-btn--sm { min-height: 36px; padding: 0 18px; font-size: 11px; }
+.usha-btn--lg { min-height: 56px; padding: 0 34px; font-size: 15px; }
+.usha-btn--icon { width: 44px; padding: 0; }
+.usha-btn:active { transform: scale(0.97); }
+.usha-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+.usha-btn:focus-visible, .usha-input:focus-visible, .usha-toggle input:focus-visible + .usha-toggle__track {
+  outline: 2px solid var(--usha-cyan); outline-offset: 2px;
+}
+
+/* ---------- TAGS & CHIPS ---------- */
+.usha-chip { display: inline-flex; align-items: center; gap: 8px; border-radius: var(--usha-radius-pill);
+  font: 700 11px/1 var(--usha-font-label); letter-spacing: 0.12em; text-transform: uppercase; padding: 8px 14px; }
+.usha-chip--navy { background: var(--usha-navy); color: var(--usha-ice); }
+.usha-chip--gold { background: var(--usha-gold); color: var(--usha-navy); }
+.usha-chip--purple { background: var(--usha-purple-600); color: var(--usha-ice); }
+.usha-chip--outline { border: 1.5px solid var(--usha-navy); color: var(--usha-navy); background: transparent; }
+
+/* ---------- CARDS (dark surfaces) ---------- */
+.usha-card { border-radius: var(--usha-radius-card); padding: 34px 28px; transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s; }
+.usha-card--purple { border: 1px solid rgba(157,78,221,0.4); background: linear-gradient(160deg, rgba(59,11,89,0.55), rgba(13,27,42,0.4)); }
+.usha-card--cyan { border: 1px solid rgba(0,210,255,0.35); background: linear-gradient(160deg, rgba(0,137,168,0.35), rgba(13,27,42,0.4)); }
+.usha-card--gold { border: 1px solid rgba(255,183,3,0.4); background: linear-gradient(160deg, rgba(255,183,3,0.18), rgba(13,27,42,0.4)); }
+.usha-card--ghost { border: 1px solid rgba(248,249,250,0.14); background: rgba(248,249,250,0.04); }
+.usha-card:hover { transform: translateY(-8px); box-shadow: var(--usha-shadow-lift); }
+.usha-card--purple:hover { border-color: var(--usha-purple-400); }
+.usha-card--cyan:hover, .usha-card--ghost:hover { border-color: var(--usha-cyan); }
+.usha-card--gold:hover { border-color: var(--usha-gold); }
+/* Cards (light surfaces) */
+.usha-card--paper { background: #fff; border: 1px solid #DDE4EA; color: var(--usha-navy); }
+.usha-card--quote { background: #fff; border: 1px solid #DDE4EA; border-top: 3px solid var(--usha-gold); color: var(--usha-navy); }
+/* Stat block */
+.usha-stat__number { font: 800 44px/1 var(--usha-font-display); }
+.usha-stat__label { font: 600 13px/1.4 var(--usha-font-label); letter-spacing: 0.18em; text-transform: uppercase; color: #8B95A5; margin-top: 6px; }
+
+/* ---------- FORMS ---------- */
+.usha-input { width: 100%; box-sizing: border-box; min-height: 48px; padding: 12px 18px;
+  border-radius: 10px; border: 1.5px solid rgba(248,249,250,0.25); background: rgba(248,249,250,0.05);
+  color: var(--usha-ice); font: 500 15px/1.4 var(--usha-font-body); transition: border-color 0.2s; }
+.usha-input::placeholder { color: rgba(248,249,250,0.4); }
+.usha-input:hover { border-color: rgba(0,210,255,0.5); }
+.usha-input:focus { border-color: var(--usha-cyan); outline: none; }
+.usha-input--light { border-color: #C6D0DA; background: #fff; color: var(--usha-navy); }
+.usha-field__label { display: block; font: 700 11px/1 var(--usha-font-label); letter-spacing: 0.18em; text-transform: uppercase; color: var(--usha-cyan); margin-bottom: 8px; }
+.usha-field__error { font: 600 12px/1.4 var(--usha-font-body); color: var(--usha-error); margin-top: 6px; }
+/* Checkbox / radio: gold dot inside navy ring */
+.usha-check { appearance: none; width: 22px; height: 22px; border: 2px solid rgba(248,249,250,0.4); border-radius: 6px; cursor: pointer; position: relative; transition: border-color 0.2s, background 0.2s; }
+.usha-check--radio { border-radius: 50%; }
+.usha-check:checked { border-color: var(--usha-gold); background: var(--usha-gold); }
+.usha-check:checked::after { content: ''; position: absolute; inset: 5px; border-radius: inherit; background: var(--usha-navy); }
+/* Toggle */
+.usha-toggle { display: inline-flex; align-items: center; gap: 12px; cursor: pointer; }
+.usha-toggle input { position: absolute; opacity: 0; }
+.usha-toggle__track { width: 52px; height: 30px; border-radius: 999px; background: rgba(248,249,250,0.18); position: relative; transition: background 0.25s; }
+.usha-toggle__track::after { content: ''; position: absolute; top: 4px; left: 4px; width: 22px; height: 22px; border-radius: 50%; background: var(--usha-ice); transition: left 0.25s cubic-bezier(0.2,0.8,0.3,1.2), background 0.25s; }
+.usha-toggle input:checked + .usha-toggle__track { background: var(--usha-cyan); }
+.usha-toggle input:checked + .usha-toggle__track::after { left: 26px; background: var(--usha-navy); }
+
+/* ---------- LINKS ---------- */
+.usha-link { color: var(--usha-cyan); text-decoration: none; background-image: linear-gradient(var(--usha-gold), var(--usha-gold));
+  background-repeat: no-repeat; background-size: 0% 2px; background-position: 0 100%; transition: background-size 0.3s, color 0.3s; padding-bottom: 2px; }
+.usha-link:hover { color: var(--usha-gold); background-size: 100% 2px; }
+.usha-link--light { color: var(--usha-cyan-700); }
+
+/* ---------- LOADERS ---------- */
+@keyframes usha-dot-pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.55); opacity: 0.75; } }
+@keyframes usha-spin { to { transform: rotate(360deg); } }
+@keyframes usha-progress-dot { 0%, 100% { opacity: 0.18; } 50% { opacity: 1; } }
+.usha-loader-ring { width: 44px; height: 44px; border-radius: 50%; border: 3px dotted var(--usha-cyan); animation: usha-spin 1.6s linear infinite; }
+.usha-loader-dots { display: inline-flex; gap: 6px; }
+.usha-loader-dots span { width: 9px; height: 9px; border-radius: 50%; animation: usha-dot-pulse 1.2s ease-in-out infinite; }
+.usha-loader-dots span:nth-child(1) { background: var(--usha-purple-400); animation-delay: 0s; }
+.usha-loader-dots span:nth-child(2) { background: var(--usha-cyan-600); animation-delay: 0.15s; }
+.usha-loader-dots span:nth-child(3) { background: var(--usha-cyan); animation-delay: 0.3s; }
+.usha-loader-dots span:nth-child(4) { background: var(--usha-gold); animation-delay: 0.45s; }
+
+/* ---------- MARQUEE ---------- */
+@keyframes usha-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.usha-marquee { background: var(--usha-gold); overflow: hidden; padding: 12px 0; border-top: 3px solid var(--usha-navy); border-bottom: 3px solid var(--usha-navy); }
+.usha-marquee__track { display: flex; width: max-content; gap: 40px; padding-right: 40px; animation: usha-marquee 24s linear infinite;
+  font: 500 15px/1 var(--usha-font-display); color: var(--usha-navy); white-space: nowrap; }
+
+/* ---------- NAV ---------- */
+.usha-nav { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between;
+  padding: 22px 56px; background: rgba(13,27,42,0.88); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,210,255,0.15); }
+
+/* ---------- MOTION & A11Y ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .usha-marquee__track, .usha-loader-ring, .usha-loader-dots span { animation: none; }
+  .usha-card, .usha-btn { transition: none; }
+}
+
+/* ---------- PRINT ---------- */
+@media print {
+  .usha-btn, .usha-chip { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .usha-card { box-shadow: none !important; transform: none !important; break-inside: avoid; }
+  .usha-marquee, .usha-nav { display: none; }
+}

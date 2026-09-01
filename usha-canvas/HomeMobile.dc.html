@@ -1,0 +1,286 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Syne:wght@600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body { margin: 0; background: #0D1B2A; font-family: Manrope, 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 16px; line-height: 1.65; color: #F8F9FA; }
+a { color: #00D2FF; text-decoration: none; } a:hover { color: #FFB703; }
+.light, .tint { color: #0D1B2A; }
+.light { background: #F8F9FA; } .tint { background: #F1F4F7; } .dark { background: #0D1B2A; color: #F8F9FA; }
+.light a, .tint a { color: #0089A8; } .light a:hover, .tint a:hover { color: #6C1FA0; }
+.eyebrow { font-family: Syne, 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; margin: 0; }
+.dark .eyebrow { color: #00D2FF; } .light .eyebrow, .tint .eyebrow { color: #6C1FA0; }
+.display { font-family: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; margin: 0; text-wrap: balance; }
+.dot { color: #FFB703; }
+p { margin: 0; text-wrap: pretty; }
+.lead { font-size: 17px; line-height: 1.6; }
+.dark p { color: #B9C6D6; } .light p, .tint p { color: #45566B; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 12px 24px; border-radius: 999px; border: 0; cursor: pointer; font-family: Syne, sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: background 200ms cubic-bezier(0.16,1,0.3,1), color 200ms cubic-bezier(0.16,1,0.3,1), border-color 200ms cubic-bezier(0.16,1,0.3,1); box-sizing: border-box; white-space: nowrap; width: 100%; }
+.btn.btn-primary { background: #FFB703; color: #0D1B2A; } .btn.btn-primary:hover { background: #00D2FF; color: #0D1B2A; }
+.btn.btn-tertiary { background: transparent; color: #F8F9FA; border: 2px solid rgba(248,249,250,0.35); } .btn.btn-tertiary:hover { border-color: #00D2FF; color: #00D2FF; }
+.light .btn.btn-tertiary, .tint .btn.btn-tertiary { color: #0D1B2A; border-color: rgba(13,27,42,0.35); } .light .btn.btn-tertiary:hover, .tint .btn.btn-tertiary:hover { border-color: #6C1FA0; color: #6C1FA0; }
+.btn.inline { width: auto; }
+.chip { display: inline-flex; align-items: center; align-self: flex-start; background: #6C1FA0; color: #F8F9FA; font-family: Syne, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 7px 14px; border-radius: 999px; }
+.card { border-radius: 12px; padding: 24px 22px; display: flex; flex-direction: column; gap: 10px; box-sizing: border-box; }
+.dark .card { background: rgba(248,249,250,0.04); border: 1px solid rgba(0,210,255,0.35); }
+.light .card, .tint .card { background: #FFFFFF; border: 1px solid rgba(108,31,160,0.35); }
+.card.tint-cyan { border-color: rgba(0,168,204,0.45); } .card.tint-gold { border-color: rgba(255,183,3,0.5); }
+.card h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; line-height: 1.25; margin: 0; letter-spacing: -0.01em; }
+.card p { font-size: 15px; line-height: 1.55; }
+.stat .num { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 40px; line-height: 1; letter-spacing: -0.02em; }
+.stat .label { font-family: Syne, sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; margin-top: 8px; line-height: 1.5; }
+.row1 .num, .row1 .label { color: #F8F9FA; } .row1 .plus { color: #FFB703; }
+.row2 .num, .row2 .label { color: #FFB703; } .row2 .plus { color: #F8F9FA; }
+.tier h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; margin: 0 0 10px; }
+.logo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.logo-cell { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; min-height: 60px; padding: 10px 12px; border: 1px solid #DDE4EA; border-radius: 10px; background: #FFFFFF; font-family: Syne, sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: #45566B; box-sizing: border-box; }
+.logo-cell .founding { display: block; font-size: 8px; letter-spacing: 0.18em; color: #E09E00; margin-top: 3px; }
+.quote { border-left: 3px solid #FFB703; padding: 6px 0 6px 16px; margin: 0; }
+.quote p { font-size: 18px; line-height: 1.5; font-weight: 600; color: #0D1B2A; }
+.quote cite { display: block; margin-top: 10px; font-style: normal; font-family: Syne, sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #6B7A8D; }
+.marquee { background: #FFB703; color: #0D1B2A; overflow: hidden; white-space: nowrap; padding: 10px 0; }
+.marquee-track { display: inline-block; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.18em; animation: marquee 26s linear infinite; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.kin { font-family: Syne, sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 0.14em; text-transform: uppercase; color: #00D2FF; line-height: 1.2; margin: 0; }
+.kin span { display: inline-block; animation: kin 9s cubic-bezier(0.16,1,0.3,1) infinite; }
+@keyframes kin { 0% { opacity: 0; transform: translateY(14px); } 8% { opacity: 1; transform: translateY(0); } 82% { opacity: 1; transform: translateY(0); } 90% { opacity: 0; transform: translateY(-8px); } 100% { opacity: 0; transform: translateY(14px); } }
+.footer a { color: #B9C6D6; font-size: 15px; padding: 6px 0; } .footer a:hover { color: #00D2FF; }
+.footer h5 { font-family: Syne, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #00D2FF; margin: 0 0 8px; }
+.field { width: 100%; box-sizing: border-box; min-height: 48px; padding: 12px 16px; border-radius: 10px; border: 1px solid #DDE4EA; background: #FFFFFF; font-family: Manrope, sans-serif; font-size: 15px; color: #6B7A8D; display: flex; align-items: center; }
+@media (prefers-reduced-motion: reduce) { .kin span, .marquee-track { animation: none !important; } }
+</style>
+</helmet>
+<div style="display: flex; flex-direction: column; width: 390px; background: #0D1B2A; overflow: hidden">
+
+  <div class="dark" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 64px; padding: 0 20px; background: rgba(13,27,42,0.92); border-bottom: 1px solid rgba(0,210,255,0.12)">
+    <div style="display: flex; align-items: center; gap: 10px">
+      <img src="usha-h-full-dark.svg" alt="USHA dotted-H monogram, full color on navy" style="width: 28px; height: auto; display: block">
+      <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 19px; letter-spacing: -0.02em; color: #F8F9FA">USHA</div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 10px">
+      <a class="btn btn-primary inline" href="#join" style="min-height: 40px; padding: 8px 16px; font-size: 12px">Join</a>
+      <div aria-label="Open menu" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(0,210,255,0.3); border-radius: 10px">
+        <svg width="20" height="14" viewBox="0 0 20 14" fill="none" stroke="#00D2FF" stroke-width="2" stroke-linecap="round"><path d="M1 1h18M1 7h18M1 13h18"></path></svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="dark" style="padding: 48px 24px 40px; display: flex; flex-direction: column; gap: 18px">
+    <sc-if value="{{ motion }}" hint-placeholder-val="{{ true }}">
+      <div class="kin" aria-label="Hydrogen is entering a new era"><sc-for list="{{ words }}" as="w" hint-placeholder-count="6"><span style="display: inline-block; white-space: nowrap; margin-right: 0.35em"><sc-for list="{{ w.letters }}" as="l" hint-placeholder-count="8"><span style="{{ l.style }}">{{ l.ch }}</span></sc-for></span></sc-for></div>
+    </sc-if>
+    <sc-if value="{{ still }}" hint-placeholder-val="{{ false }}">
+      <div class="kin">Hydrogen is entering a new era</div>
+    </sc-if>
+    <h1 class="display" style="font-size: 44px; color: #F8F9FA">The future of hydrogen starts here<span class="dot">.</span></h1>
+    <div style="margin: 4px -24px 0 0">
+      <sc-if value="{{ heroFull }}" hint-placeholder-val="{{ true }}">
+        <img src="usha-map-full-dark.svg" alt="USHA dotted map, full color on navy" style="width: 100%; height: auto; display: block; filter: drop-shadow(0 0 16px rgba(0,210,255,0.22))">
+      </sc-if>
+      <sc-if value="{{ heroSpectrum }}" hint-placeholder-val="{{ false }}">
+        <img src="usha-map-spectrum-dark.svg" alt="USHA dotted map, spectrum on navy" style="width: 100%; height: auto; display: block; filter: drop-shadow(0 0 16px rgba(0,210,255,0.22))">
+      </sc-if>
+      <sc-if value="{{ heroKnockout }}" hint-placeholder-val="{{ false }}">
+        <img src="usha-map-knockout.svg" alt="USHA dotted map, knockout on navy" style="width: 100%; height: auto; display: block">
+      </sc-if>
+    </div>
+    <p class="lead">The next hydrogen economy needs more than technology. It needs the conditions to grow.</p>
+    <p>USHA works state by state to shape policy, build markets, and connect the people who make hydrogen happen, turning individual opportunities into one robust and durable U.S. hydrogen economy.</p>
+    <p style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 19px; color: #FFB703; letter-spacing: -0.01em; line-height: 1.3">Fifty states. One hydrogen economy. Built together.</p>
+    <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 6px">
+      <a class="btn btn-primary" href="#membership">Become a member</a>
+      <a class="btn btn-tertiary" href="#about">Who we are &#9656;</a>
+    </div>
+  </div>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track" style="{{ marqueeStyle }}">ONE HYDROGEN ECONOMY &nbsp;&#9702;&nbsp; BUILT TOGETHER &nbsp;&#9702;&nbsp; 50 STATES &nbsp;&#9702;&nbsp; ONE HYDROGEN ECONOMY &nbsp;&#9702;&nbsp; BUILT TOGETHER &nbsp;&#9702;&nbsp; 50 STATES &nbsp;&#9702;&nbsp; ONE HYDROGEN ECONOMY &nbsp;&#9702;&nbsp; BUILT TOGETHER &nbsp;&#9702;&nbsp; 50 STATES &nbsp;&#9702;&nbsp; </div>
+  </div>
+
+  <div class="light" style="padding: 40px 24px 24px">
+    <div class="card tint-gold" style="gap: 12px">
+      <span class="chip">Sept 8&ndash;10, 2026 &middot; Atlantic City, NJ</span>
+      <h2 class="display" style="font-size: 26px">Fourth Annual National Hydrogen Policy Leaders Convention<span class="dot">.</span></h2>
+      <p style="font-family: Syne, sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: #0D1B2A">Build the framework. Align the states. Move the market.</p>
+      <p>The annual working convention where policymakers and industry build practical state policy, align regional strategies, and create the frameworks hydrogen markets need in order to grow.</p>
+      <div style="margin-top: 6px"><a class="btn btn-primary" href="#events">Convention details</a></div>
+    </div>
+  </div>
+
+  <div class="light" style="padding: 24px 24px 56px; display: flex; flex-direction: column; gap: 16px">
+    <p class="eyebrow">The campaign</p>
+    <h2 class="display" style="font-size: 38px">Hydrogen Built<span class="dot">.</span></h2>
+    <div style="margin: 0 -24px 0 -16px">
+      <sc-if value="{{ lightFull }}" hint-placeholder-val="{{ true }}">
+        <img src="usha-map-full-light.svg" alt="USHA dotted map, full color on ice" style="width: 100%; height: auto; display: block">
+      </sc-if>
+      <sc-if value="{{ lightDuo }}" hint-placeholder-val="{{ false }}">
+        <img src="usha-map-gold-navy.svg" alt="USHA dotted map, gold and navy duotone on ice" style="width: 100%; height: auto; display: block">
+      </sc-if>
+    </div>
+    <p class="lead">Hydrogen has been building America for generations. Now we&rsquo;re building its next chapter.</p>
+    <p>From the fertilizer that feeds our fields to the industries that power our economy, hydrogen is already at work.</p>
+    <p>Hydrogen Built is about what comes next: new markets, stronger communities, American industry, and a hydrogen economy built to last.</p>
+    <p>What America builds next can be Hydrogen Built.</p>
+    <div style="margin-top: 6px"><a class="btn btn-tertiary" href="#hydrogen-built">Explore the campaign &#9656;</a></div>
+  </div>
+
+  <div class="tint" style="padding: 56px 24px; display: flex; flex-direction: column; gap: 16px">
+    <div class="card" style="padding: 26px 22px">
+      <span class="chip">For policymakers</span>
+      <h3 style="font-size: 26px; letter-spacing: -0.02em">Are you shaping policy<span class="dot">?</span></h3>
+      <p>Practical tools for building hydrogen policy that works, from fundamentals and model legislation to proven frameworks from states across the country.</p>
+      <div style="margin-top: 6px"><a class="btn btn-primary" href="#policymakers">Policymaker resources</a></div>
+    </div>
+    <div class="card tint-cyan" style="padding: 26px 22px">
+      <span class="chip">For industry</span>
+      <h3 style="font-size: 26px; letter-spacing: -0.02em">Are you shaping markets<span class="dot">?</span></h3>
+      <p>Policy intelligence, market development, strategic introductions, and a national network built to move your business forward.</p>
+      <div style="margin-top: 6px"><a class="btn btn-primary" href="#industry">Industry engagement</a></div>
+    </div>
+  </div>
+
+  <div class="dark" style="padding: 56px 24px; display: flex; flex-direction: column; gap: 21px">
+    <p class="eyebrow">About us</p>
+    <h2 class="display" style="font-size: 34px">
+      <span style="color: #F8F9FA">Technology makes hydrogen possible<span class="dot">.</span></span><br>
+      <span style="color: #FFB703">USHA builds the policy and markets to put it to work<span style="color: #F8F9FA">.</span></span>
+    </h2>
+    <p>The United States Hydrogen Alliance is a national 501(c)(6) business association working across all 50 states to shape policy, develop markets, and connect the stakeholders needed to build durable hydrogen economies.</p>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; margin-top: 8px">
+      <div class="stat row1"><div class="num">1,000<span class="plus">+</span></div><div class="label">State bills tracked and analyzed</div></div>
+      <div class="stat row1"><div class="num">20</div><div class="label">Bills enacted into law</div></div>
+      <div class="stat row2"><div class="num">300<span class="plus">+</span></div><div class="label">Legislative and regulatory engagements</div></div>
+      <div class="stat row2"><div class="num">500<span class="plus">+</span></div><div class="label">Policymakers educated and engaged</div></div>
+    </div>
+    <div style="margin-top: 6px"><a class="btn btn-tertiary" href="#about">Learn more &#9656;</a></div>
+  </div>
+
+  <div class="light" style="padding: 56px 24px; display: flex; flex-direction: column; gap: 24px">
+    <div style="display: flex; flex-direction: column; gap: 10px">
+      <p class="eyebrow">Our members</p>
+      <h2 class="display" style="font-size: 34px">The coalition that builds<span class="dot">.</span></h2>
+    </div>
+    <div class="tier">
+      <h4 style="color: #E09E00">H2 Champions</h4>
+      <div class="logo-grid">
+        <div class="logo-cell">Air Water<span class="founding">Founding member</span></div>
+        <div class="logo-cell">Honda</div>
+        <div class="logo-cell">Nikkiso</div>
+        <div class="logo-cell">Pacific Clean Fuels</div>
+        <div class="logo-cell">Pap&eacute;</div>
+        <div class="logo-cell">Taylor-Wharton<span class="founding">Founding member</span></div>
+        <div class="logo-cell">TOMCO2 Systems<span class="founding">Founding member</span></div>
+        <div class="logo-cell">Total Hydrogen Solutions</div>
+      </div>
+    </div>
+    <div class="tier">
+      <h4 style="color: #6C1FA0">H2 Patrons</h4>
+      <div class="logo-grid"><div class="logo-cell">Avalon</div></div>
+    </div>
+    <div class="tier">
+      <h4 style="color: #0089A8">H2 Proponents</h4>
+      <div class="logo-grid">
+        <div class="logo-cell">Independence Hydrogen</div>
+        <div class="logo-cell">Jensen Hughes</div>
+        <div class="logo-cell">Southwest Gas</div>
+        <div class="logo-cell">TLM One</div>
+        <div class="logo-cell">Suburban Propane</div>
+        <div class="logo-cell">University of Delaware</div>
+        <div class="logo-cell">University of Maryland</div>
+        <div class="logo-cell">University of Wyoming</div>
+        <div class="logo-cell">Virginia Tech Corporate Research Center</div>
+        <div class="logo-cell">Zero Emission Advisors</div>
+      </div>
+    </div>
+    <div class="tier">
+      <h4 style="color: #6B7A8D">Our Allies</h4>
+      <div class="logo-grid">
+        <div class="logo-cell">ASU Carbon Neutral Economy</div>
+        <div class="logo-cell">Canadian Hydrogen Association</div>
+        <div class="logo-cell">H2 Mexico</div>
+        <div class="logo-cell">Nuclear Hydrogen Initiative</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tint" style="padding: 48px 24px; display: flex; flex-direction: column; gap: 16px">
+    <p class="eyebrow">Testimonials</p>
+    <blockquote class="quote">
+      <p>&ldquo;Without USHA, recent Utah legislation promoting hydrogen production through tax credits would not have been successful or even possible.&rdquo;</p>
+      <cite>Melissa Garff Ballard &middot; Utah State Representative</cite>
+    </blockquote>
+  </div>
+
+  <div class="dark" style="padding: 56px 24px; display: flex; flex-direction: column; gap: 24px">
+    <div style="display: flex; flex-direction: column; gap: 10px">
+      <p class="eyebrow">Propel your business</p>
+      <h2 class="display" style="font-size: 34px">Join the United States Hydrogen Alliance<span class="dot">.</span></h2>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 14px">
+      <div class="card"><span class="chip">Strategy</span><h3>Navigate what&rsquo;s next</h3><p>One-on-one strategy focused on the policy, market, and business priorities affecting your company.</p></div>
+      <div class="card"><span class="chip">Visibility</span><h3>Be seen by the right people</h3><p>Position your company and expertise before policymakers, industry leaders, and potential partners.</p></div>
+      <div class="card"><span class="chip">Intelligence</span><h3>See what&rsquo;s coming</h3><p>Biweekly policy reports on federal and state hydrogen and fuel cell policy.</p></div>
+      <div class="card"><span class="chip">Policy engagement</span><h3>Help shape the framework</h3><p>Bring your expertise into the policies and regulations affecting hydrogen deployment.</p></div>
+      <div class="card"><span class="chip">Business development</span><h3>Get closer to opportunity</h3><p>Tailored introductions to customers, partners, economic developers, and emerging markets.</p></div>
+      <div class="card"><span class="chip">Exclusive access</span><h3>Get in the room</h3><p>Member-only access to working groups, strategy sessions, political and investment roundtables, and USHA convenings.</p></div>
+    </div>
+    <a class="btn btn-primary" href="#membership">Explore membership</a>
+  </div>
+
+  <div class="tint" style="padding: 48px 24px; display: flex; flex-direction: column; gap: 14px">
+    <p class="eyebrow">Newsletter</p>
+    <h2 class="display" style="font-size: 34px">Stay ahead<span class="dot">.</span></h2>
+    <p>From policy shifts to market opportunities, stay ahead of what&rsquo;s moving hydrogen forward.</p>
+    <div class="field" style="margin-top: 6px">Work email</div>
+    <a class="btn btn-primary" href="#newsletter">Subscribe</a>
+  </div>
+
+  <div class="dark footer" style="padding: 56px 24px 28px; display: flex; flex-direction: column; gap: 34px">
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center">
+      <div style="display: flex; align-items: center; gap: 12px">
+        <img src="usha-h-full-dark.svg" alt="USHA dotted-H monogram, full color on navy" style="width: 40px; height: auto; display: block">
+        <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: -0.02em; color: #F8F9FA">USHA</div>
+      </div>
+      <p style="color: #B9C6D6; font-size: 14px; white-space: nowrap">Fifty states. One hydrogen economy. Built together.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px">
+      <div><h5>Alliance</h5><div style="display: flex; flex-direction: column"><a href="#about">About Us</a><a href="#membership">Membership</a><a href="#contact">Contact</a></div></div>
+      <div><h5>Work</h5><div style="display: flex; flex-direction: column"><a href="#policymakers">Policymakers</a><a href="#industry">Industry</a><a href="#hydrogen-built">Hydrogen Built</a><a href="#events">Events</a></div></div>
+      <div style="grid-column: span 2"><h5>Newsroom</h5><div style="display: flex; flex-direction: column"><a href="#media">Media Room</a><a href="#resources">Resources</a><a href="#linkedin-usha">LinkedIn &middot; USHA</a><a href="#linkedin-convention">LinkedIn &middot; Convention</a><a href="#x">X / Twitter</a></div></div>
+    </div>
+    <div style="border-top: 2px solid #FFB703; padding-top: 18px; text-align: center; font-family: Syne, sans-serif; font-weight: 600; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #6B7A8D; line-height: 1.6">&copy; 2026 United States Hydrogen Alliance &middot; 501(c)(6)</div>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":390,"height":8600},"motion":{"editor":"boolean","default":true,"tsType":"boolean","section":"Motion"},"heroMark":{"editor":"enum","default":"full-dark","options":["full-dark","spectrum-dark","knockout"],"tsType":"string","section":"Marks"},"lightMark":{"editor":"enum","default":"full-light","options":["full-light","gold-navy"],"tsType":"string","section":"Marks"}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const motion = this.props.motion ?? true;
+    const heroMark = this.props.heroMark ?? 'full-dark';
+    const lightMark = this.props.lightMark ?? 'full-light';
+    const text = 'HYDROGEN IS ENTERING A NEW ERA';
+    let idx = 0; const words = text.split(' ').map((w) => ({ letters: Array.from(w).map((c) => ({ ch: c, style: 'animation-delay: ' + ((idx++) * 45) + 'ms' })) }));
+    return {
+      motion: motion,
+      still: !motion,
+      words: words,
+      marqueeStyle: motion ? '' : 'animation: none',
+      heroFull: heroMark === 'full-dark',
+      heroSpectrum: heroMark === 'spectrum-dark',
+      heroKnockout: heroMark === 'knockout',
+      lightFull: lightMark === 'full-light',
+      lightDuo: lightMark === 'gold-navy'
+    };
+  }
+}
+</script>
+</body>
+</html>

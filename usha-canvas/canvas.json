@@ -1,0 +1,319 @@
+{
+  "artboards": [
+    {
+      "file": "DesignSystem.dc.html",
+      "title": "Web Design System v1.1",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 8400,
+      "page": "page-1"
+    },
+    {
+      "file": "Main.dc.html",
+      "title": "Home \u00b7 Desktop 1440",
+      "x": 1560,
+      "y": 0,
+      "w": 1440,
+      "h": 6100,
+      "page": "page-1"
+    },
+    {
+      "file": "HomeMobile.dc.html",
+      "title": "Home \u00b7 Mobile 390",
+      "x": 3120,
+      "y": 0,
+      "w": 390,
+      "h": 8600,
+      "page": "page-1"
+    },
+    {
+      "file": "About.dc.html",
+      "title": "About Us \u00b7 Desktop 1440",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 7038,
+      "page": "page-2"
+    },
+    {
+      "file": "AboutMobile.dc.html",
+      "title": "About Us \u00b7 Mobile 390",
+      "x": 1560,
+      "y": 0,
+      "w": 390,
+      "h": 12098,
+      "page": "page-2"
+    },
+    {
+      "file": "Membership.dc.html",
+      "title": "Membership \u00b7 Desktop 1440",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 6196,
+      "page": "page-3"
+    },
+    {
+      "file": "MembershipMobile.dc.html",
+      "title": "Membership \u00b7 Mobile 390",
+      "x": 1560,
+      "y": 0,
+      "w": 390,
+      "h": 10010,
+      "page": "page-3"
+    },
+    {
+      "file": "Policymakers.dc.html",
+      "title": "Policymakers \u00b7 Desktop 1440",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 7050,
+      "page": "page-4"
+    },
+    {
+      "file": "PolicymakersMobile.dc.html",
+      "title": "Policymakers \u00b7 Mobile 390",
+      "x": 1560,
+      "y": 0,
+      "w": 390,
+      "h": 12225,
+      "page": "page-4"
+    },
+    {
+      "file": "Industry.dc.html",
+      "title": "Industry \u00b7 Desktop 1440",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 7566,
+      "page": "page-5"
+    },
+    {
+      "file": "IndustryMobile.dc.html",
+      "title": "Industry \u00b7 Mobile 390",
+      "x": 1560,
+      "y": 0,
+      "w": 390,
+      "h": 11614,
+      "page": "page-5"
+    },
+    {
+      "file": "Events.dc.html",
+      "title": "Events \u00b7 Desktop 1440",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 3018,
+      "page": "page-6"
+    },
+    {
+      "file": "EventsMobile.dc.html",
+      "title": "Events \u00b7 Mobile 390",
+      "x": 1560,
+      "y": 0,
+      "w": 390,
+      "h": 4873,
+      "page": "page-6"
+    },
+    {
+      "file": "MediaRoom.dc.html",
+      "title": "Media Room \u00b7 Desktop 1440",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 3623,
+      "page": "page-7"
+    },
+    {
+      "file": "MediaRoomMobile.dc.html",
+      "title": "Media Room \u00b7 Mobile 390",
+      "x": 1560,
+      "y": 0,
+      "w": 390,
+      "h": 6145,
+      "page": "page-7"
+    },
+    {
+      "file": "Resources.dc.html",
+      "title": "Resources \u00b7 Desktop 1440",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 3432,
+      "page": "page-8"
+    },
+    {
+      "file": "ResourcesMobile.dc.html",
+      "title": "Resources \u00b7 Mobile 390",
+      "x": 1560,
+      "y": 0,
+      "w": 390,
+      "h": 5362,
+      "page": "page-8"
+    },
+    {
+      "file": "HydrogenBuilt.dc.html",
+      "title": "Hydrogen Built \u00b7 Desktop 1440",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 4829,
+      "page": "page-9"
+    },
+    {
+      "file": "HydrogenBuiltMobile.dc.html",
+      "title": "Hydrogen Built \u00b7 Mobile 390",
+      "x": 1560,
+      "y": 0,
+      "w": 390,
+      "h": 8198,
+      "page": "page-9"
+    },
+    {
+      "file": "Contact.dc.html",
+      "title": "Contact \u00b7 Desktop 1440",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 2856,
+      "page": "page-10"
+    },
+    {
+      "file": "ContactMobile.dc.html",
+      "title": "Contact \u00b7 Mobile 390",
+      "x": 1560,
+      "y": 0,
+      "w": 390,
+      "h": 4863,
+      "page": "page-10"
+    },
+    {
+      "file": "MemberProfile.dc.html",
+      "title": "Member Profile (template) \u00b7 Desktop 1440",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 2720,
+      "page": "page-11"
+    },
+    {
+      "file": "MemberProfileMobile.dc.html",
+      "title": "Member Profile (template) \u00b7 Mobile 390",
+      "x": 1560,
+      "y": 0,
+      "w": 390,
+      "h": 4768,
+      "page": "page-11"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "q-tagline",
+      "x": 1560,
+      "y": -260,
+      "w": 320,
+      "text": "Q1 \u00b7 Tagline\nNotes say \"Fifty states. One hydrogen economy. Built together.\" The brand guide still says \"One molecule. Every state. Zero excuses.\" Assumed the new line everywhere and dropped the old one from the footer.",
+      "page": "page-1"
+    },
+    {
+      "id": "q-hero-mark",
+      "x": 1920,
+      "y": -260,
+      "w": 320,
+      "text": "Q2 \u00b7 Hero mark\n\"USHA logo with dark background\" read as the full-color map on navy. Use the heroMark tweak above the artboard to compare spectrum and knockout.",
+      "page": "page-1"
+    },
+    {
+      "id": "q-join-copy",
+      "x": 2280,
+      "y": -260,
+      "w": 320,
+      "text": "Q3 \u00b7 Join section\nHome keeps the six Why Join cards (per the home note). \"PEOPLE. POLICY. MARKETS. / Your seat is at the table.\" assumed for the membership page only.",
+      "page": "page-1"
+    },
+    {
+      "id": "q-footer",
+      "x": 2640,
+      "y": -260,
+      "w": 320,
+      "text": "Q4 \u00b7 Footer\nNewsroom column kept (Media Room, Resources) plus both LinkedIn accounts as placeholders. Confirm whether Media Room transfers or is cut.",
+      "page": "page-1"
+    },
+    {
+      "id": "q-logos",
+      "x": 3120,
+      "y": -260,
+      "w": 360,
+      "text": "Q5 \u00b7 Member logos\nTier lists updated from the notes; names stand in until logo files arrive. Confirm Pap\u00e9 stays in Champions and Allies gets Canadian Hydrogen Association.",
+      "page": "page-1"
+    },
+    {
+      "id": "ds-note",
+      "x": 0,
+      "y": -260,
+      "w": 420,
+      "text": "Design system sheet\nEvery token here matches the Brand & Design System v1.0 (Space Grotesk / Syne / Manrope, Fibonacci spacing) plus the CURRENT review notes: kinetic eyebrow, headline and stat color alternation, the standard purple-pill card, the new footer lockup, 501(c)(6). Section 11 lists what was applied and what is still open.",
+      "page": "page-1"
+    },
+    {
+      "id": "pages-note",
+      "x": 3120,
+      "y": -540,
+      "w": 420,
+      "page": "page-1",
+      "text": "Every other v1.0 page lives on its own page of this canvas (pages menu in the toolbar): About Us, Membership, Policymakers, Industry, Events, Media Room, Resources, Hydrogen Built, Contact, and the Member Profile template. Each has a desktop and a mobile artboard."
+    }
+  ],
+  "launch": {
+    "view": "canvas",
+    "page": "page-1"
+  },
+  "pages": [
+    {
+      "id": "page-1",
+      "name": "Home & Design System"
+    },
+    {
+      "id": "page-2",
+      "name": "About Us"
+    },
+    {
+      "id": "page-3",
+      "name": "Membership"
+    },
+    {
+      "id": "page-4",
+      "name": "Policymakers"
+    },
+    {
+      "id": "page-5",
+      "name": "Industry"
+    },
+    {
+      "id": "page-6",
+      "name": "Events"
+    },
+    {
+      "id": "page-7",
+      "name": "Media Room"
+    },
+    {
+      "id": "page-8",
+      "name": "Resources"
+    },
+    {
+      "id": "page-9",
+      "name": "Hydrogen Built"
+    },
+    {
+      "id": "page-10",
+      "name": "Contact"
+    },
+    {
+      "id": "page-11",
+      "name": "Member Profile (template)"
+    }
+  ]
+}

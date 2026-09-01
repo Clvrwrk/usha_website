@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@500;700&family=Sora:wght@600;700&family=Chakra+Petch:wght@600;700&family=Barlow+Condensed:wght@600;700&family=Outfit:wght@600;700&family=Manrope:wght@500;600;700;800&family=IBM+Plex+Sans:wght@600;700&display=swap" rel="stylesheet">
+<style>
+body { margin: 0; background: #E9E7E1; font-family: Manrope, sans-serif; color: #16294A; }
+a { color: #1E7DBE; } a:hover { color: #0F5FA8; }
+</style>
+</helmet>
+<section style="display: flex; flex-wrap: wrap; gap: 36px; padding: 44px; align-items: flex-start; max-width: 1960px">
+  <div style="flex-basis: 100%; display: flex; flex-direction: column; gap: 6px">
+    <div style="font-family: Manrope, sans-serif; font-weight: 800; font-size: 28px; letter-spacing: -0.01em">USHA — 8 logo directions from the Abstract Prism seed</div>
+    <div style="font-family: Manrope, sans-serif; font-weight: 500; font-size: 14px; color: #6B7280; max-width: 900px">Each card shows the primary lockup in light and dark, plus favicon 50×50, square 512×512, horizontal 380×180, vertical 3:5, and 9:16 formats. Favicons use a dotted-H monogram in each option's palette so they stay legible at 16px.</div>
+  </div>
+  <sc-for list="{{ rows }}" as="opt" hint-placeholder-count="16">
+    <div id="{{ opt.anchor }}" style="background: #FFFFFF; border: 1px solid #DBD7CE; border-radius: 4px; padding: 22px 26px; display: flex; flex-direction: column; gap: 14px; flex-basis: 100%">
+      <div style="display: flex; align-items: center; gap: 12px">
+        <div style="background: #16294A; color: #FFFFFF; font-weight: 800; font-size: 13px; padding: 4px 10px; border-radius: 3px">{{ opt.id }}</div>
+        <div style="font-weight: 800; font-size: 18px">{{ opt.name }}</div>
+        <div style="font-weight: 600; font-size: 12px; color: #8A8578; letter-spacing: 0.06em; text-transform: uppercase">{{ opt.fontNote }}</div>
+        <div style="font-weight: 700; font-size: 12px; color: {{ opt.modeColor }}; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid {{ opt.modeColor }}; padding: 3px 8px; border-radius: 3px">{{ opt.mode }}</div>
+      </div>
+      <div style="display: flex; gap: 14px; align-items: flex-start">
+        <sc-for list="{{ opt.tiles }}" as="t" hint-placeholder-count="12">
+          <div style="display: flex; flex-direction: column; gap: 6px">
+            <div style="font-weight: 700; font-size: 10px; color: #8A8578; text-transform: uppercase; letter-spacing: 0.08em">{{ t.label }}</div>
+            <div style="zoom: {{ t.zoom }}; width: {{ t.w }}px; height: {{ t.h }}px; background: {{ t.bg }}; display: flex; align-items: center; justify-content: center; flex-direction: {{ t.dir }}; gap: {{ t.gap }}px; border-radius: 2px; overflow: hidden; border: 1px solid #E5E2DA">
+              {{ t.svg }}
+              <sc-if value="{{ t.hasWord }}" hint-placeholder-val="{{ false }}">
+                <div style="display: flex; flex-direction: column; gap: {{ t.subGap }}px; align-items: {{ t.alignText }}">
+                  <div style="font-family: {{ t.font }}; font-weight: {{ t.wt }}; font-size: {{ t.fs }}px; letter-spacing: {{ t.ls }}em; color: {{ t.fg }}; line-height: 1; white-space: nowrap">{{ t.word }}</div>
+                  <sc-if value="{{ t.hasSub }}" hint-placeholder-val="{{ false }}">
+                    <div style="font-family: Manrope, sans-serif; font-weight: 600; font-size: {{ t.subFs }}px; letter-spacing: 0.18em; color: {{ t.subFg }}; text-transform: uppercase; white-space: nowrap; line-height: 1.4">{{ t.sub }}</div>
+                  </sc-if>
+                </div>
+              </sc-if>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </sc-for>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;wordmark&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;USHA&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Naming&quot;},&quot;fullName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;United States Hydrogen Alliance&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Naming&quot;},&quot;lightBg&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#FBF9F4&quot;,&quot;options&quot;:[&quot;#FBF9F4&quot;,&quot;#FFFFFF&quot;,&quot;#F4F6F8&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Backgrounds&quot;},&quot;darkBg&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#0D1522&quot;,&quot;options&quot;:[&quot;#0D1522&quot;,&quot;#0A0F14&quot;,&quot;#141B2A&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Backgrounds&quot;}}">
+class Component extends DCLogic {
+  constructor(p) {
+    super(p);
+    this.US = [[12,11],[22,9],[33,8],[45,9],[54,11],[58,14],[63,17],[66,15],[70,13],[75,15],[79,13],[83,9],[87,5],[90,3],[92,7],[89,12],[86,16],[83,19],[80,22],[76,26],[73,30],[70,34],[69,38],[70,42],[73,47],[76,53],[74,57],[70,53],[67,47],[63,45],[58,46],[53,44],[49,46],[44,45],[39,47],[35,52],[33,57],[30,52],[29,46],[26,43],[21,44],[16,42],[12,40],[9,34],[7,27],[8,19],[10,13]];
+    this.dotsets = this.buildDotsets();
+  }
+  rng(seed) { return function() { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+  inside(x, y) { const poly = this.US; let c = false; for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) { const xi = poly[i][0], yi = poly[i][1], xj = poly[j][0], yj = poly[j][1]; if (((yi > y) != (yj > y)) && (x < (xj - xi) * (y - yi) / (yj - yi) + xi)) c = !c; } return c; }
+  genSeedMap(colorLeft, colorRight, seed) {
+    const dots = [], r1 = this.rng(seed);
+    let row = 0;
+    for (let y = 8; y < 58; y += 4.8) { let col = 0; for (let x = 4; x < 36; x += 4.8) { if (this.inside(x, y)) dots.push({ x, y, r: 1.35 + ((x - 4) / 32) * 0.75, c: colorLeft(row, col, r1) }); col++; } row++; }
+    for (let y = 4; y < 60; y += 2.5) for (let x = 36; x < 98; x += 2.5) { if (this.inside(x, y)) dots.push({ x, y, r: 0.62 + r1() * 0.36, c: colorRight(x, y, r1) }); }
+    return dots;
+  }
+  genFineMap(colorFn, seed) {
+    const dots = [], r1 = this.rng(seed);
+    let row = 0;
+    for (let y = 4; y < 60; y += 2.7) { for (let x = 4; x < 98; x += 2.7) { if (this.inside(x, y)) dots.push({ x, y, r: 0.82 + r1() * 0.28, c: colorFn(x, y, row, r1) }); } row++; }
+    return dots;
+  }
+  genH(c1, c2, cross) {
+    const dots = [];
+    for (let row = 0; row < 9; row++) for (let col = 0; col < 8; col++) {
+      const isBar = col < 2 || col > 5, isCross = row > 2 && row < 6;
+      if (!isBar && !isCross) continue;
+      let c = col < 2 ? c1 : col > 5 ? c2 : cross[(row + col) % cross.length];
+      dots.push({ x: col * 3 + 1.6, y: row * 3 + 1.6, r: 1.15, c });
+    }
+    return dots;
+  }
+  svg(dots, vb, w, h) {
+    return React.createElement('svg', { viewBox: vb, width: w, height: h, style: { display: 'block', flex: 'none' } },
+      dots.map((d, i) => React.createElement('circle', { key: i, cx: d.x, cy: d.y, r: d.r, fill: d.c })));
+  }
+  buildDotsets() {
+    const B0 = '#0F5FA8', B1 = '#1E7DBE', B2 = '#4FA3D8', B3 = '#8CC5E8', Y = '#F0B429', M = '#AE3B8E', T = '#21A69A', R = '#D45B5B';
+    const Bd = '#5FAEE0', Md = '#C95BA8', Td = '#3BC4B8';
+    const prismRight = dk => (x, y, r1) => { const p = r1(); return p < 0.42 ? (dk ? Bd : B1) : p < 0.66 ? (dk ? Td : T) : p < 0.79 ? B2 : p < 0.88 ? Y : p < 0.94 ? (dk ? Md : M) : R; };
+    const prismLeft = dk => (row) => [(dk ? Bd : B1), B2, Y, (dk ? Md : M)][row % 4];
+    const mono = dk => (x, y, row, r1) => { const s = dk ? [Bd, B3, '#BADDF2', B2] : [B0, B1, B2, B3]; const p = r1(); return s[p < 0.35 ? 0 : p < 0.65 ? 1 : p < 0.88 ? 2 : 3]; };
+    const lerp = (a, b, t) => Math.round(a + (b - a) * t);
+    const spectrum = dk => (x, y, row, r1) => { if (r1() < 0.05) return Y; const t = (x - 4) / 94; const a = dk ? [95, 174, 224] : [20, 110, 185], b = dk ? [80, 220, 195] : [30, 175, 150]; return `rgb(${lerp(a[0], b[0], t)},${lerp(a[1], b[1], t)},${lerp(a[2], b[2], t)})`; };
+    const flag = dk => (x, y, row, r1) => { const navy = dk ? '#7FA8E0' : '#1E3A6E', red = dk ? '#E06555' : '#C0392B', wht = dk ? '#E9EEF5' : '#B9C4D4'; if (x < 40 && y < 28) return navy; return row % 2 === 0 ? red : wht; };
+    const energy = dk => (x, y, row, r1) => { const s = dk ? ['#5FAEE0', '#57C278', '#9AD98A', '#3BC4B8'] : ['#1E7DBE', '#2FA85F', '#7BC96A', '#21A69A']; const p = r1(); return s[p < 0.35 ? 0 : p < 0.62 ? 1 : p < 0.82 ? 2 : 3]; };
+    const seedMap = dk => this.genSeedMap(prismLeft(dk), prismRight(dk), 7);
+    const D = {};
+    D.seed = { light: seedMap(false), dark: seedMap(true) };
+    D.fine = { light: this.genFineMap((x, y, r, g) => prismRight(false)(x, y, g), 11), dark: this.genFineMap((x, y, r, g) => prismRight(true)(x, y, g), 11) };
+    D.mono = { light: this.genFineMap(mono(false), 21), dark: this.genFineMap(mono(true), 21) };
+    D.spec = { light: this.genFineMap(spectrum(false), 31), dark: this.genFineMap(spectrum(true), 31) };
+    D.flag = { light: this.genFineMap(flag(false), 41), dark: this.genFineMap(flag(true), 41) };
+    D.energy = { light: this.genFineMap(energy(false), 51), dark: this.genFineMap(energy(true), 51) };
+    D.h = {
+      prism: { light: this.genH(B1, T, [Y, M]), dark: this.genH(Bd, Td, [Y, Md]) },
+      mono: { light: this.genH(B0, B2, [B1, B3]), dark: this.genH(Bd, '#BADDF2', [B3, B2]) },
+      spec: { light: this.genH(B1, '#1EAF96', [B2, '#4FC7B2']), dark: this.genH(Bd, '#50DCC3', [B3, Td]) },
+      flag: { light: this.genH('#1E3A6E', '#C0392B', ['#B9C4D4']), dark: this.genH('#7FA8E0', '#E06555', ['#E9EEF5']) },
+      energy: { light: this.genH('#1E7DBE', '#2FA85F', ['#7BC96A', '#21A69A']), dark: this.genH(Bd, '#57C278', ['#9AD98A', Td]) }
+    };
+    return D;
+  }
+  renderVals() {
+    const D = this.dotsets;
+    const lightBg = this.props.lightBg ?? '#FBF9F4', darkBg = this.props.darkBg ?? '#0D1522';
+    const word = this.props.wordmark ?? 'USHA', fullName = this.props.fullName ?? 'United States Hydrogen Alliance';
+    const fgL = '#16294A', fgD = '#F4F7FB', subL = '#6B7686', subD = '#9DA9BC';
+    const mapAspect = 62 / 102, hAspect = 28.4 / 24.2;
+    const mkSvg = (mapKey, hKey, useH, wide, kind, mode) => {
+      if (kind === 'fav' || useH) { const dots = D.h[hKey][mode]; return this.svg(dots, '0 0 24.2 28.4', wide, wide * hAspect); }
+      const dots = D[mapKey][mode]; return this.svg(dots, '0 0 102 62', wide, wide * mapAspect);
+    };
+    const opts = [
+      { id: '1a', name: 'Prism Field', fontNote: 'Archivo Black', map: 'fine', hk: 'prism', font: "'Archivo Black', sans-serif", wt: 400, ls: 0.04 },
+      { id: '1b', name: 'Hydrogen Mono', fontNote: 'Space Grotesk Bold', map: 'mono', hk: 'mono', font: "'Space Grotesk', sans-serif", wt: 700, ls: 0.14 },
+      { id: '1c', name: 'Spectrum Drift', fontNote: 'Sora Bold', map: 'spec', hk: 'spec', font: 'Sora, sans-serif', wt: 700, ls: 0.1 },
+      { id: '1d', name: 'Dot-H Monogram', fontNote: 'Chakra Petch Bold', map: 'fine', hk: 'prism', useH: true, font: "'Chakra Petch', sans-serif", wt: 700, ls: 0.12 },
+      { id: '1e', name: 'Stars & Stripes Halftone', fontNote: 'Barlow Condensed Bold', map: 'flag', hk: 'flag', font: "'Barlow Condensed', sans-serif", wt: 700, ls: 0.1, sizeMul: 1.22 },
+      { id: '1f', name: 'Clean Energy Duotone', fontNote: 'IBM Plex Sans Bold', map: 'energy', hk: 'energy', font: "'IBM Plex Sans', sans-serif", wt: 700, ls: 0.06 },
+      { id: '1g', name: 'Seed Mark + USHA', fontNote: 'Outfit Bold', map: 'seed', hk: 'prism', font: 'Outfit, sans-serif', wt: 700, ls: 0.16 },
+      { id: '1h', name: 'Seed Mark + Full Name', fontNote: 'Manrope ExtraBold', map: 'seed', hk: 'prism', hasSub: true, font: 'Manrope, sans-serif', wt: 800, ls: 0.08 }
+    ];
+    const formats = [
+      { key: 'hero', label: 'Primary lockup', w: 560, h: 200, zoom: 1, mw: 190, hw: 120, fs: 56, sub: 14, dir: 'row', gap: 28 },
+      { key: 'fav', label: 'Favicon 50×50', w: 50, h: 50, zoom: 1, mw: 30, hw: 30, fs: 0, sub: 0, dir: 'row', gap: 0 },
+      { key: 'square', label: 'Square 512×512', w: 512, h: 512, zoom: 0.4, mw: 300, hw: 185, fs: 58, sub: 17, dir: 'column', gap: 34 },
+      { key: 'horiz', label: 'Horizontal 380×180', w: 380, h: 180, zoom: 1, mw: 140, hw: 92, fs: 40, sub: 10, dir: 'row', gap: 20 },
+      { key: 'vert', label: 'Vertical 3:5 (300×500)', w: 300, h: 500, zoom: 0.55, mw: 215, hw: 145, fs: 44, sub: 12, dir: 'column', gap: 28 },
+      { key: 'tall', label: '9:16 (270×480)', w: 270, h: 480, zoom: 0.55, mw: 190, hw: 128, fs: 38, sub: 11, dir: 'column', gap: 26 }
+    ];
+    const rows = [];
+    opts.forEach(o => {
+      ['light', 'dark'].forEach(mode => {
+        const dark = mode === 'dark';
+        const tiles = formats.map(f => {
+          const isFav = f.key === 'fav';
+          const mul = o.sizeMul || 1;
+          return {
+            label: f.label,
+            w: f.w, h: f.h, zoom: f.zoom, dir: f.dir, gap: f.gap,
+            bg: dark ? darkBg : lightBg,
+            svg: mkSvg(o.map, o.hk, !!o.useH, (isFav || o.useH) ? f.hw : f.mw, isFav ? 'fav' : 'map', mode),
+            hasWord: !isFav, word,
+            font: o.font, wt: o.wt, fs: Math.round(f.fs * mul), ls: o.ls,
+            fg: dark ? fgD : fgL,
+            hasSub: !!o.hasSub && !isFav, sub: fullName, subFs: f.sub,
+            subFg: dark ? subD : subL, subGap: 9,
+            alignText: f.dir === 'row' ? 'flex-start' : 'center'
+          };
+        });
+        rows.push({ id: o.id, anchor: o.id + '-' + mode, name: o.name, fontNote: o.fontNote, mode, modeColor: dark ? '#16294A' : '#8A8578', tiles });
+      });
+    });
+    return { rows };
+  }
+}
+</script>
+</body>
+</html>

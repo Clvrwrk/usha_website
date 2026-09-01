@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700;800;900&family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>body { margin: 0; background: #101318; }</style>
+</helmet>
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%">
+  <section data-label="01 Title" data-speaker-notes="Master title slide. Swap headline + date. Keep the gold period." style="background: #0D1B2A; color: #F8F9FA; font-family: Manrope, sans-serif; display: flex; flex-direction: column; justify-content: space-between; padding: 100px 120px; box-sizing: border-box">
+    <div style="display: flex; justify-content: space-between; align-items: center">
+      <div style="display: flex; align-items: center; gap: 20px"><img src="assets/usha-h-full-dark.svg" style="width: 64px" alt=""><div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 34px">USHA</div></div>
+      <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 20px; letter-spacing: 0.3em; color: #00D2FF">H₂ SUMMIT 2026</div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 30px">
+      <div style="font-family: Unbounded, sans-serif; font-weight: 900; font-size: 110px; line-height: 1.04; letter-spacing: -0.02em; max-width: 1400px">PRESENTATION TITLE GOES HERE<span style="color: #FFB703">.</span></div>
+      <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 24px; letter-spacing: 0.26em; color: #8B95A5">PRESENTER NAME · ROLE · JULY 2026</div>
+    </div>
+    <img src="assets/usha-map-spectrum-dark.svg" style="width: 1100px; align-self: flex-end; margin-bottom: -40px" alt="">
+  </section>
+  <section data-label="02 Section" data-speaker-notes="Section divider. Number in gold, one declarative line." style="background: linear-gradient(120deg, #3B0B59, #0D1B2A 65%); color: #F8F9FA; font-family: Manrope, sans-serif; display: flex; align-items: center; padding: 120px; box-sizing: border-box">
+    <div style="display: flex; flex-direction: column; gap: 34px; max-width: 1300px">
+      <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 40px; color: #FFB703">01</div>
+      <div style="font-family: Unbounded, sans-serif; font-weight: 900; font-size: 120px; line-height: 1.05">SECTION TITLE<span style="color: #FFB703">.</span></div>
+      <div style="width: 140px; height: 4px; background: #00D2FF"></div>
+    </div>
+  </section>
+  <section data-label="03 Content" data-speaker-notes="Standard content slide: golden split 62/38, three points max." style="background: #0D1B2A; color: #F8F9FA; font-family: Manrope, sans-serif; display: grid; grid-template-columns: 1.618fr 1fr; gap: 90px; padding: 110px 120px; box-sizing: border-box; align-items: center">
+    <div style="display: flex; flex-direction: column; gap: 44px">
+      <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 64px; line-height: 1.12">Slide headline, one line<span style="color: #FFB703">.</span></div>
+      <div style="display: flex; flex-direction: column; gap: 26px; font-size: 28px; line-height: 1.55; color: #B9C6D6">
+        <div style="border-left: 5px solid #FFB703; padding-left: 26px"><strong style="color: #F8F9FA">First point.</strong> One sentence of support, no more.</div>
+        <div style="border-left: 5px solid #00A8CC; padding-left: 26px"><strong style="color: #F8F9FA">Second point.</strong> Three per slide is the ceiling.</div>
+        <div style="border-left: 5px solid #9D4EDD; padding-left: 26px"><strong style="color: #F8F9FA">Third point.</strong> If it needs a fourth, it's two slides.</div>
+      </div>
+    </div>
+    <img src="assets/usha-map-spectrum-dark.svg" style="width: 100%" alt="">
+  </section>
+  <section data-label="04 Data" data-speaker-notes="Stat slide: numbers brag in Unbounded, labels whisper in Space Grotesk." style="background: #0D1B2A; color: #F8F9FA; font-family: Manrope, sans-serif; display: flex; flex-direction: column; justify-content: center; gap: 70px; padding: 110px 120px; box-sizing: border-box">
+    <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 64px">The numbers do the talking<span style="color: #FFB703">.</span></div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px">
+      <div style="border: 2px solid rgba(0,210,255,0.3); border-radius: 20px; padding: 60px 50px; display: flex; flex-direction: column; gap: 14px"><div style="font-family: Unbounded, sans-serif; font-weight: 900; font-size: 120px; color: #00D2FF">50</div><div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 22px; letter-spacing: 0.2em; color: #8B95A5">STATES COVERED</div></div>
+      <div style="border: 2px solid rgba(255,183,3,0.35); border-radius: 20px; padding: 60px 50px; display: flex; flex-direction: column; gap: 14px"><div style="font-family: Unbounded, sans-serif; font-weight: 900; font-size: 120px; color: #FFB703">26</div><div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 22px; letter-spacing: 0.2em; color: #8B95A5">MEMBERS &amp; ALLIES</div></div>
+      <div style="border: 2px solid rgba(157,78,221,0.4); border-radius: 20px; padding: 60px 50px; display: flex; flex-direction: column; gap: 14px"><div style="font-family: Unbounded, sans-serif; font-weight: 900; font-size: 120px; color: #9D4EDD">52</div><div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 22px; letter-spacing: 0.2em; color: #8B95A5">REPORTS / YEAR</div></div>
+    </div>
+  </section>
+  <section data-label="05 Quote" data-speaker-notes="Quote slide: light surface, gold quote mark, real attribution." style="background: #F8F9FA; color: #0D1B2A; font-family: Manrope, sans-serif; display: flex; flex-direction: column; justify-content: center; gap: 50px; padding: 110px 160px; box-sizing: border-box">
+    <div style="font-family: Unbounded, sans-serif; font-weight: 900; font-size: 160px; color: #FFB703; line-height: 0.5">“</div>
+    <div style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 60px; line-height: 1.3; max-width: 1500px; text-wrap: balance">It's not a trade association; it's an active legislative impact machine.</div>
+    <div style="display: flex; align-items: center; gap: 24px; border-top: 5px solid #FFB703; padding-top: 30px; align-self: flex-start"><div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 26px">JEFF HOLYOAK</div><div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 22px; letter-spacing: 0.2em; color: #6C1FA0">TOMCO SYSTEMS</div></div>
+  </section>
+  <section data-label="06 Closing" data-speaker-notes="Closing: tagline + one CTA + contact. Nothing else." style="background: #0D1B2A; color: #F8F9FA; font-family: Manrope, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 44px; padding: 100px; box-sizing: border-box">
+    <img src="assets/usha-seal-fullcolor-dark.svg" style="width: 280px" alt="">
+    <div style="font-family: Unbounded, sans-serif; font-weight: 900; font-size: 84px; text-align: center; line-height: 1.1">One molecule. Every state.<br>Zero excuses<span style="color: #FFB703">.</span></div>
+    <div style="background: #FFB703; color: #0D1B2A; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: 0.08em; padding: 28px 56px; border-radius: 999px">USHYDROGENALLIANCE.ORG</div>
+  </section>
+</x-import>
+</x-dc>
+</body>
+</html>

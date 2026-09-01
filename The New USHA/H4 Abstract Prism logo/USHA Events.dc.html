@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700;800;900&family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body { margin: 0; background: #0D1B2A; font-family: Manrope, sans-serif; color: #F8F9FA; }
+a { color: #00D2FF; text-decoration: none; } a:hover { color: #FFB703; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+</style>
+</helmet>
+<div style="display: flex; flex-direction: column; min-width: 1280px">
+
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 22px 56px; background: rgba(13,27,42,0.88); border-bottom: 1px solid rgba(0,210,255,0.15)">
+    <a href="USHA Home.dc.html" style="display: flex; align-items: center; gap: 14px; color: #F8F9FA"><img src="assets/usha-h-full-dark.svg" style="width: 34px" alt=""><div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 22px">USHA</div></a>
+    <div style="display: flex; align-items: center; gap: 36px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 0.12em">
+      <a href="USHA Home.dc.html">MISSION</a><a href="USHA Members.dc.html">MEMBERS</a><a href="#calendar" style="color: #FFB703">EVENTS</a>
+      <div style="background: #FFB703; color: #0D1B2A; font-weight: 700; padding: 12px 24px; border-radius: 999px; cursor: pointer">JOIN THE ALLIANCE</div>
+    </div>
+  </div>
+
+  <div id="calendar" style="padding: 90px 56px 40px; display: flex; flex-direction: column; gap: 20px">
+    <div style="display: flex; align-items: center; gap: 12px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.3em; color: #00D2FF"><div style="width: 36px; height: 2px; background: #00D2FF"></div>2026 EVENTS</div>
+    <div style="font-family: Unbounded, sans-serif; font-weight: 900; font-size: 72px; line-height: 1.05">Where the molecules meet<span style="color: #FFB703">.</span></div>
+    <div style="font-size: 17px; color: #B9C6D6; max-width: 640px; line-height: 1.6">Six stops. Fifty states' worth of business. One annual blowout. Bring your state. Bring your molecule.</div>
+  </div>
+
+  <div style="background: #FFB703; overflow: hidden; padding: 12px 0; border-top: 3px solid #0D1B2A; border-bottom: 3px solid #0D1B2A">
+    <div style="display: flex; width: max-content; animation: marquee 26s linear infinite">
+      <div style="display: flex; gap: 40px; padding-right: 40px; font-family: Unbounded, sans-serif; font-weight: 500; font-size: 15px; color: #0D1B2A; white-space: nowrap"><span>H₂ SUMMIT · SEPT 15–17 · HOUSTON</span><span>◦</span><span>EARLY BIRD ENDS AUG 1</span><span>◦</span><span>HILL DAY · OCT 6 · DC</span><span>◦</span><span>H₂ SUMMIT · SEPT 15–17 · HOUSTON</span><span>◦</span><span>EARLY BIRD ENDS AUG 1</span><span>◦</span><span>HILL DAY · OCT 6 · DC</span><span>◦</span></div>
+    </div>
+  </div>
+
+  <div style="padding: 56px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px">
+    <div style="grid-column: 1 / -1; background: linear-gradient(120deg, #3B0B59, #0D1B2A 70%); border: 1px solid rgba(255,183,3,0.4); border-radius: 16px; padding: 44px; display: grid; grid-template-columns: 1.618fr 1fr; gap: 40px; align-items: center; position: relative; overflow: hidden">
+      <img src="assets/usha-map-spectrum-dark.svg" style="position: absolute; right: -140px; bottom: -60px; width: 700px; opacity: 0.25" alt="">
+      <div style="display: flex; flex-direction: column; gap: 16px; position: relative">
+        <div style="display: flex; gap: 10px"><div style="background: #FFB703; color: #0D1B2A; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.14em; padding: 7px 14px; border-radius: 999px">THE ANNUAL</div><div style="border: 1.5px solid #00D2FF; color: #00D2FF; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.14em; padding: 7px 14px; border-radius: 999px">3 DAYS</div></div>
+        <div style="font-family: Unbounded, sans-serif; font-weight: 900; font-size: 54px; line-height: 1.06">H₂ SUMMIT 2026<span style="color: #FFB703">.</span></div>
+        <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 15px; letter-spacing: 0.2em; color: #00D2FF">SEPT 15–17 · HOUSTON, TX · GEORGE R. BROWN CONVENTION CENTER</div>
+        <div style="font-size: 15px; color: #B9C6D6; line-height: 1.6; max-width: 560px">Every member, every hub, every deal — under one roof. Keynotes, offtaker matchmaking, and one legendary rooftop social.</div>
+        <a href="#summit" style="align-self: flex-start; background: #FFB703; color: #0D1B2A; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.08em; padding: 16px 30px; border-radius: 999px">GET TICKETS ↓</a>
+      </div>
+      <div style="position: relative; display: flex; align-items: center; justify-content: center"><img src="assets/usha-seal-spectrum-dark.svg" style="width: 240px" alt=""></div>
+    </div>
+    <div style="background: rgba(248,249,250,0.04); border: 1px solid rgba(248,249,250,0.14); border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 12px; transition: transform 0.25s" style-hover="transform: translateY(-8px); border-color: #00D2FF">
+      <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 30px; color: #00D2FF">OCT<br>06</div>
+      <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 19px">Hill Day</div>
+      <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.16em; color: #8B95A5">WASHINGTON, D.C. · MEMBERS ONLY</div>
+      <div style="font-size: 13px; color: #B9C6D6; line-height: 1.6">200 meetings on the Hill in one day. We book them; you take them.</div>
+    </div>
+    <div style="background: rgba(248,249,250,0.04); border: 1px solid rgba(248,249,250,0.14); border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 12px; transition: transform 0.25s" style-hover="transform: translateY(-8px); border-color: #00D2FF">
+      <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 30px; color: #9D4EDD">NOV<br>12</div>
+      <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 19px">Hub Tour: Gulf Coast</div>
+      <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.16em; color: #8B95A5">PORT ARTHUR, TX · BUS + BOOTS</div>
+      <div style="font-size: 13px; color: #B9C6D6; line-height: 1.6">Hard hats on. See the electrolyzers your dues helped permit.</div>
+    </div>
+    <div style="background: rgba(248,249,250,0.04); border: 1px solid rgba(248,249,250,0.14); border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 12px; transition: transform 0.25s" style-hover="transform: translateY(-8px); border-color: #00D2FF">
+      <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 30px; color: #FFB703">DEC<br>03</div>
+      <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 19px">The Weekly Molecule LIVE</div>
+      <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.16em; color: #8B95A5">WEBINAR · FREE · OPEN TO ALL</div>
+      <div style="font-size: 13px; color: #B9C6D6; line-height: 1.6">Year-end policy scorecard, live, with questions we'll actually answer.</div>
+    </div>
+    <div style="background: rgba(248,249,250,0.04); border: 1px solid rgba(248,249,250,0.14); border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 12px; transition: transform 0.25s" style-hover="transform: translateY(-8px); border-color: #00D2FF">
+      <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 30px; color: #00D2FF">JAN<br>20</div>
+      <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 19px">Statehouse Sprint: West</div>
+      <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.16em; color: #8B95A5">SACRAMENTO → PHOENIX → DENVER</div>
+      <div style="font-size: 13px; color: #B9C6D6; line-height: 1.6">Three capitols, five days, one van. The road warrior special.</div>
+    </div>
+    <div style="background: rgba(248,249,250,0.04); border: 1px solid rgba(248,249,250,0.14); border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 12px; transition: transform 0.25s" style-hover="transform: translateY(-8px); border-color: #00D2FF">
+      <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 30px; color: #9D4EDD">FEB<br>24</div>
+      <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 19px">Research Roundtable</div>
+      <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.16em; color: #8B95A5">NEWARK, DE · WITH UD, UMD, UWYO</div>
+      <div style="font-size: 13px; color: #B9C6D6; line-height: 1.6">Where lab data meets model legislation. Scientists front row.</div>
+    </div>
+    <div style="border: 2px dashed rgba(157,78,221,0.5); border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 10px; justify-content: center">
+      <div style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 18px; color: #B9C6D6">Host a stop in your state<span style="color: #FFB703">.</span></div>
+      <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.14em; color: #9D4EDD; cursor: pointer">PITCH AN EVENT →</div>
+    </div>
+  </div>
+
+  <div id="summit" style="background: #F8F9FA; color: #0D1B2A; padding: 90px 56px; display: flex; flex-direction: column; gap: 40px">
+    <div style="display: grid; grid-template-columns: 1.618fr 1fr; gap: 56px; align-items: start">
+      <div style="display: flex; flex-direction: column; gap: 22px">
+        <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.3em; color: #6C1FA0">THE ANNUAL GET-TOGETHER</div>
+        <div style="font-family: Unbounded, sans-serif; font-weight: 900; font-size: 60px; line-height: 1.05">Three days. Every molecule that matters<span style="color: #E09E00">.</span></div>
+        <div style="font-size: 16px; line-height: 1.7; color: #2A3B4E; max-width: 640px">The H₂ Summit is where the Alliance stops emailing and starts shaking hands: 600+ attendees, 40 speakers, offtaker matchmaking with actual offtakers, and the Gold Dot Awards over Texas barbecue.</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px">
+          <div style="background: #FFF; border: 1px solid #DDE4EA; border-radius: 10px; padding: 18px"><div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 16px; color: #6C1FA0">DAY 1</div><div style="font-size: 12.5px; line-height: 1.55; margin-top: 6px"><strong>Policy.</strong> State scorecards, federal outlook, testimony bootcamp.</div></div>
+          <div style="background: #FFF; border: 1px solid #DDE4EA; border-radius: 10px; padding: 18px"><div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 16px; color: #0089A8">DAY 2</div><div style="font-size: 12.5px; line-height: 1.55; margin-top: 6px"><strong>Deals.</strong> Matchmaking floor, hub showcases, member expo.</div></div>
+          <div style="background: #FFF; border: 1px solid #DDE4EA; border-radius: 10px; padding: 18px"><div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 16px; color: #E09E00">DAY 3</div><div style="font-size: 12.5px; line-height: 1.55; margin-top: 6px"><strong>Awards.</strong> Gold Dot Awards, closing keynote, rooftop social.</div></div>
+        </div>
+        <div style="display: flex; gap: 24px; align-items: center; background: #0D1B2A; color: #F8F9FA; border-radius: 12px; padding: 22px 26px">
+          <img src="assets/usha-h-full-dark.svg" style="width: 40px" alt="">
+          <div style="font-size: 13.5px; line-height: 1.6"><strong style="color: #FFB703">H₂ Champions:</strong> your swag bag (tumbler, statehouse backpack, road-warrior kit) is waiting at registration. Everyone else: there's a merch table, and yes, it takes purchase orders.</div>
+        </div>
+      </div>
+      <div style="background: #0D1B2A; color: #F8F9FA; border-radius: 16px; padding: 34px; display: flex; flex-direction: column; gap: 20px; box-shadow: 0 24px 60px rgba(13,27,42,0.35)">
+        <div style="display: flex; justify-content: space-between; align-items: center"><div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 20px">Pre-buy tickets<span style="color: #FFB703">.</span></div><div style="background: #21A66E; color: #FFF; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 10px; letter-spacing: 0.14em; padding: 6px 12px; border-radius: 999px">EARLY BIRD LIVE</div></div>
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          <div style="border: 2px solid #FFB703; border-radius: 12px; padding: 18px; display: flex; justify-content: space-between; align-items: center; background: rgba(255,183,3,0.08)"><div><div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px">MEMBER ALL-ACCESS</div><div style="font-size: 11px; color: #8B95A5; margin-top: 3px">All 3 days + awards dinner + swag</div></div><div style="text-align: right"><div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 22px; color: #FFB703">$495</div><div style="font-size: 10px; color: #8B95A5; text-decoration: line-through">$695</div></div></div>
+          <div style="border: 1.5px solid rgba(248,249,250,0.2); border-radius: 12px; padding: 18px; display: flex; justify-content: space-between; align-items: center"><div><div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px">NON-MEMBER</div><div style="font-size: 11px; color: #8B95A5; margin-top: 3px">All 3 days · join on-site, get $500 back</div></div><div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 22px">$995</div></div>
+          <div style="border: 1.5px solid rgba(0,210,255,0.35); border-radius: 12px; padding: 18px; display: flex; justify-content: space-between; align-items: center"><div><div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px; color: #00D2FF">STUDENT / RESEARCHER</div><div style="font-size: 11px; color: #8B95A5; margin-top: 3px">With .edu email · Day 2–3</div></div><div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 22px; color: #00D2FF">$95</div></div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <input placeholder="you@yourcompany.com" style="min-height: 48px; padding: 12px 18px; border-radius: 10px; border: 1.5px solid rgba(248,249,250,0.25); background: rgba(248,249,250,0.05); color: #F8F9FA; font-family: Manrope, sans-serif; font-size: 14px">
+          <div style="display: flex; gap: 8px">
+            <input placeholder="Card number" style="flex: 2; min-height: 48px; padding: 12px 18px; border-radius: 10px; border: 1.5px solid rgba(248,249,250,0.25); background: rgba(248,249,250,0.05); color: #F8F9FA; font-family: Manrope, sans-serif; font-size: 14px">
+            <input placeholder="MM/YY" style="flex: 1; min-height: 48px; padding: 12px 14px; border-radius: 10px; border: 1.5px solid rgba(248,249,250,0.25); background: rgba(248,249,250,0.05); color: #F8F9FA; font-family: Manrope, sans-serif; font-size: 14px; min-width: 0">
+            <input placeholder="CVC" style="flex: 1; min-height: 48px; padding: 12px 14px; border-radius: 10px; border: 1.5px solid rgba(248,249,250,0.25); background: rgba(248,249,250,0.05); color: #F8F9FA; font-family: Manrope, sans-serif; font-size: 14px; min-width: 0">
+          </div>
+        </div>
+        <div style="background: #FFB703; color: #0D1B2A; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.08em; padding: 17px; border-radius: 999px; text-align: center; cursor: pointer" style-hover="background: #00D2FF">PRE-BUY — MEMBER ALL-ACCESS · $495</div>
+        <div style="font-size: 11px; color: #8B95A5; text-align: center">Early bird ends Aug 1 · Fully refundable through Sept 1 · Mock checkout</div>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 18px; border-top: 2px solid #FFB703; padding-top: 22px">
+      <img src="assets/usha-seal-fullcolor-light.svg" style="width: 56px" alt="">
+      <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.2em; color: #45566B">H₂ SUMMIT 2026 · SEPT 15–17 · HOUSTON · TICKETS@USHYDROGENALLIANCE.ORG (PLACEHOLDER)</div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

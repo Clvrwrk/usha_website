@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Syne:wght@600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body { margin: 0; background: #0D1B2A; font-family: Manrope, 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 16px; line-height: 1.7; color: #F8F9FA; }
+a { color: #00D2FF; text-decoration: none; } a:hover { color: #FFB703; }
+.light, .tint, .paper { color: #0D1B2A; }
+.light { background: #F8F9FA; } .tint { background: #F1F4F7; } .paper { background: #EEF2F6; } .dark { background: #0D1B2A; color: #F8F9FA; }
+.light a, .tint a, .paper a { color: #0089A8; } .light a:hover, .tint a:hover, .paper a:hover { color: #6C1FA0; }
+.sec { padding: 89px 56px; } .m .sec { padding: 56px 24px; }
+.wrap { max-width: 1216px; margin: 0 auto; display: flex; flex-direction: column; gap: 34px; }
+.m .wrap { gap: 24px; }
+.eyebrow { font-family: Syne, sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; margin: 0; }
+.m .eyebrow { font-size: 12px; }
+.dark .eyebrow { color: #00D2FF; } .light .eyebrow, .tint .eyebrow, .paper .eyebrow { color: #6C1FA0; }
+.display { font-family: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; letter-spacing: -0.02em; line-height: 1.08; margin: 0; text-wrap: balance; }
+.h-xl { font-size: 66px; } .h-l { font-size: 55px; } .h-1 { font-size: 34px; } .h-2 { font-size: 21px; line-height: 1.25; }
+.m .h-xl { font-size: 42px; } .m .h-l { font-size: 34px; } .m .h-1 { font-size: 26px; } .m .h-2 { font-size: 20px; }
+.dot { color: #FFB703; } .gold { color: #FFB703; } .cyan { color: #00D2FF; } .purple { color: #6C1FA0; }
+p { margin: 0; text-wrap: pretty; }
+.lead { font-size: 18px; line-height: 1.65; } .m .lead { font-size: 17px; }
+.dark p { color: #B9C6D6; } .light p, .tint p, .paper p { color: #45566B; }
+.stack { display: flex; flex-direction: column; gap: 18px; } .stack-s { display: flex; flex-direction: column; gap: 13px; }
+.split { display: grid; grid-template-columns: 1.618fr 1fr; gap: 55px; align-items: center; }
+.split.flip { grid-template-columns: 1fr 1.618fr; }
+.split.even { grid-template-columns: minmax(0,1fr) minmax(0,1fr); }
+.m .split, .m .split.flip, .m .split.even { grid-template-columns: 1fr; gap: 24px; }
+.g2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 21px; }
+.g3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 21px; }
+.g4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 21px; }
+.g5 { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 13px; }
+.m .g2, .m .g3, .m .g4 { grid-template-columns: 1fr; gap: 14px; } .m .g5 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.m .g2.keep { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.btns { display: flex; gap: 13px; flex-wrap: wrap; align-items: center; } .m .btns { flex-direction: column; align-items: stretch; gap: 12px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 12px 26px; border-radius: 999px; border: 0; cursor: pointer; font-family: Syne, sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: background 200ms cubic-bezier(0.16,1,0.3,1), color 200ms cubic-bezier(0.16,1,0.3,1), border-color 200ms cubic-bezier(0.16,1,0.3,1); box-sizing: border-box; white-space: nowrap; text-align: center; }
+.m .btns .btn { width: 100%; white-space: normal; min-height: 48px; }
+.btn.btn-primary { background: #FFB703; color: #0D1B2A; } .btn.btn-primary:hover { background: #00D2FF; color: #0D1B2A; }
+.btn.btn-tertiary { background: transparent; color: #F8F9FA; border: 2px solid rgba(248,249,250,0.35); padding: 10px 24px; } .btn.btn-tertiary:hover { border-color: #00D2FF; color: #00D2FF; }
+.light .btn.btn-tertiary, .tint .btn.btn-tertiary, .paper .btn.btn-tertiary { color: #0D1B2A; border-color: rgba(13,27,42,0.35); } .light .btn.btn-tertiary:hover, .tint .btn.btn-tertiary:hover, .paper .btn.btn-tertiary:hover { border-color: #6C1FA0; color: #6C1FA0; }
+.chip { display: inline-flex; align-items: center; align-self: flex-start; background: #6C1FA0; color: #F8F9FA; font-family: Syne, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 7px 14px; border-radius: 999px; white-space: nowrap; }
+.chip.gold { background: #FFB703; color: #0D1B2A; }
+.m .chip { white-space: normal; text-align: left; line-height: 1.4; }
+.card { border-radius: 12px; padding: 28px 26px; display: flex; flex-direction: column; gap: 12px; box-sizing: border-box; transition: transform 200ms cubic-bezier(0.16,1,0.3,1), box-shadow 200ms cubic-bezier(0.16,1,0.3,1); }
+.m .card { padding: 24px 22px; gap: 10px; }
+.card:hover { transform: translateY(-8px); box-shadow: 0 18px 40px rgba(13,27,42,0.18); }
+.dark .card { background: rgba(248,249,250,0.04); border: 1px solid rgba(0,210,255,0.35); }
+.light .card, .tint .card, .paper .card { background: #FFFFFF; border: 1px solid rgba(108,31,160,0.35); }
+.card.tint-cyan { border-color: rgba(0,168,204,0.45); } .card.tint-gold { border-color: rgba(255,183,3,0.5); }
+.card h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 21px; line-height: 1.25; margin: 0; letter-spacing: -0.01em; }
+.m .card h3 { font-size: 20px; }
+.card p { font-size: 15px; line-height: 1.6; }
+.card .open { font-family: Syne, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; }
+.stat .num { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 55px; line-height: 1; letter-spacing: -0.02em; }
+.m .stat .num { font-size: 40px; }
+.stat .label { font-family: Syne, sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; margin-top: 10px; line-height: 1.5; }
+.m .stat .label { font-size: 11px; }
+.row1 .num, .row1 .label { color: #F8F9FA; } .row1 .plus { color: #FFB703; }
+.row2 .num, .row2 .label { color: #FFB703; } .row2 .plus { color: #F8F9FA; }
+.ice .num, .ice .label { color: #F8F9FA; } .ice .plus, .ice .dot { color: #FFB703; }
+.light .stat .num, .tint .stat .num { color: #0D1B2A; } .light .stat .label, .tint .stat .label { color: #6B7A8D; }
+.tier h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 21px; margin: 0 0 13px; } .m .tier h4 { font-size: 18px; margin-bottom: 10px; }
+.logo-cell { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; min-height: 72px; padding: 13px 16px; border: 1px solid #DDE4EA; border-radius: 10px; background: #FFFFFF; font-family: Syne, sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: #45566B; box-sizing: border-box; }
+.m .logo-cell { min-height: 60px; padding: 10px 12px; font-size: 11px; }
+.logo-cell .founding { display: block; font-size: 9px; letter-spacing: 0.2em; color: #E09E00; margin-top: 4px; }
+.quote { border-left: 3px solid #FFB703; padding: 8px 0 8px 21px; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.quote p { font-size: 19px; line-height: 1.5; font-weight: 600; color: #0D1B2A; } .m .quote p { font-size: 17px; }
+.dark .quote p { color: #F8F9FA; }
+.quote cite { font-style: normal; font-family: Syne, sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #6B7A8D; }
+.dark .quote cite { color: #B9C6D6; }
+.nav { display: flex; align-items: center; gap: 34px; min-height: 72px; padding: 0 56px; background: rgba(13,27,42,0.9); border-bottom: 1px solid rgba(0,210,255,0.12); }
+.m .nav { min-height: 64px; padding: 0 20px; justify-content: space-between; gap: 12px; }
+.brand { display: flex; align-items: center; gap: 12px; } .brand img { width: 34px; height: auto; display: block; } .m .brand img { width: 28px; }
+.brand .wm { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: -0.02em; color: #F8F9FA; } .m .brand .wm { font-size: 19px; }
+.nav-links { display: flex; align-items: center; gap: 24px; margin-left: auto; }
+.nav-link { font-family: Syne, sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #F8F9FA; padding: 8px 2px; border-bottom: 2px solid transparent; }
+.nav-link:hover { color: #00D2FF; } .nav-link.on { color: #FFB703; border-bottom-color: #FFB703; }
+.burger { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(0,210,255,0.3); border-radius: 10px; }
+.footer a { color: #B9C6D6; font-size: 14px; } .footer a:hover { color: #00D2FF; } .m .footer a { font-size: 15px; padding: 6px 0; }
+.footer h5 { font-family: Syne, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #00D2FF; margin: 0 0 13px; } .m .footer h5 { font-size: 11px; margin-bottom: 8px; }
+.fgrid { display: grid; grid-template-columns: 1.618fr 1fr 1fr 1fr; gap: 55px; align-items: start; }
+.m .fgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; }
+.m .fgrid > div:first-child, .m .fgrid > div.wide { grid-column: span 2; }
+.fcol { display: flex; flex-direction: column; gap: 8px; } .m .fcol { gap: 0; }
+.copy { border-top: 2px solid #FFB703; padding-top: 21px; text-align: center; font-family: Syne, sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #6B7A8D; line-height: 1.6; }
+.field { width: 100%; box-sizing: border-box; min-height: 48px; padding: 12px 16px; border-radius: 10px; border: 1px solid #DDE4EA; background: #FFFFFF; font-family: Manrope, sans-serif; font-size: 15px; color: #6B7A8D; display: flex; align-items: center; }
+.field.ta { min-height: 130px; align-items: flex-start; }
+.flabel { font-family: Syne, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; margin: 0 0 6px; color: #0D1B2A; }
+.dark .flabel { color: #00D2FF; }
+.dark .field { background: rgba(248,249,250,0.05); border-color: rgba(248,249,250,0.25); color: rgba(248,249,250,0.5); }
+.fgroup { display: flex; flex-direction: column; }
+.list-row { display: grid; grid-template-columns: 150px 1fr auto; gap: 21px; align-items: baseline; padding: 21px 0; border-bottom: 1px solid #DDE4EA; }
+.m .list-row { grid-template-columns: 1fr; gap: 6px; padding: 16px 0; }
+.list-row .date { font-family: Syne, sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #6B7A8D; }
+.list-row h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 21px; margin: 0 0 4px; letter-spacing: -0.01em; line-height: 1.25; } .m .list-row h3 { font-size: 19px; }
+.list-row p { font-size: 15px; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { font-family: Syne, sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid #DDE4EA; border-radius: 999px; padding: 7px 14px; color: #45566B; background: #FFFFFF; }
+.tag.on { background: #0D1B2A; color: #F8F9FA; border-color: #0D1B2A; }
+.info { display: flex; flex-direction: column; gap: 6px; padding: 21px 24px; border-radius: 12px; background: #FFFFFF; border: 1px solid #DDE4EA; }
+.info .k { font-family: Syne, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #6C1FA0; }
+.info .v { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; color: #0D1B2A; line-height: 1.3; }
+.person { display: flex; flex-direction: column; gap: 10px; padding: 24px; border-radius: 12px; background: #FFFFFF; border: 1px solid #DDE4EA; }
+.avatar { width: 72px; height: 72px; border-radius: 50%; background: #0D1B2A; color: #FFB703; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: -0.02em; }
+.avatar.cyan { background: #0089A8; color: #F8F9FA; } .avatar.purple { background: #6C1FA0; color: #F8F9FA; }
+.person .name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 19px; color: #0D1B2A; line-height: 1.25; }
+.person .role { font-family: Syne, sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #6C1FA0; }
+.person p { font-size: 14px; }
+.icon { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1.5px solid rgba(108,31,160,0.45); background: rgba(108,31,160,0.06); flex: none; }
+.dark .icon { border-color: rgba(0,210,255,0.45); background: rgba(0,210,255,0.06); }
+.pillar { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; padding: 21px 13px; border-left: 1px solid #DDE4EA; }
+.pillar:first-child { border-left: 0; }
+.m .pillar { border-left: 0; border-top: 1px solid #DDE4EA; padding: 21px 0; } .m .pillar:first-child { border-top: 0; }
+.dark .pillar { border-left-color: rgba(248,249,250,0.14); } .m .dark .pillar, .dark.m .pillar { border-top-color: rgba(248,249,250,0.14); }
+.pillar .t { font-family: Syne, sans-serif; font-weight: 800; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; }
+.pillar p { font-size: 15px; line-height: 1.7; }
+.hb-photo { border-radius: 12px; overflow: hidden; background: linear-gradient(160deg, #1B2A44, #0D1B2A 55%, #3B0B59); position: relative; min-height: 420px; display: flex; align-items: flex-end; }
+.hb-photo img { width: 100%; height: auto; display: block; }
+.diagram { position: relative; width: 560px; height: 560px; margin: 0 auto; } .m .diagram { width: 342px; height: 342px; }
+.node { position: absolute; width: 96px; height: 96px; margin: -48px 0 0 -48px; border-radius: 50%; background: #FFFFFF; border: 1.5px solid rgba(108,31,160,0.45); display: flex; align-items: center; justify-content: center; text-align: center; font-family: Syne, sans-serif; font-weight: 700; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #0D1B2A; padding: 8px; box-sizing: border-box; line-height: 1.3; }
+.m .node { width: 74px; height: 74px; margin: -37px 0 0 -37px; font-size: 8px; letter-spacing: 0.08em; }
+.node.core { width: 150px; height: 150px; margin: -75px 0 0 -75px; background: #0D1B2A; color: #FFB703; font-size: 14px; border: 0; box-shadow: 0 0 0 10px rgba(255,183,3,0.12); }
+.m .node.core { width: 100px; height: 100px; margin: -50px 0 0 -50px; font-size: 11px; }
+.marquee { background: #FFB703; color: #0D1B2A; overflow: hidden; white-space: nowrap; padding: 11px 0; }
+.marquee-track { display: inline-block; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.2em; animation: marquee 32s linear infinite; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .marquee-track { animation: none !important; } .card, .btn { transition: none; } }
+</style>
+</helmet>
+<div class="root" style="display: flex; flex-direction: column; width: 1440px; background: #0D1B2A; overflow: hidden"><div class="dark nav"><div class="brand"><img src="usha-h-full-dark.svg" alt="USHA dotted-H monogram, full color on navy"><div class="wm">USHA</div></div><div class="nav-links"><a class="nav-link" href="#about">About Us</a><a class="nav-link" href="#membership">Membership</a><a class="nav-link" href="#policymakers">Policymakers</a><a class="nav-link" href="#industry">Industry</a><a class="nav-link" href="#events">Events</a><a class="nav-link" href="#media">Media Room</a><a class="nav-link" href="#resources">Resources</a><a class="btn btn-primary" href="#join" style="margin-left: 8px; min-height: 40px; padding: 10px 22px">Join</a></div></div><div class="dark sec" style="padding-top: 89px; padding-bottom: 76px"><div class="wrap"><div class="split"><div class="stack"><p class="eyebrow">Hydrogen Built</p><h1 class="display h-xl">Hydrogen built<span class="dot">.</span> America strengthened<span class="dot">.</span></h1><p class="lead">Hydrogen is built in America by American workers, innovators, and communities.</p><p>It powers our economy, strengthens our energy security, and builds a cleaner, more competitive future.</p><div class="btns" style="margin-top: 8px"><a class="btn btn-primary" href="#movement">Join the movement</a></div></div><div><div class="hb-photo"><img src="hb-hero.jpg" alt="Worker in a hard hat looking over a hydrogen facility at sunset"><img src="usha-map-knockout.svg" alt="" style="position: absolute; left: 6%; top: 8%; width: 60%; opacity: 0.85; filter: drop-shadow(0 0 18px rgba(0,210,255,0.35))"></div></div></div></div></div><div class="light sec" style=""><div class="wrap"><div class="split" style="align-items: start">
+      <div class="stack"><p class="eyebrow">The Hydrogen Built initiative</p><h2 class="display h-l">A national call to build the hydrogen economy<span class="dot">.</span></h2>
+      <p class="lead">Hydrogen Built is USHA&rsquo;s initiative to elevate the real impact of hydrogen across America, and to empower the people, companies, and communities building it.</p>
+      <p>Together, we&rsquo;re proving that hydrogen is more than a promise. It&rsquo;s already being built.</p></div>
+      <div class="g2 keep" style="gap: 0">
+        <div class="pillar"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6C1FA0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm8 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM2 20c0-3 3-5 6-5s6 2 6 5M12 20c0-3 3-5 6-5s4 1 4 4"/></svg></div><div class="t" style="color: #6C1FA0">People</div><p>Good jobs. Safer communities. A stronger future.</p></div>
+        <div class="pillar"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0089A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></div><div class="t" style="color: #0089A8">Security</div><p>Reliable energy. Resilient supply chains. Greater independence.</p></div>
+        <div class="pillar" style="border-left: 0; border-top: 1px solid #DDE4EA"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00A8CC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg></div><div class="t" style="color: #00A8CC">Prosperity</div><p>Investment. Innovation. Economic growth.</p></div>
+        <div class="pillar" style="border-top: 1px solid #DDE4EA"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E09E00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20c0-8 5-14 15-15-1 10-7 15-15 15Z"/><path d="M5 20c3-4 6-7 10-9"/></svg></div><div class="t" style="color: #E09E00">Sustainability</div><p>Lower emissions. Cleaner air. A better tomorrow.</p></div>
+      </div></div></div></div><div class="dark sec" style=""><div class="wrap"><div class="split" style="align-items: start">
+      <div class="stack"><p class="eyebrow">What we&rsquo;re building</p><h2 class="display h-l">Hydrogen is already delivering across America<span class="dot">.</span></h2>
+      <p class="lead">From production facilities and infrastructure to mobility projects and power generation, hydrogen is creating measurable impact in every region.</p></div>
+      <div class="stat" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00D2FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6 7-12a7 7 0 1 0-14 0c0 6 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg></div><div class="num" style="color: #00D2FF">50</div><div class="label" style="color: #00D2FF">States</div><p style="font-size: 15px">Hydrogen projects, policies, and investments are taking shape.</p></div></div>
+      <div class="g3" style="gap: 0">
+        <div class="pillar"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00D2FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-4 3-6 7-6s7 2 7 6"/><circle cx="17" cy="9" r="2.5"/><path d="M17 14c3 0 5 2 5 5"/></svg></div><div class="t" style="color: #00D2FF">Good jobs</div><p>From engineering and construction to operations and manufacturing.</p></div>
+        <div class="pillar"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00D2FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></div><div class="t" style="color: #00D2FF">Energy security</div><p>Diverse domestic resources. Stronger supply chains. Less reliance.</p></div>
+        <div class="pillar"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFB703" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg></div><div class="t" style="color: #FFB703">Economic growth</div><p>Billions in investment. New industries. Stronger communities.</p></div>
+      </div></div></div><div class="light sec" style=""><div class="wrap"><div class="split even" style="align-items: start; gap: 55px">
+      <div class="stack" style="gap: 24px"><p class="eyebrow">How you can get involved</p><h2 class="display h-l">Be part of what&rsquo;s Hydrogen Built<span class="dot">.</span></h2>
+      <p class="lead">Add your voice, share your story, and help show the real impact of hydrogen in your state and community.</p>
+      <div style="display: flex; gap: 16px; align-items: flex-start"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6C1FA0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10v4h3l7 4V6l-7 4H3Z"/><path d="M17 9a4 4 0 0 1 0 6"/></svg></div><div class="stack-s" style="gap: 4px"><div style="font-family: Syne, sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #6C1FA0">Share your story</div><p style="font-size: 15px">Highlight your project, innovation, or community impact.</p></div></div>
+      <div style="display: flex; gap: 16px; align-items: flex-start"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6C1FA0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm8 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM2 20c0-3 3-5 6-5s6 2 6 5M12 20c0-3 3-5 6-5s4 1 4 4"/></svg></div><div class="stack-s" style="gap: 4px"><div style="font-family: Syne, sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #6C1FA0">Join the movement</div><p style="font-size: 15px">Businesses, workers, communities, and leaders, together.</p></div></div>
+      <div style="display: flex; gap: 16px; align-items: flex-start"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6C1FA0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9L12 3Z"/></svg></div><div class="stack-s" style="gap: 4px"><div style="font-family: Syne, sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #6C1FA0">Amplify the impact</div><p style="font-size: 15px">Help others see what hydrogen is making possible.</p></div></div>
+      <div class="btns"><a class="btn btn-primary" href="#story">Submit your story</a></div></div>
+      <div class="card" style="padding: 34px; gap: 14px"><p class="eyebrow">Join the movement</p><h3 style="font-size: 28px">I stand with Hydrogen Built<span class="dot">.</span></h3><p>Add your name to show your support for hydrogen jobs, energy security, and a stronger America.</p>
+        <div class="g2 keep" style="gap: 13px"><div class="fgroup"><p class="flabel">First name *</p><div class="field">&nbsp;</div></div><div class="fgroup"><p class="flabel">Last name *</p><div class="field">&nbsp;</div></div></div>
+        <div class="fgroup"><p class="flabel">Organization (optional)</p><div class="field">&nbsp;</div></div>
+        <div class="fgroup"><p class="flabel">Email address *</p><div class="field">&nbsp;</div></div>
+        <div class="g2 keep" style="gap: 13px"><div class="fgroup"><p class="flabel">State *</p><div class="field">Select your state</div></div><div class="fgroup"><p class="flabel">I am a&hellip; *</p><div class="field">Select an option</div></div></div>
+        <div style="display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: #45566B"><div style="width: 20px; height: 20px; border: 2px solid rgba(13,27,42,0.35); border-radius: 6px; flex: none; margin-top: 2px"></div><span>Yes, I would like to receive updates about the Hydrogen Built initiative and how I can get involved.</span></div>
+        <div class="btns"><a class="btn btn-primary" href="#sign">Add my name</a></div>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; padding-top: 21px; border-top: 1px solid #DDE4EA; text-align: center"><img src="usha-h-full-light.svg" alt="USHA dotted-H monogram, full color on ice" style="width: 64px; height: auto; display: block"><p style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; color: #0D1B2A">Fifty states. One hydrogen economy. Built together<span class="dot">.</span></p><p style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; color: #6C1FA0">#HydrogenBuilt</p></div>
+      </div></div></div></div><div class="dark sec" style=""><div class="wrap"><div class="stack-s"><p class="eyebrow">Propel your business</p><h2 class="display h-l">Join the United States Hydrogen Alliance<span class="dot">.</span></h2></div><div class="g3"><div class="card "><span class="chip">Strategy</span><h3>Navigate what&rsquo;s next</h3><p>One-on-one strategy focused on the policy, market, and business priorities affecting your company.</p></div><div class="card "><span class="chip">Visibility</span><h3>Be seen by the right people</h3><p>Position your company and expertise before policymakers, industry leaders, and potential partners.</p></div><div class="card "><span class="chip">Intelligence</span><h3>See what&rsquo;s coming</h3><p>Biweekly policy reports on federal and state hydrogen and fuel cell policy.</p></div><div class="card "><span class="chip">Policy engagement</span><h3>Help shape the framework</h3><p>Bring your expertise into the policies and regulations affecting hydrogen deployment.</p></div><div class="card "><span class="chip">Business development</span><h3>Get closer to opportunity</h3><p>Tailored introductions to customers, partners, economic developers, and emerging markets.</p></div><div class="card "><span class="chip">Exclusive access</span><h3>Get in the room</h3><p>Member-only access to working groups, strategy sessions, political and investment roundtables, and USHA convenings.</p></div></div><div class="btns"><a class="btn btn-primary" href="#membership">Explore membership</a></div></div></div><div class="tint sec" style="padding-top: 76px; padding-bottom: 76px"><div class="wrap"><div class="split"><div class="stack-s"><p class="eyebrow">Newsletter</p><h2 class="display h-l">Stay ahead<span class="dot">.</span></h2><p class="lead">From policy shifts to market opportunities, stay ahead of what&rsquo;s moving hydrogen forward.</p></div>
+      <div class="btns" style="flex-wrap: nowrap"><div class="field" style="flex: 1 1 auto">Work email</div><a class="btn btn-primary" href="#newsletter">Subscribe</a></div></div></div></div><div class="dark footer sec" style="padding-top: 76px; padding-bottom: 34px"><div class="wrap" style="gap: 55px">
+      <div class="fgrid">
+        <div class="stack" style="">
+          <div class="brand" style="gap: 14px"><img src="usha-h-full-dark.svg" alt="USHA dotted-H monogram, full color on navy" style="width: 44px"><div class="wm" style="font-size: 28px">USHA</div></div>
+          <p style="color: #B9C6D6; font-size: 16px; white-space: nowrap">Fifty states. One hydrogen economy. Built together.</p>
+        </div>
+        <div><h5>Alliance</h5><div class="fcol"><a href="#about">About Us</a><a href="#membership">Membership</a><a href="#contact">Contact</a></div></div>
+        <div><h5>Work</h5><div class="fcol"><a href="#policymakers">Policymakers</a><a href="#industry">Industry</a><a href="#hydrogen-built">Hydrogen Built</a><a href="#events">Events</a></div></div>
+        <div class="wide"><h5>Newsroom</h5><div class="fcol"><a href="#media">Media Room</a><a href="#resources">Resources</a><a href="#linkedin-usha">LinkedIn &middot; USHA</a><a href="#linkedin-convention">LinkedIn &middot; Convention</a><a href="#x">X / Twitter</a></div></div>
+      </div>
+      <div class="copy">&copy; 2026 United States Hydrogen Alliance &middot; 501(c)(6)</div>
+    </div></div></div>
+</x-dc>
+</body>
+</html>
